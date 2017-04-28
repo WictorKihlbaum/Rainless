@@ -18,7 +18,7 @@ declare var google: any;
 export class LookupPage implements OnInit {
 
   private helpPage = HelpPage;
-  private chosenDate: string;
+  private chosenDate: any;
   private minYear: number;
   private maxYear: number;
   private yearLimit: number = 20;
@@ -135,9 +135,11 @@ export class LookupPage implements OnInit {
   }
 
   onDateChange() {
+    this.convertChosenDateToISO();
     this.setNiceLookingDate();
     this.setOptionsAvailable();
   }
+
 
   setNiceLookingDate() {
     const date = new Date(this.chosenDate);
@@ -158,6 +160,14 @@ export class LookupPage implements OnInit {
       this.optionsAvailable = false;
     } else {
       this.optionsAvailable = true;
+    }
+  }
+
+  convertChosenDateToISO() {
+    if (typeof this.chosenDate != 'string') {
+      let date = new Date();
+      date.setFullYear(this.chosenDate.year, this.chosenDate.month - 1, this.chosenDate.day);
+      this.chosenDate = date.toISOString();
     }
   }
 
@@ -224,7 +234,6 @@ export class LookupPage implements OnInit {
     const date = new Date();
     const year = date.getFullYear();
     const defaultYear = (year - this.pastYears).toString();
-
     this.chosenDate = date.toISOString().replace(/^\d{4}/, defaultYear);
     this.minYear = year - this.yearLimit;
     this.maxYear = year - 1;
