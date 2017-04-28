@@ -11,7 +11,7 @@ export class AboutPage {
   constructor(private iab: InAppBrowser) {}
 
   onVisitDarkSky() {
-    this.iab.create('https://darksky.net/poweredby/');
+    this.iab.create('https://darksky.net/poweredby/', '_system');
   }
 
 }

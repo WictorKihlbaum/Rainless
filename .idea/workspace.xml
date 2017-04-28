@@ -2,8 +2,76 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4121ebe-0881-4dd9-adf5-f5905aaea6d2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/ios/Rainless/Images.xcassets/AppIcon.appiconset/Contents.json" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova.xcodeproj/project.pbxproj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Bridging-Header.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Classes/AppDelegate.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Classes/AppDelegate.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Classes/MainViewController.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Classes/MainViewController.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Classes/MainViewController.xib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/HelloCordova-Info.plist" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/HelloCordova-Prefix.pch" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/AppIcon.appiconset/Contents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/AppIcon.appiconset/icon-40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/AppIcon.appiconset/icon-40@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/AppIcon.appiconset/icon-50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/AppIcon.appiconset/icon-50@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/AppIcon.appiconset/icon-60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/AppIcon.appiconset/icon-60@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/AppIcon.appiconset/icon-60@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/AppIcon.appiconset/icon-72.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/AppIcon.appiconset/icon-72@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/AppIcon.appiconset/icon-76.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/AppIcon.appiconset/icon-76@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/AppIcon.appiconset/icon-83.5@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/AppIcon.appiconset/icon-small.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/AppIcon.appiconset/icon-small@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/AppIcon.appiconset/icon-small@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/AppIcon.appiconset/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/AppIcon.appiconset/icon@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/LaunchImage.launchimage/Contents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/LaunchImage.launchimage/Default-568h@2x~iphone.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/LaunchImage.launchimage/Default-667h.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/LaunchImage.launchimage/Default-736h.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/LaunchImage.launchimage/Default-Landscape-736h.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/LaunchImage.launchimage/Default-Landscape@2x~ipad.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/LaunchImage.launchimage/Default-Landscape~ipad.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/LaunchImage.launchimage/Default-Portrait@2x~ipad.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/LaunchImage.launchimage/Default-Portrait~ipad.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/LaunchImage.launchimage/Default@2x~iphone.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Images.xcassets/LaunchImage.launchimage/Default~iphone.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Plugins/README" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Plugins/cordova-plugin-console/CDVLogger.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Plugins/cordova-plugin-console/CDVLogger.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Plugins/cordova-plugin-device/CDVDevice.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Plugins/cordova-plugin-device/CDVDevice.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Plugins/cordova-plugin-geolocation/CDVLocation.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Plugins/cordova-plugin-geolocation/CDVLocation.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Plugins/cordova-plugin-inappbrowser/CDVInAppBrowser.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Plugins/cordova-plugin-inappbrowser/CDVInAppBrowser.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Plugins/cordova-plugin-nativegeocoder/NativeGeocoder-Bridging-Header.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Plugins/cordova-plugin-nativegeocoder/NativeGeocoder.swift" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Plugins/cordova-plugin-splashscreen/CDVSplashScreen.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Plugins/cordova-plugin-splashscreen/CDVSplashScreen.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Plugins/cordova-plugin-splashscreen/CDVViewController+SplashScreen.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Plugins/cordova-plugin-splashscreen/CDVViewController+SplashScreen.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Plugins/cordova-plugin-statusbar/CDVStatusBar.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Plugins/cordova-plugin-statusbar/CDVStatusBar.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Plugins/ionic-plugin-keyboard/IonicKeyboard.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/Plugins/ionic-plugin-keyboard/IonicKeyboard.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/config.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/HelloCordova/main.m" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/cordova/build-extras.xcconfig" afterPath="$PROJECT_DIR$/platforms/ios/cordova/build-extras.xcconfig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/CordovaLib/CordovaLib.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/platforms/ios/CordovaLib/CordovaLib.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/index.html" afterPath="$PROJECT_DIR$/platforms/ios/www/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/about/about.ts" afterPath="$PROJECT_DIR$/src/pages/about/about.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/lookup/lookup.ts" afterPath="$PROJECT_DIR$/src/pages/lookup/lookup.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/lookup/result/result.ts" afterPath="$PROJECT_DIR$/src/pages/lookup/result/result.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/providers/lookup-service.ts" afterPath="$PROJECT_DIR$/src/providers/lookup-service.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/main.js" afterPath="$PROJECT_DIR$/www/build/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/main.js.map" afterPath="$PROJECT_DIR$/www/build/main.js.map" />
     </list>
@@ -19,15 +87,13 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="lookup.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/lookup/lookup.ts">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="lookup-service.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/providers/lookup-service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="184" column="48" lean-forward="false" selection-start-line="184" selection-start-column="48" selection-end-line="184" selection-end-column="48" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="511">
+              <caret line="47" column="44" lean-forward="false" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -46,8 +112,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/providers/lookup-service.ts" />
         <option value="$PROJECT_DIR$/src/pages/lookup/lookup.ts" />
+        <option value="$PROJECT_DIR$/src/providers/lookup-service.ts" />
+        <option value="$PROJECT_DIR$/config.xml" />
+        <option value="$PROJECT_DIR$/src/pages/about/about.ts" />
+        <option value="$PROJECT_DIR$/src/pages/lookup/result/result.ts" />
       </list>
     </option>
   </component>
@@ -84,7 +153,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -108,24 +176,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Rainless" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Rainless" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="providers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -169,9 +219,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Rainless" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Rainless" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lookup" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="result" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -199,6 +276,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="a4121ebe-0881-4dd9-adf5-f5905aaea6d2" name="Default" comment="" />
@@ -206,34 +286,35 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1493347938880</updated>
-      <workItem from="1493347940173" duration="10891000" />
+      <workItem from="1493347940173" duration="11011000" />
+      <workItem from="1493364603404" duration="5956000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10891000" />
+    <option name="totallyTimeSpent" value="16967000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22695035" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22695035" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -248,11 +329,20 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/pages/lookup/lookup.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#50#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -264,23 +354,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/providers/lookup-service.ts">
+    <entry file="file://$PROJECT_DIR$/src/pages/lookup/lookup.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="28" column="6" lean-forward="false" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+        <state relative-caret-position="973">
+          <caret line="187" column="0" lean-forward="true" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/lookup/lookup.ts">
+    <entry file="file://$PROJECT_DIR$/src/pages/about/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="184" column="48" lean-forward="false" selection-start-line="184" selection-start-column="48" selection-end-line="184" selection-end-column="48" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/about/about.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="62" lean-forward="false" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#42#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/lookup/result/result.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="54" column="65" lean-forward="false" selection-start-line="54" selection-start-column="65" selection-end-line="54" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/providers/lookup-service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="47" column="44" lean-forward="false" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>

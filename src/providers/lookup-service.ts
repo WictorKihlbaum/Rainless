@@ -26,14 +26,18 @@ export class LookupService {
     this.cacheStore = localforage.createInstance({ name: "rainless", storeName: "cache" });
   }
 
-  load(year, monthAndDay, latitude, longitude) {
-    const date: string = year.toString() + monthAndDay + 'T00:00:00';
-    const lat: string = latitude.toString();
-    const lng: string = longitude.toString();
-    const cacheName: string = `${date}-${lat}-${lng}`;
+  load(i, chosenDate, latitude, longitude) {
+    const year: string = i.toString();
+    let month: string = (new Date(chosenDate).getMonth() + 1).toString();
+    let day: string = new Date(chosenDate).getDate().toString();
 
-    // Complete URL
-    const url: string = `${this.cors}${this.apiURL}/${this.apiKey}/${lat},${lng},${date}?${this.excludes}&${this.units}`;
+    if (day.length == 1) day = '0' + day;
+    if (month.length == 1) month = '0' + month;
+
+    const date: string = `${year}-${month}-${day}T00:00:00`;
+    const cacheName: string = `${date}-${latitude}-${longitude}`;
+
+    const url: string = `${this.cors}${this.apiURL}/${this.apiKey}/${latitude},${longitude},${date}?${this.excludes}&${this.units}`;
 
     return new Promise(resolve => {
       // First check if the data is already cached.

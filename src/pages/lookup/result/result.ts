@@ -52,7 +52,7 @@ export class ResultPage {
   }
 
   onVisitDarkSky() {
-    this.iab.create('https://darksky.net/poweredby/');
+    this.iab.create('https://darksky.net/poweredby/', '_system');
   }
 
   onPopToRoot() {
