@@ -140,7 +140,6 @@ export class LookupPage implements OnInit {
     this.setOptionsAvailable();
   }
 
-
   setNiceLookingDate() {
     const date = new Date(this.chosenDate);
     const day = date.getDate();
@@ -171,7 +170,54 @@ export class LookupPage implements OnInit {
     }
   }
 
-  onFetchWeatherData() {
+  async onFetchWeatherData() {
+    const latitude: number = this.location.lat;
+    const longitude: number = this.location.lng;
+    const fromYear: number = parseInt(this.chosenDate.substring(0, 4)); // Get YYYY
+    const toYear: number = new Date().getFullYear();
+    const monthAndDay: string = this.chosenDate.substring(4, 10); // Get -MM-DD
+    const yearsBack = toYear - fromYear;
+    let precipDays: number = 0;
+
+    // Show loading animation for user.
+    this.presentLoading('Loading...');
+
+    for (let i = fromYear; i < toYear; i += 1) {
+      const data = await this.lookupService.load(i, monthAndDay, latitude, longitude);
+      if (this.isRain(data)) precipDays += 1;
+    }
+    this.presentResultPage(precipDays, yearsBack);
+  }
+
+  isRain(data) {
+    let rain: boolean = false;
+
+    if (data.hasOwnProperty('precipType') && data['precipType'] == 'rain') {
+      if (this.optionsAvailable && this.mm > 0) {
+        if (data.hasOwnProperty('precipIntensity')) {
+          if ((data['precipIntensity'] * 24) >= this.mm) {
+            rain = true;
+          }
+        }
+      } else {
+        rain = true;
+      }
+    }
+    return rain;
+  }
+
+  presentResultPage(precipDays: number, yearsBack: number) {
+    const parameters = {
+      keyName: new Date().toISOString(),
+      precipDays: precipDays,
+      yearsBack: yearsBack,
+      location: this.location,
+      niceLookingDate: this.niceLookingDate
+    };
+    this.navCtrl.push(ResultPage, parameters);
+  }
+
+  onFetchWeatherDataOld() {
     const latitude: number = this.location.lat;
     const longitude: number = this.location.lng;
     const fromYear: number = parseInt(this.chosenDate.substring(0, 4)); // Get YYYY
@@ -190,30 +236,11 @@ export class LookupPage implements OnInit {
         this.lookupService.load(i, monthAndDay, latitude, longitude).then(data => {
           counter += 1; // Keep track of how many years we have fetched data for.
 
-          if (data.hasOwnProperty('precipType') && data['precipType'] == 'rain') {
-            if (this.optionsAvailable && this.mm > 0) {
-              if (data.hasOwnProperty('precipIntensity')) {
-                if ((data['precipIntensity'] * 24) >= this.mm) {
-                  precipDays += 1;
-                }
-              }
-            } else {
-              precipDays += 1;
-            }
-          }
+          if (this.isRain(data)) precipDays += 1;
 
           // Present result page if we have fetched data for all the years.
           if (counter == yearsBack) {
-            const date = new Date().toISOString();
-            const key = `${latitude}-${longitude}-${fromYear}${monthAndDay}-${date}`;
-            const data = {
-              keyName: key,
-              precipDays: precipDays,
-              yearsBack: yearsBack,
-              location: this.location,
-              niceLookingDate: this.niceLookingDate
-            };
-            this.navCtrl.push(ResultPage, data);
+            this.presentResultPage(precipDays, yearsBack);
           }
           resolve();
         });
