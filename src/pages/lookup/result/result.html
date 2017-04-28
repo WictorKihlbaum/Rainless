@@ -1,0 +1,47 @@
+<ion-content class="gradient-background" no-bounce>
+
+  <ion-grid id="result-grid">
+    <ion-row align-items-center id="result-grid-row">
+      <ion-col>
+
+        <h2 id="result-topic">Result</h2>
+
+        <ion-card>
+          <ion-card-content padding>
+            <h1 id="date">{{ parameters.get('niceLookingDate') }}</h1>
+            <h2 id="location">{{ parameters.get('location').address }}</h2>
+          </ion-card-content>
+
+          <!-- Show result -->
+          <div id="result-text" padding>
+            It has rained {{ parameters.get('precipDays') }} out of {{ parameters.get('yearsBack') }}
+            times this date during the past {{ parameters.get('yearsBack') }} years.
+          </div>
+        </ion-card>
+
+        <!-- Buttons -->
+        <div id="buttons" padding>
+          <button ion-button icon-left [disabled]="resultIsSaved" (click)="onSaveResult()" color="primarybutton">
+            <ion-icon name="bookmark"></ion-icon>
+            Save result
+          </button>
+
+          <button ion-button icon-left navPop color="primarybutton">
+            <ion-icon name="search"></ion-icon>
+            New lookup
+          </button>
+
+          <button ion-button icon-left outline color="light" (click)="onPopToRoot()">
+            <ion-icon name="home"></ion-icon>
+            Back to home
+          </button>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Powered by DarkSky -->
+  <img src="assets/img/darksky-white.png" id="darksky-logo" (click)="onVisitDarkSky()" />
+
+</ion-content>

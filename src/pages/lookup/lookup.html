@@ -1,0 +1,70 @@
+<ion-header>
+
+  <!-- Navbar -->
+  <ion-navbar color="mytoolbar" [hideBackButton]="true">
+    <ion-buttons start>
+      <button ion-fab mini color="primarybutton" navPop>
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-fab mini color="primarybutton" [navPush]="helpPage">
+        <ion-icon name="help-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Lookup date
+    </ion-title>
+  </ion-navbar>
+
+  <!-- Current lookup settings -->
+  <h1>{{ niceLookingDate }}</h1>
+  <h2>{{ pastYears }} past years</h2>
+
+  <!-- Settings buttons -->
+  <ion-grid class="gradient-bg" padding>
+    <ion-row justify-content-center>
+      <ion-col>
+        <!-- Calendar button -->
+        <button ion-fab mini (click)="picker.open()" color="calendarfab" [disabled]="!map">
+          <ion-icon name="calendar"></ion-icon>
+          <ion-datetime #picker
+            id="datetime-picker"
+            pickerFormat="D MMMM YYYY"
+            min="{{minYear}}"
+            max="{{maxYear}}"
+            (ionChange)="onDateChange()"
+            [(ngModel)]="chosenDate">
+          </ion-datetime>
+        </button>
+      </ion-col>
+      <ion-col>
+        <!-- Advanced options button -->
+        <button ion-fab mini (click)="onShowAdvancedOptions($event)" [disabled]="!optionsAvailable || !map" color="optionsfab">
+          <ion-icon name="options"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col>
+        <!-- Location button -->
+        <button ion-fab mini (click)="onShowPlacesModal()" color="pinfab" [disabled]="!map">
+          <ion-icon name="pin"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-header>
+
+<ion-content no-bounce>
+
+  <!-- Map -->
+  <div id="map"></div>
+
+  <!-- Lookup button -->
+  <ion-fab bottom center id="search-fab-container">
+    <button ion-fab class="gradient-bg" (click)="onFetchWeatherData()" [disabled]="!chosenDate || !location.set">
+      <ion-icon name="search"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

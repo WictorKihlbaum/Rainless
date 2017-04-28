@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar [color]="'mytoolbar'">
+    <ion-title>Help</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="gradient-background">
+  <h2>Basics</h2>
+  <p>
+    Choose a location and a date. By default these are set for your current location
+    and today's date 10 years back in time. Tap the "Lookup" button when you are done.
+    The app will check the chosen date and location for each year as from the year you
+    choose up until 2016. The result will be shown on a new page.
+  </p>
+  <h2>Advanced options</h2>
+  <p>
+    Adjust the slider to choose the amount of daily precipitation (0-10 millimeters).
+    The app will only consider a day as rainy if the chosen amount of rain (or more)
+    has fallen during that whole day.
+
+    This might be something you want to set to potentially get a more
+    representative result. Often it is enough to set the slider to "1mm".
+
+    This is however completely optional and by default it is set for 0 millimeters.
+
+    Tap the "Done" button when you are done, otherwise the app won't save this setting.
+  </p>
+  <p>
+    <strong>Worth noting</strong><br />
+    This option is only available for lookups 10 years or less back in time.
+    This is because the really old weather data often is to insufficient
+    to calculate the daily precipitation.
+  </p>
+</ion-content>

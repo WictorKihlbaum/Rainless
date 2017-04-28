@@ -1,0 +1,59 @@
+page-saved-results {
+
+  #saved-results-grid, #saved-results-grid-row {
+    height: 100%;
+    padding: 0;
+    color: white;
+    font-size: 5vw;
+  }
+  #saved-results-grid-row {
+    text-align: center;
+  }
+
+  ion-card {
+    background-color: transparent !important;
+    border-radius: 8px !important;
+    border: 1px solid white;
+    box-shadow: none !important;
+  }
+
+  ion-card ion-card-content {
+    text-align: center;
+    padding: 12px 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: white;
+  }
+  h1, h2 {
+    color: white !important;
+  }
+
+  #date {
+    font-size: 10vw;
+    color: white;
+  }
+
+  #location {
+    font-size: 5vw;
+    color: white;
+  }
+
+  #result-text {
+    font-family: OpenSans-Regular, sans-serif;
+    color: white;
+    font-size: 4.5vw;
+  }
+
+  .result-card.ng-enter {
+    -webkit-animation: bounceIn 1s;
+    animation: bounceIn 1s;
+  }
+  .result-card.ng-enter-stagger {
+    -webkit-animation-delay: 200ms;
+    animation-delay: 200ms;
+
+    /* Override to make sure it's not inherited from other styles */
+    -webkit-animation-duration: 0ms;
+    animation-duration: 0ms;
+  }
+
+}

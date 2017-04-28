@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar [color]="'mytoolbar'">
+    <ion-buttons end>
+      <!-- Delete all button -->
+      <button ion-button icon-left [navPush]="helpPage" (click)="showConfirmAll()" [disabled]="storeIsClear">
+        <ion-icon name="trash"></ion-icon>
+        Delete all
+      </button>
+    </ion-buttons>
+    <ion-title>Saved results</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="gradient-background" no-bounce>
+
+  <!-- Show if no saved results -->
+  <ion-grid id="saved-results-grid" *ngIf="savedResults.length == 0">
+    <ion-row align-items-center id="saved-results-grid-row">
+      <ion-col>
+        You don't have any saved results
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Show if saved results -->
+  <ion-card *ngFor="let result of savedResults" class="result-card">
+    <ion-card-content padding>
+      <h1 id="date">
+        {{ result.niceLookingDate }}
+      </h1>
+      <h2 id="location">
+        {{ result.location.address }}
+      </h2>
+    </ion-card-content>
+    <div id="result-text" padding>
+      It has rained {{ result.precipDays }} out of {{ result.yearsBack }}
+      times this date during the past {{ result.yearsBack }} years.
+    </div>
+    <div padding>
+      <button ion-button block icon-left color="deletebutton" (click)="showConfirm(result.keyName)">
+        <ion-icon name="trash"></ion-icon>
+        Delete
+      </button>
+    </div>
+  </ion-card>
+
+</ion-content>

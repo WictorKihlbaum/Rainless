@@ -1,0 +1,37 @@
+page-about {
+
+  position: relative;
+  font-size: 4vw;
+  line-height: 1.4;
+  font-family: OpenSans-Regular, sans-serif;
+
+  #about-grid, #about-grid-row {
+    height: 100%;
+    padding: 0;
+    color: white;
+
+    button {
+      margin-top: 44px;
+    }
+  }
+  #about-grid-row {
+    text-align: center;
+  }
+
+  #about-topic {
+    font-size: 8vw;
+    font-family: Josefin-Regular, sans-serif;
+  }
+
+  #about-text {
+    text-align: left;
+  }
+
+  #darksky-logo {
+    width: 34vw;
+    position: absolute;
+    right: 3vw;
+    bottom: 3vw;
+  }
+
+}

@@ -1,0 +1,50 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+/* Josefin */
+@font-face {
+  font-family: Josefin-Light;
+  src: url("../assets/fonts/JosefinSans-Light.ttf");
+}
+@font-face {
+  font-family: Josefin-Regular;
+  src: url("../assets/fonts/JosefinSans-Regular.ttf");
+}
+
+/* OpenSans */
+@font-face {
+  font-family: OpenSans-Light;
+  src: url("../assets/fonts/OpenSans-Light.ttf");
+}
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url("../assets/fonts/OpenSans-Regular.ttf");
+}
+
+ion-title {
+  font-family: OpenSans-Light, sans-serif;
+  font-weight: bold;
+}
+
+/* Teal / Cyan */
+.gradient-background {
+  background: #00e5ff; /* Old browsers */
+  background: -moz-linear-gradient(top, #00e5ff 0%, #1de9b6 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #00e5ff 0%,#1de9b6 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #00e5ff 0%,#1de9b6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e5ff', endColorstr='#1de9b6',GradientType=0 );
+}

@@ -1,0 +1,52 @@
+page-home {
+
+  #home-grid, #home-grid-row {
+    height: 100%;
+    padding: 0;
+  }
+  #home-grid-row {
+    text-align: center;
+
+    background-image: url("../assets/img/home-bottom.png");
+    background-position: center bottom;
+    background-size: 100% 30vh;
+    background-repeat: no-repeat;
+  }
+
+  #inapp-logo {
+    width: 25vw;
+  }
+
+  /* Topic and subtopic */
+  #home-topic, #home-subtopic {
+    font-family: Josefin-Regular, sans-serif;
+    color: white;
+  }
+  #home-topic {
+    font-size: 13vw;
+  }
+  #home-subtopic {
+    font-size: 6vw;
+  }
+
+  #lookup-button {
+    font-family: OpenSans-Regular, sans-serif;
+  }
+
+  #fabs-container {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+  }
+  #fabs-grid ion-row ion-col {
+    text-align: center;
+  }
+  #fabs-grid ion-row ion-col button {
+    margin: 0 auto !important;
+    background-color: white;
+    color: #00E5FF;
+    border: 1px solid #00E5FF;
+  }
+
+}

@@ -1,0 +1,33 @@
+page-contact {
+
+  #contact-grid, #contact-grid-row {
+    height: 100%;
+    padding: 0;
+  }
+  #contact-grid-row {
+    text-align: center;
+  }
+
+  #contact-topic {
+    font-size: 8vw;
+    font-family: Josefin-Regular, sans-serif;
+    color: white;
+  }
+
+  #top-text {
+    font-family: OpenSans-Regular, sans-serif;
+    color: white;
+    text-align: left;
+    font-size: 4vw;
+  }
+
+  #contact-form {
+    margin-top: 16px;
+  }
+
+  #mid-items-container {
+    background-color: white;
+    border-radius: 6px;
+  }
+
+}
