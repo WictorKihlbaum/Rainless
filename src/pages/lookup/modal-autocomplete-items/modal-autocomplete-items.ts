@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Content, Searchbar, ViewController } from 'ionic-angular';
 
-declare var google: any;
+declare let google: any;
 
 @Component({
   selector: 'page-modal-autocomplete-items',
@@ -21,7 +21,7 @@ export class ModalAutocompleteItems implements OnInit {
 
   ionViewDidEnter() {
     this.content.scrollToTop();
-    //this.searchbar.setFocus();
+    this.searchbar.setFocus();
   }
 
   ngOnInit() {

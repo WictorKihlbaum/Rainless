@@ -5,6 +5,7 @@
 </ion-header>
 <ion-content #content no-bounce>
   <ion-searchbar
+    color="light"
     #searchbar
     [(ngModel)]="autocomplete.query"
     [showCancelButton]="true"
@@ -13,8 +14,7 @@
     placeholder="Start typing and select...">
   </ion-searchbar>
   <ion-list>
-    <ion-item *ngFor="let item of autocompleteItems"
-              (click)="chooseItem(item)">
+    <ion-item *ngFor="let item of autocompleteItems" (click)="chooseItem(item)">
       {{ item.description }}
       <ion-icon name="pin" item-left></ion-icon>
     </ion-item>

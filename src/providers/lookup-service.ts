@@ -30,18 +30,16 @@ export class LookupService {
     const year: string = i.toString();
     let month: string = (new Date(chosenDate).getMonth() + 1).toString();
     let day: string = new Date(chosenDate).getDate().toString();
-
     if (day.length == 1) day = '0' + day;
     if (month.length == 1) month = '0' + month;
-
     const date: string = `${year}-${month}-${day}T00:00:00`;
-    const cacheName: string = `${date}-${latitude}-${longitude}`;
+    const key: string = `${date}-${latitude}-${longitude}`;
 
     const url: string = `${this.cors}${this.apiURL}/${this.apiKey}/${latitude},${longitude},${date}?${this.excludes}&${this.units}`;
 
     return new Promise(resolve => {
       // First check if the data is already cached.
-      this.cacheStore.getItem(cacheName).then(cache => {
+      this.cacheStore.getItem(key).then(cache => {
         if (cache) {
           resolve(cache);
         } else {
@@ -50,7 +48,7 @@ export class LookupService {
             .map(res => res.json())
             .subscribe(data => {
               data = data.daily.data[0];
-              this.cacheStore.setItem(cacheName, data).then(() => {
+              this.cacheStore.setItem(key, data).then(() => {
                 resolve(data);
               });
             });

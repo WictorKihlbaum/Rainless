@@ -8,7 +8,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { NativeGeocoder, NativeGeocoderReverseResult } from "@ionic-native/native-geocoder";
 import { AdvancedOptionsPage } from "./advanced-options/advanced-options";
 
-declare var google: any;
+declare let google: any;
 
 @Component({
   selector: 'page-lookup',
@@ -135,7 +135,6 @@ export class LookupPage implements OnInit {
   }
 
   onDateChange() {
-    this.convertChosenDateToISO();
     this.setNiceLookingDate();
     this.setOptionsAvailable();
   }
@@ -153,21 +152,9 @@ export class LookupPage implements OnInit {
     const toYear: number = new Date().getFullYear();
     this.pastYears = toYear - fromYear;
 
-    /* Disable advanced options. Weather data will be to
-     insufficient for calculations. */
-    if (toYear - fromYear >= 11) {
-      this.optionsAvailable = false;
-    } else {
-      this.optionsAvailable = true;
-    }
-  }
-
-  convertChosenDateToISO() {
-    if (typeof this.chosenDate != 'string') {
-      let date = new Date();
-      date.setFullYear(this.chosenDate.year, this.chosenDate.month - 1, this.chosenDate.day);
-      this.chosenDate = date.toISOString();
-    }
+    // Disable advanced options. Weather data will be to insufficient for calculations.
+    if (toYear - fromYear >= 11) this.optionsAvailable = false;
+    else this.optionsAvailable = true;
   }
 
   async onFetchWeatherData() {
