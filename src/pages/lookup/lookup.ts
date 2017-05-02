@@ -48,48 +48,45 @@ export class LookupPage implements OnInit {
     this.setupDatePicker();
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.presentLoading('Loading map...');
-    this.setCurrentCoordinates().then(() => {
-      this.initMap();
-      this.setMapPin();
-      this.createMapMarker({ lat: this.location.lat, lng: this.location.lng });
-      this.setCurrentAddress();
-      this.setNiceLookingDate();
-      this.loader.dismiss();
-    });
+    await this.setCurrentCoordinates();
+    this.initMap();
+    this.setMapPin();
+    this.createMapMarker({ lat: this.location.lat, lng: this.location.lng });
+    this.setCurrentAddress();
+    this.setNiceLookingDate();
+    this.loader.dismiss();
   }
 
   onShowAdvancedOptions(myEvent) {
-    let popover = this.popoverCtrl.create(AdvancedOptionsPage, { mm: this.mm });
+    const popover = this.popoverCtrl.create(AdvancedOptionsPage, { mm: this.mm });
     popover.onDidDismiss(mm => {
       if (mm != null) this.mm = mm;
     });
     popover.present({ ev: myEvent });
   }
 
-  setCurrentCoordinates() {
-    return new Promise((resolve, reject) => {
-      this.geolocation.getCurrentPosition().then(resp => {
-        this.location.lat = resp.coords.latitude;
-        this.location.lng = resp.coords.longitude;
-        this.location.set = true;
-        resolve();
-      }).catch(error => {
-        console.log('Error getting location', error);
-        reject();
-      });
-    });
+  async setCurrentCoordinates() {
+    try {
+      const position = await this.geolocation.getCurrentPosition();
+      this.location.lat = position.coords.latitude;
+      this.location.lng = position.coords.longitude;
+      this.location.set = true;
+    }
+    catch (error) {
+      console.log('Error getting location', error);
+    }
   }
 
-  setCurrentAddress() {
-    this.nativeGeocoder.reverseGeocode(this.location.lat, this.location.lng)
-      .then((result: NativeGeocoderReverseResult) => {
-        this.location.address = `${result.street}, ${result.city}, ${result.countryName}`;
-      })
-      .catch((error: any) => {
-        console.log(error)
-      });
+  async setCurrentAddress() {
+    try {
+      const address = await this.nativeGeocoder.reverseGeocode(this.location.lat, this.location.lng);
+      this.location.address = `${address.street}, ${address.city}, ${address.countryName}`;
+    }
+    catch (error) {
+      console.log(error);
+    }
   }
 
   onShowPlacesModal() {
@@ -103,9 +100,9 @@ export class LookupPage implements OnInit {
     modal.present();
   }
 
-  getPlaceDetail(place_id: string): void {
+  getPlaceDetail(placeID: string): void {
     let self = this;
-    let request = { placeId: place_id };
+    let request = { placeId: placeID };
     this.placesService = new google.maps.places.PlacesService(this.map);
     this.placesService.getDetails(request, callback);
 
@@ -217,7 +214,9 @@ export class LookupPage implements OnInit {
     const date = new Date();
     const year = date.getFullYear();
     const defaultYear = (year - this.pastYears).toString();
-    this.chosenDate = date.toISOString().replace(/^\d{4}/, defaultYear);
+    const tzoffset = date.getTimezoneOffset() * 60000; // offset in milliseconds
+    const localISOTime = (new Date(Date.now() - tzoffset)).toISOString();
+    this.chosenDate = localISOTime.replace(/^\d{4}/, defaultYear);
     this.minYear = year - this.yearLimit;
     this.maxYear = year - 1;
   }
