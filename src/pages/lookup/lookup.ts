@@ -138,10 +138,17 @@ export class LookupPage implements OnInit {
 
   setNiceLookingDate() {
     const date = new Date(this.chosenDate);
-    const day = date.getDate();
+    let day = date.getDate().toString();
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     const month = months[date.getMonth()];
-    this.niceLookingDate = `${day} ${month}`;
+
+    switch (true) {
+      case day.endsWith('1'): day += 'st'; break;
+      case day.endsWith('2'): day += 'nd'; break;
+      case day.endsWith('3'): day += 'rd'; break;
+      default: day += 'th'; break;
+    }
+    this.niceLookingDate = `${month} ${day}`;
   }
 
   setOptionsAvailable() {
@@ -192,7 +199,7 @@ export class LookupPage implements OnInit {
 
   presentResultPage(precipDays: number, yearsBack: number) {
     const parameters = {
-      keyName: new Date().toISOString(),
+      keyName: this.chosenDate,
       precipDays: precipDays,
       yearsBack: yearsBack,
       location: this.location,
