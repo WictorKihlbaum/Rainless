@@ -1,13 +1,19 @@
 page-saved-results {
 
-  #saved-results-grid, #saved-results-grid-row {
-    height: 100%;
-    padding: 0;
-    color: white;
-    font-size: 5vw;
+  #saved-results-container {
+    //border: 1px solid white;
+    //border-radius: 8px;
+    height: 45vh;
+    //overflow: scroll;
   }
-  #saved-results-grid-row {
-    text-align: center;
+
+  ion-list {
+    ion-item {
+      background-color: rgba(255, 255, 255, 0.2) !important;
+      border-radius: 6px;
+      margin: 3px !important;
+      color: white !important;
+    }
   }
 
   ion-card {
@@ -35,25 +41,6 @@ page-saved-results {
   #location {
     font-size: 5vw;
     color: white;
-  }
-
-  #result-text {
-    font-family: OpenSans-Regular, sans-serif;
-    color: white;
-    font-size: 4.5vw;
-  }
-
-  .result-card.ng-enter {
-    -webkit-animation: bounceIn 1s;
-    animation: bounceIn 1s;
-  }
-  .result-card.ng-enter-stagger {
-    -webkit-animation-delay: 200ms;
-    animation-delay: 200ms;
-
-    /* Override to make sure it's not inherited from other styles */
-    -webkit-animation-duration: 0ms;
-    animation-duration: 0ms;
   }
 
 }

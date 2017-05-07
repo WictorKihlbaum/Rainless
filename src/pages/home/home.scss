@@ -1,12 +1,6 @@
 page-home {
 
-  #home-grid, #home-grid-row {
-    height: 100%;
-    padding: 0;
-  }
-  #home-grid-row {
-    text-align: center;
-
+  .page-grid-row {
     background-image: url("../assets/img/home-bottom.png");
     background-position: center bottom;
     background-size: 100% 30vh;

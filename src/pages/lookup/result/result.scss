@@ -47,9 +47,13 @@ page-result {
     text-align: left;
   }
 
-  #buttons {
+  #buttons-container {
     margin-top: 24px;
     text-align: center;
+
+    #back-button {
+      margin-top: 44px;
+    }
   }
 
   #darksky-logo {

@@ -48,3 +48,32 @@ ion-title {
   background: linear-gradient(to bottom, #00e5ff 0%,#1de9b6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e5ff', endColorstr='#1de9b6',GradientType=0 );
 }
+
+.darksky-logo {
+  width: 34vw;
+  position: absolute;
+  right: 3vw;
+  bottom: 3vw;
+}
+
+.page-grid, .page-grid-row {
+  height: 100%;
+  padding: 0;
+  color: white;
+}
+.page-grid-row {
+  text-align: center;
+}
+
+.page-topic {
+  font-size: 8vw;
+  font-family: Josefin-Regular, sans-serif;
+}
+
+.page-text {
+  font-size: 4.5vw;
+  line-height: 1.4;
+  font-family: OpenSans-Regular, sans-serif;
+  text-align: left;
+  color: white;
+}

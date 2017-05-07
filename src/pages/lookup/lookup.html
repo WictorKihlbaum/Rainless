@@ -1,7 +1,7 @@
 <ion-header>
 
   <!-- Navbar -->
-  <ion-navbar color="mytoolbar" [hideBackButton]="true">
+  <ion-navbar [hideBackButton]="true" color="mytoolbar">
     <ion-buttons start>
       <button ion-fab mini color="primarybutton" navPop>
         <ion-icon name="arrow-back"></ion-icon>
@@ -22,7 +22,7 @@
   <h2>{{ pastYears }} past years</h2>
 
   <!-- Settings buttons -->
-  <ion-grid class="gradient-bg" padding>
+  <ion-grid padding class="gradient-background">
     <ion-row justify-content-center>
       <ion-col>
         <!-- Calendar button -->
@@ -62,7 +62,7 @@
 
   <!-- Lookup button -->
   <ion-fab bottom center id="search-fab-container">
-    <button ion-fab class="gradient-bg" (click)="onFetchWeatherData()" [disabled]="!chosenDate || !location.set">
+    <button ion-fab class="gradient-background" (click)="onFetchWeatherData()" [disabled]="!chosenDate || !location.set">
       <ion-icon name="search"></ion-icon>
     </button>
   </ion-fab>

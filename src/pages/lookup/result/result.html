@@ -20,7 +20,7 @@
         </ion-card>
 
         <!-- Buttons -->
-        <div id="buttons" padding>
+        <div id="buttons-container" padding>
           <button ion-button icon-left [disabled]="resultIsSaved" (click)="onSaveResult()" color="primarybutton">
             <ion-icon name="bookmark"></ion-icon>
             Save result
@@ -31,9 +31,9 @@
             New lookup
           </button>
 
-          <button ion-button icon-left outline color="light" (click)="onPopToRoot()">
-            <ion-icon name="home"></ion-icon>
-            Back to home
+          <button ion-button icon-left outline color="light" (click)="onPopToRoot()" id="back-button">
+            <ion-icon name="arrow-back"></ion-icon>
+            Back to menu
           </button>
         </div>
 
@@ -42,6 +42,6 @@
   </ion-grid>
 
   <!-- Powered by DarkSky -->
-  <img src="assets/img/darksky-white.png" id="darksky-logo" (click)="onVisitDarkSky()" />
+  <img src="assets/img/darksky-white.png" class="darksky-logo" (click)="onVisitDarkSky()" />
 
 </ion-content>

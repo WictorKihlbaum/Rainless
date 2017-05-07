@@ -141,14 +141,7 @@ export class LookupPage implements OnInit {
     let day = date.getDate().toString();
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     const month = months[date.getMonth()];
-
-    switch (true) {
-      case day.endsWith('1'): day += 'st'; break;
-      case day.endsWith('2'): day += 'nd'; break;
-      case day.endsWith('3'): day += 'rd'; break;
-      default: day += 'th'; break;
-    }
-    this.niceLookingDate = `${month} ${day}`;
+    this.niceLookingDate = `${day} ${month}`;
   }
 
   setOptionsAvailable() {

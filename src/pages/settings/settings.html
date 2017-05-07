@@ -1,10 +1,10 @@
 <ion-content padding class="gradient-background" no-bounce>
 
-  <ion-grid id="settings-grid">
-    <ion-row align-items-center id="settings-grid-row">
+  <ion-grid class="page-grid">
+    <ion-row align-items-center class="page-grid-row">
       <ion-col>
-        <h2 id="settings-topic">Settings</h2>
-        <div id="settings-text">
+        <h1 class="page-topic">Settings</h1>
+        <div class="page-text">
           This app caches fetched weather data to increase loading times.
           Tap the button below to delete this data. This will not affect your
           saved results.
@@ -14,11 +14,8 @@
             <ion-icon name="trash"></ion-icon>
             Clear cache
           </button>
-          <div *ngIf="storeIsClear">
-            (no cache to clear)
-          </div>
         </div>
-        <button ion-button color="light" outline icon-left navPop id="back-button">
+        <button ion-button color="light" outline icon-left navPop>
           <ion-icon name="arrow-back"></ion-icon>
           Back
         </button>
