@@ -26,18 +26,14 @@ export class SettingsPage {
     this.cacheStore = localforage.createInstance({ name: "rainless", storeName: "cache" });
   }
 
-  checkCache() {
-    this.cacheStore.length().then(size => {
-      if (size > 0) {
-        this.storeIsClear = false
-      } else {
-        this.storeIsClear = true;
-      }
-    });
+  async checkCache() {
+    const size = await this.cacheStore.length();
+    if (size > 0) this.storeIsClear = false;
+    else this.storeIsClear = true;
   }
 
   showConfirm() {
-    let confirm = this.alertCtrl.create({
+    const confirm = this.alertCtrl.create({
       title: 'Clear cache',
       message: 'Are you sure you want to clear the cache?',
       buttons: [
@@ -58,11 +54,10 @@ export class SettingsPage {
     confirm.present();
   }
 
-  clearCache() {
-    this.cacheStore.clear().then(() => {
-      this.presentToast();
-      this.checkCache();
-    });
+  async clearCache() {
+    await this.cacheStore.clear();
+    this.presentToast();
+    this.checkCache();
   }
 
   presentToast() {

@@ -54868,7 +54868,7 @@ ion-title {
 }
 
 .page-text {
-  font-size: 4.5vw;
+  font-size: 4vw;
   line-height: 1.4;
   font-family: OpenSans-Regular, sans-serif;
   text-align: left;
@@ -55058,15 +55058,16 @@ page-result #darksky-logo {
   bottom: 3vw;
 }
 
-page-saved-results #saved-results-container {
-  height: 45vh;
+page-saved-results ion-slides {
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-top: 12px;
+  border-radius: 8px 8px 0 0;
 }
 
-page-saved-results ion-list ion-item {
-  background-color: rgba(255, 255, 255, 0.2) !important;
-  border-radius: 6px;
-  margin: 3px !important;
-  color: white !important;
+page-saved-results #badge-container {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0 0 8px 8px;
+  padding-bottom: 10px;
 }
 
 page-saved-results ion-card {
@@ -55079,20 +55080,29 @@ page-saved-results ion-card {
 page-saved-results ion-card ion-card-content {
   text-align: center;
   padding: 12px 0;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
   color: white;
 }
 
-page-saved-results h1, page-saved-results h2 {
+page-saved-results ion-card ion-card-content h1, page-saved-results ion-card ion-card-content h2 {
   color: white !important;
 }
 
-page-saved-results #date {
-  font-size: 10vw;
-  color: white;
+page-saved-results ion-card ion-card-content h1 {
+  font-size: 6vw;
 }
 
-page-saved-results #location {
-  font-size: 5vw;
+page-saved-results ion-card ion-card-content h2 {
+  font-size: 4vw;
+}
+
+page-saved-results #result-text {
+  text-align: left;
+}
+
+page-saved-results #no-results-text {
+  font-size: 4vw;
+  font-family: OpenSans-Regular, sans-serif;
+  text-align: center;
   color: white;
 }

@@ -1,19 +1,15 @@
 page-saved-results {
 
-  #saved-results-container {
-    //border: 1px solid white;
-    //border-radius: 8px;
-    height: 45vh;
-    //overflow: scroll;
+  ion-slides {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-top: 12px;
+    border-radius: 8px 8px 0 0;
   }
 
-  ion-list {
-    ion-item {
-      background-color: rgba(255, 255, 255, 0.2) !important;
-      border-radius: 6px;
-      margin: 3px !important;
-      color: white !important;
-    }
+  #badge-container {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0 0 8px 8px;
+    padding-bottom: 10px;
   }
 
   ion-card {
@@ -21,25 +17,32 @@ page-saved-results {
     border-radius: 8px !important;
     border: 1px solid white;
     box-shadow: none !important;
+
+    ion-card-content {
+      text-align: center;
+      padding: 12px 0;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+
+      h1, h2 {
+        color: white !important;
+      }
+      h1 {
+        font-size: 6vw;
+      }
+      h2 {
+        font-size: 4vw;
+      }
+    }
+  }
+  #result-text {
+    text-align: left;
   }
 
-  ion-card ion-card-content {
+  #no-results-text {
+    font-size: 4vw;
+    font-family: OpenSans-Regular, sans-serif;
     text-align: center;
-    padding: 12px 0;
-    background-color: rgba(255, 255, 255, 0.4);
-    color: white;
-  }
-  h1, h2 {
-    color: white !important;
-  }
-
-  #date {
-    font-size: 10vw;
-    color: white;
-  }
-
-  #location {
-    font-size: 5vw;
     color: white;
   }
 

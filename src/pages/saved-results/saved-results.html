@@ -6,68 +6,59 @@
       <ion-col>
         <h1 class="page-topic">Saved results</h1>
 
-        <!--<div id="saved-results-container">-->
-          <ion-scroll scrollY="true" id="saved-results-container">
+        <!-- Show if there are any saved results -->
+        <div *ngIf="savedResults.length > 0">
 
+          <div class="page-text">
+            Swipe sideways to browse through your saved results.
+          </div>
 
-          <ion-list no-lines>
-            <ion-item *ngFor="let result of savedResults" margin>
-              <h2>{{ result.niceLookingDate }}</h2>
-              <h3>{{ result.location.address }}</h3>
-              <p>It has rained 8/10 times</p>
-              <button ion-fab mini color="deletebutton" item-right>
-                <ion-icon name="trash"></ion-icon>
-              </button>
-            </ion-item>
-          </ion-list>
+          <ion-slides (ionSlideDidChange)="onSlideChange()">
+            <ion-slide *ngFor="let result of savedResults">
 
-          </ion-scroll>
+              <ion-card class="result-card">
+                <ion-card-content padding>
+                  <h1>{{ result.niceLookingDate }}</h1>
+                  <h2>{{ result.location.address }}</h2>
+                  <!-- Delete button -->
+                  <ion-fab top right>
+                    <button ion-fab mini item-right color="deletebutton" (click)="showConfirm(result.keyName)">
+                      <ion-icon name="trash"></ion-icon>
+                    </button>
+                  </ion-fab>
+                </ion-card-content>
+                <div id="result-text" padding>
+                  It has rained {{ result.precipDays }} out of {{ result.yearsBack }}
+                  times this date during the past {{ result.yearsBack }} years.
+                </div>
+              </ion-card>
 
-        <!--</div>-->
+            </ion-slide>
+          </ion-slides>
 
-        <!-- Delete all button -->
-        <div padding>
-          <button block ion-button icon-left color="deletebutton" (click)="showConfirmAll()" [disabled]="storeIsClear">
-            <ion-icon name="trash"></ion-icon>
-            Delete all
-          </button>
+          <div id="badge-container">
+            <ion-badge color="primarybutton">
+              {{ currentSlide }} of {{ savedResults.length }}
+            </ion-badge>
+          </div>
+
+        </div>
+
+        <!-- Show if no saved results -->
+        <div padding id="no-results-text" *ngIf="savedResults.length == 0">
+          You don't have any saved results
         </div>
 
         <!-- Back button -->
-        <button ion-button color="light" outline icon-left navPop>
-          <ion-icon name="arrow-back"></ion-icon>
-          Back
-        </button>
+        <div padding>
+          <button ion-button color="light" outline icon-left navPop>
+            <ion-icon name="arrow-back"></ion-icon>
+            Back
+          </button>
+        </div>
 
       </ion-col>
     </ion-row>
   </ion-grid>
 
 </ion-content>
-
-<!-- *ngIf="savedResults.length == 0" -->
-
-<!--
-
-<ion-card *ngFor="let result of savedResults" class="result-card">
-  <ion-card-content padding>
-    <h1 id="date">
-      {{ result.niceLookingDate }}
-    </h1>
-    <h2 id="location">
-      {{ result.location.address }}
-    </h2>
-  </ion-card-content>
-  <div id="result-text" padding>
-    It has rained {{ result.precipDays }} out of {{ result.yearsBack }}
-    times this date during the past {{ result.yearsBack }} years.
-  </div>
-  <div padding>
-    <button ion-button block icon-left color="deletebutton" (click)="showConfirm(result.keyName)">
-      <ion-icon name="trash"></ion-icon>
-      Delete
-    </button>
-  </div>
-</ion-card>
-
--->

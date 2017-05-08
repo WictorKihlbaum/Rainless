@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AlertController, ToastController } from 'ionic-angular';
 import { StatusBar } from "@ionic-native/status-bar";
 import * as localforage from "localforage";
+import { Slides } from 'ionic-angular';
 
 @Component({
   selector: 'page-saved-results',
@@ -9,14 +10,19 @@ import * as localforage from "localforage";
 })
 export class SavedResultsPage {
 
+  @ViewChild(Slides) slides: Slides;
+
   private savedResults: any = [];
   private resultsStore: any;
-  private storeIsClear: boolean;
+  private currentSlide: number = 1;
 
 
-  constructor(private alertCtrl: AlertController, private toastCtrl: ToastController, private statusBar: StatusBar) {
+  constructor(
+    private alertCtrl: AlertController,
+    private toastCtrl: ToastController,
+    private statusBar: StatusBar) {
+
     this.setResultsStore();
-    this.checkStore();
     this.listSavedResults();
   }
 
@@ -24,14 +30,8 @@ export class SavedResultsPage {
     this.resultsStore = localforage.createInstance({ name: "rainless", storeName: "results" });
   }
 
-  checkStore() {
-    this.resultsStore.length().then(size => {
-      if (size > 0) {
-        this.storeIsClear = false
-      } else {
-        this.storeIsClear = true;
-      }
-    });
+  onSlideChange() {
+    this.currentSlide = this.slides.getActiveIndex() + 1;
   }
 
   listSavedResults() {
@@ -41,7 +41,7 @@ export class SavedResultsPage {
   }
 
   showConfirm(id: string) {
-    let confirm = this.alertCtrl.create({
+    const confirm = this.alertCtrl.create({
       title: 'Delete result',
       message: 'Are you sure you want to delete this result?',
       buttons: [
@@ -62,11 +62,10 @@ export class SavedResultsPage {
     confirm.present();
   }
 
-  onDeleteResult(id: string) {
-    this.resultsStore.removeItem(id).then(() => {
-      this.showToast('Result was successfully deleted');
-      this.resetAndRefresh();
-    });
+  async onDeleteResult(id: string) {
+    await this.resultsStore.removeItem(id);
+    this.showToast('Result was successfully deleted');
+    this.resetAndRefresh();
   }
 
   showToast(message: string) {
@@ -82,39 +81,10 @@ export class SavedResultsPage {
     toast.present();
   }
 
-  showConfirmAll() {
-    let confirm = this.alertCtrl.create({
-      title: 'Delete results',
-      message: 'Are you sure you want to delete all results?',
-      buttons: [
-        {
-          text: 'cancel',
-          handler: () => {
-            // Do nothing.
-          }
-        },
-        {
-          text: 'Yes',
-          handler: () => {
-            this.onDeleteAll();
-          }
-        }
-      ]
-    });
-    confirm.present();
-  }
-
-  onDeleteAll() {
-    this.resultsStore.clear().then(() => {
-      this.showToast('All results was successfully deleted');
-      this.resetAndRefresh();
-    });
-  }
-
   resetAndRefresh() {
-    this.checkStore();
     this.savedResults = [];
     this.listSavedResults();
+    this.onSlideChange();
   }
 
 }

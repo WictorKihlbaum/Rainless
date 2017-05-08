@@ -23,15 +23,21 @@ export class ResultPage {
     private iab: InAppBrowser) {
 
     this.parameters = navParams;
+    this.setResultsStore();
+    this.checkIfResultIsSaved();
   }
 
-  onSaveResult() {
-    this.setResultsStore();
-    const key = this.navParams.get('keyName');
-    this.resultsStore.setItem(key, this.navParams).then(() => {
-      this.resultIsSaved = true;
-      this.presentToast();
-    });
+  async checkIfResultIsSaved() {
+    const key = this.parameters.get('keyName');
+    const value = await this.resultsStore.getItem(key);
+    if (value != null) this.resultIsSaved = true;
+  }
+
+  async onSaveResult() {
+    const key = this.parameters.get('keyName');
+    await this.resultsStore.setItem(key, this.parameters);
+    this.resultIsSaved = true;
+    this.presentToast();
   }
 
   setResultsStore() {

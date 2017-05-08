@@ -191,8 +191,9 @@ export class LookupPage implements OnInit {
   }
 
   presentResultPage(precipDays: number, yearsBack: number) {
+    const key = `${this.chosenDate}-${this.mm}-${this.location.lat}-${this.location.lng}`;
     const parameters = {
-      keyName: this.chosenDate,
+      keyName: key,
       precipDays: precipDays,
       yearsBack: yearsBack,
       location: this.location,
