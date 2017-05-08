@@ -38,7 +38,6 @@ export class ContactPage {
 
   sendFeedback() {
     this.presentLoading();
-
     let requestHeaders = new Headers();
     requestHeaders.append("Authorization", `Basic ${this.mailgunApiKey}`);
     requestHeaders.append("Content-Type", "application/x-www-form-urlencoded");
@@ -56,8 +55,7 @@ export class ContactPage {
         this.onFeedbackSuccess();
       }, error => {
         console.log("ERROR -> " + JSON.stringify(error));
-        const message: string = 'An error occurred while trying to send your message.';
-        this.presentToast(message);
+        this.presentToast('An error occurred while trying to send your message.');
       });
   }
 
@@ -70,8 +68,7 @@ export class ContactPage {
 
   onFeedbackSuccess() {
     this.loader.dismiss();
-    const message: string = 'Thank you! Your message was successfully sent.';
-    this.presentToast(message);
+    this.presentToast('Thank you! Your message was successfully sent.');
     this.feedback.reset();
   }
 

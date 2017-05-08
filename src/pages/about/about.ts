@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
-
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html',
