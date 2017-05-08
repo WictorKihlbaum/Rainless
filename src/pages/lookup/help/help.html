@@ -1,34 +1,75 @@
 <ion-header>
-  <ion-navbar [color]="'mytoolbar'">
+  <ion-navbar color="mytoolbar" [hideBackButton]="true">
+    <ion-buttons start>
+      <button ion-fab mini color="primarybutton" navPop>
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>Help</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding class="light">
+<ion-content class="gradient-background">
 
-  <h2>Basics</h2>
-  <p>
-    Choose a location and a date. By default these are set for your current location
-    and today's date 10 years back in time. Tap the "Lookup" button when you are done.
-    The app will check the chosen date and location for each year as from the year you
-    choose up until 2016. The result will be shown on a new page.
-  </p>
-  <h2>Advanced options</h2>
-  <p>
-    Adjust the slider to choose the amount of daily precipitation (0-10 millimeters).
-    The app will only consider a day as rainy if the chosen amount of rain (or more)
-    has fallen during that whole day.
+  <ion-card>
+    <ion-card-header>
+      <h2>Basics</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        Choose a location and a date. By default these are set for your current location
+        and today's date. Tap the search button when you are done with the settings.
+        The app will check the chosen date and location for each year as from the year you
+        choose up until {{ lastYear }}. The result will be shown on a new page.
+      </p>
+    </ion-card-content>
+  </ion-card>
 
-    This might be something you want to set to potentially get a more
-    representative result. Often it is enough to set the slider to "1mm".
+  <ion-card>
+    <ion-item>
+      <ion-icon item-left name="md-calendar"></ion-icon>
+      <h2>Date and years</h2>
+    </ion-item>
+    <ion-card-content>
+      <p>Press the calendar button to choose the date you want and the amount of past years to lookup.</p>
+    </ion-card-content>
+  </ion-card>
 
-    This is however completely optional and by default it is set for 0 millimeters.
+  <ion-card>
+    <ion-item>
+      <ion-icon item-left name="options"></ion-icon>
+      <h2>Daily precipitation</h2>
+    </ion-item>
+    <ion-card-content>
+      <p>
+        Adjust the slider to choose the amount of daily precipitation.
+        The app will only consider a day as rainy if the chosen amount of rain (or more)
+        has fallen during that whole day.
 
-    Tap the "Done" button when you are done, otherwise the app won't save this setting.
-  </p>
-  <p>
-    <strong>Worth noting</strong><br />
-    This option is only available for lookups 10 years or less back in time.
-    This is because the really old weather data often is to insufficient
-    to calculate the daily precipitation.
-  </p>
+        This might be something you want to set to get a more desirable
+        result. Often it is enough to set the slider to "1 mm".
+
+        This is however completely optional and by default it is set for 0 mm.
+      </p>
+      <p>
+        <strong>Worth noting</strong><br />
+        This option is only available for lookups 10 past years or less.
+        This is because the older weather data often is to insufficient
+        for daily precipitation calculations.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-icon item-left name="pin"></ion-icon>
+      <h2>Location</h2>
+    </ion-item>
+    <ion-card-content>
+      <p>
+        Press the pin button to choose a location. A new window will appear with a search field
+        to type in your location.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

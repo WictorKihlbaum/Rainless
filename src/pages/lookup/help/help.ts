@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
 })
 export class HelpPage {
 
-  constructor() {}
+  private lastYear: number;
+
+  constructor() {
+    this.lastYear = new Date().getFullYear() - 1;
+  }
 
 }
