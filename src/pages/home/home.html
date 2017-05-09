@@ -15,7 +15,7 @@
 
         <!-- Lookup date button -->
         <div padding>
-          <button [navPush]="lookupPage" ion-button icon-left round id="lookup-button" color="primarybutton">
+          <button [navPush]="lookupPage" [disabled]="isDisconnected" ion-button icon-left round id="lookup-button" color="primarybutton">
             <ion-icon name="search"></ion-icon>
             Lookup date
           </button>

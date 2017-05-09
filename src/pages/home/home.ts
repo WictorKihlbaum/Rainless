@@ -5,7 +5,7 @@ import { AboutPage } from "../about/about";
 import { LookupPage } from "../lookup/lookup";
 import { SettingsPage } from "../settings/settings";
 import { Network } from '@ionic-native/network';
-import { ToastController } from "ionic-angular";
+import { NavController, ToastController} from "ionic-angular";
 import { StatusBar } from "@ionic-native/status-bar";
 
 @Component({
@@ -20,27 +20,42 @@ export class HomePage {
   private contactPage = ContactPage;
   private settingsPage = SettingsPage;
 
-  private connectSubscription: any;
-  private disconnectSubscription: any;
-
+  private isDisconnected: boolean = false;
   private errorToast: any;
   private successToast: any;
 
 
-  constructor(private network: Network, public toastCtrl: ToastController, private statusBar: StatusBar) {
+  constructor(
+      private network: Network,
+      public toastCtrl: ToastController,
+      private statusBar: StatusBar,
+      private navCtrl: NavController) {
     this.setupNetworkWatchers();
+  }
+
+  ionViewDidEnter() {
+    this.checkCurrentNetworkConnection();
+  }
+
+  checkCurrentNetworkConnection() {
+    if (this.network.type == 'none' || this.network.type == 'unknown') {
+      this.isDisconnected = true;
+    }
   }
 
   setupNetworkWatchers() {
     // Network connection is established.
-    this.connectSubscription = this.network.onConnect().subscribe(() => {
+    this.network.onConnect().subscribe(() => {
       if (this.errorToast) this.errorToast.dismiss();
+      this.isDisconnected = false;
       this.showSuccessToast();
     });
 
     // Network connection is down.
-    this.disconnectSubscription = this.network.onDisconnect().subscribe(() => {
+    this.network.onDisconnect().subscribe(() => {
       if (this.successToast) this.successToast.dismiss();
+      this.isDisconnected = true;
+      this.navCtrl.popToRoot();
       this.showErrorToast();
     });
   }
