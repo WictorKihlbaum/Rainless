@@ -54875,6 +54875,22 @@ ion-title {
   color: white;
 }
 
+.error-toast .toast-wrapper {
+  background-color: #FFEBEE;
+}
+
+.error-toast .toast-wrapper .toast-message, .error-toast .toast-wrapper .toast-button {
+  color: #F44336 !important;
+}
+
+.success-toast .toast-wrapper {
+  background-color: #E8F5E9;
+}
+
+.success-toast .toast-wrapper .toast-message, .success-toast .toast-wrapper .toast-button {
+  color: #4CAF50 !important;
+}
+
 page-about {
   position: relative;
 }

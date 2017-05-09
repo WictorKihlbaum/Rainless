@@ -18,6 +18,7 @@ import { AdvancedOptionsPage } from "../pages/lookup/advanced-options/advanced-o
 import { HelpPage } from "../pages/lookup/help/help";
 import { ModalAutocompleteItems } from "../pages/lookup/modal-autocomplete-items/modal-autocomplete-items";
 import { ResultPage } from "../pages/lookup/result/result";
+import { Network } from "@ionic-native/network";
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { ResultPage } from "../pages/lookup/result/result";
     StatusBar,
     SplashScreen,
     InAppBrowser,
+    Network,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

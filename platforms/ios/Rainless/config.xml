@@ -41,6 +41,9 @@
     <feature name="NativeGeocoder">
         <param name="ios-package" value="NativeGeocoder" />
     </feature>
+    <feature name="NetworkStatus">
+        <param name="ios-package" value="CDVConnection" />
+    </feature>
     <name>Rainless</name>
     <description>Plan the future with the past</description>
     <author email="wictor.kihlbaum@gmail.com" href="http://ionicframework.com/">Wictor Kihlbaum</author>

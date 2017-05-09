@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		013436EA705E4FFBA54304A1 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B50394A3A8248F2ACF81748 /* CDVSplashScreen.m */; };
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
@@ -23,6 +22,10 @@
 		804ED1439D9E4C0EBC012BFB /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B20274D23F462FA7ECB3BD /* CDVLocation.m */; };
 		E9E9034D6BCA458B8C83CF5B /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FD8A4AF7D64A838590884D /* IonicKeyboard.m */; };
 		F34DB915A3EC420EAC184663 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F27E6F8B3904274A8E2AFB4 /* CoreLocation.framework */; };
+		B2426B6BD45A429BAA517A88 /* CDVConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD6B52FCD944E4C97608902 /* CDVConnection.m */; };
+		CD98BD465D70420DB73187C4 /* CDVReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C24DB844586E4979B4454E5B /* CDVReachability.m */; };
+		6CB137A567FA41B9B7CBBBE1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E02272AE50D46089AE332E1 /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		7FFAC1BE834240D7B0E17A36 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21A35E43AB741CBB3C00935 /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,12 @@
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F46F5724BB054F0FA9B82048 /* CDVLocation.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVLocation.h; path = "cordova-plugin-geolocation/CDVLocation.h"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = Rainless/config.xml; sourceTree = "<group>"; };
+		CAD6B52FCD944E4C97608902 /* CDVConnection.m */ = {isa = PBXFileReference; name = "CDVConnection.m"; path = "cordova-plugin-network-information/CDVConnection.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		C24DB844586E4979B4454E5B /* CDVReachability.m */ = {isa = PBXFileReference; name = "CDVReachability.m"; path = "cordova-plugin-network-information/CDVReachability.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		8761B9DD8CD54736B49916AB /* CDVConnection.h */ = {isa = PBXFileReference; name = "CDVConnection.h"; path = "cordova-plugin-network-information/CDVConnection.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		8E89DA9888294B43A28508FE /* CDVReachability.h */ = {isa = PBXFileReference; name = "CDVReachability.h"; path = "cordova-plugin-network-information/CDVReachability.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		8E02272AE50D46089AE332E1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		A21A35E43AB741CBB3C00935 /* CoreTelephony.framework */ = {isa = PBXFileReference; name = "CoreTelephony.framework"; path = "System/Library/Frameworks/CoreTelephony.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +99,8 @@
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				F34DB915A3EC420EAC184663 /* CoreLocation.framework in Frameworks */,
+				6CB137A567FA41B9B7CBBBE1 /* SystemConfiguration.framework in Frameworks */,
+				7FFAC1BE834240D7B0E17A36 /* CoreTelephony.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				5F27E6F8B3904274A8E2AFB4 /* CoreLocation.framework */,
+				8E02272AE50D46089AE332E1 /* SystemConfiguration.framework */,
+				A21A35E43AB741CBB3C00935 /* CoreTelephony.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -203,6 +216,10 @@
 				2DE5076BE8994E149B091E0C /* CDVInAppBrowser.h */,
 				A3A8D049BEA24110A6EEDAB8 /* NativeGeocoder.swift */,
 				8BF0B0B3CD704180B4FCC647 /* NativeGeocoder-Bridging-Header.h */,
+				CAD6B52FCD944E4C97608902 /* CDVConnection.m */,
+				C24DB844586E4979B4454E5B /* CDVReachability.m */,
+				8761B9DD8CD54736B49916AB /* CDVConnection.h */,
+				8E89DA9888294B43A28508FE /* CDVReachability.h */,
 			);
 			name = Plugins;
 			path = Rainless/Plugins;
@@ -245,11 +262,11 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 830;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = ZZQJ53NS98;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 830;
 					};
 				};
 			};
@@ -332,6 +349,8 @@
 				804ED1439D9E4C0EBC012BFB /* CDVLocation.m in Sources */,
 				6404F7449BBE4AB8A0E9CB02 /* CDVInAppBrowser.m in Sources */,
 				205A818272FB44BE8F624511 /* NativeGeocoder.swift in Sources */,
+				B2426B6BD45A429BAA517A88 /* CDVConnection.m in Sources */,
+				CD98BD465D70420DB73187C4 /* CDVReachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +387,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wictorkihlbaum.rainless2;
 				PRODUCT_NAME = Rainless;
 				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Bridging-Header.h";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -390,6 +412,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wictorkihlbaum.rainless2;
 				PRODUCT_NAME = Rainless;
 				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Bridging-Header.h";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 			};
 			name = Release;
 		};
@@ -424,6 +449,9 @@
 				PRODUCT_NAME = Rainless;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Bridging-Header.h";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -457,6 +485,9 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Bridging-Header.h";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 			};
 			name = Release;
 		};

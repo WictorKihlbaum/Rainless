@@ -48,6 +48,7 @@ export class LookupService {
             .map(res => res.json())
             .subscribe(data => {
               data = data.daily.data[0];
+              console.log(data);
               this.cacheStore.setItem(key, data).then(() => {
                 resolve(data);
               });

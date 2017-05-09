@@ -77,3 +77,16 @@ ion-title {
   text-align: left;
   color: white;
 }
+
+.error-toast .toast-wrapper {
+  background-color: #FFEBEE;
+  .toast-message, .toast-button {
+    color: #F44336 !important;
+  }
+}
+.success-toast .toast-wrapper {
+  background-color: #E8F5E9;
+  .toast-message, .toast-button {
+    color: #4CAF50 !important;
+  }
+}
