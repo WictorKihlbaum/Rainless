@@ -11,9 +11,6 @@
 <ion-content class="gradient-background">
 
   <ion-card>
-    <ion-card-header>
-      <h2>Basics</h2>
-    </ion-card-header>
     <ion-card-content>
       <p>
         Choose a location and a date. By default these are set for your current location
@@ -26,49 +23,58 @@
 
   <ion-card>
     <ion-item>
-      <ion-icon item-left name="md-calendar"></ion-icon>
+      <ion-icon item-left name="md-calendar" id="calendar-icon"></ion-icon>
       <h2>Date and years</h2>
     </ion-item>
     <ion-card-content>
-      <p>Press the calendar button to choose the date you want and the amount of past years to lookup.</p>
+      <p>Tap the calendar button to choose the date you want and the amount of past years to lookup.</p>
     </ion-card-content>
   </ion-card>
 
   <ion-card>
     <ion-item>
-      <ion-icon item-left name="options"></ion-icon>
+      <ion-icon item-left name="options" id="options-icon"></ion-icon>
       <h2>Daily precipitation</h2>
     </ion-item>
     <ion-card-content>
       <p>
         Adjust the slider to choose the amount of daily precipitation.
-        The app will only consider a day as rainy if the chosen amount of rain (or more)
-        has fallen during that whole day.
-
-        This might be something you want to set to get a more desirable
-        result. Often it is enough to set the slider to "1 mm".
-
-        This is however completely optional and by default it is set for 0 mm.
+        The app will only consider a day as rainy if the chosen amount
+        of rain (or more) has fallen during that whole day. This might
+        be something you want to set to get a more desirable result.
+        This setting is completely optional and by default it is set for 0 mm.
+      </p>
+      <p id="worth-noting">
+        <strong>Worth noting</strong>
       </p>
       <p>
-        <strong>Worth noting</strong><br />
         This option is only available for lookups 10 past years or less.
         This is because the older weather data often is to insufficient
-        for daily precipitation calculations.
+        for such calculations.
       </p>
     </ion-card-content>
   </ion-card>
 
   <ion-card>
     <ion-item>
-      <ion-icon item-left name="pin"></ion-icon>
+      <ion-icon item-left name="pin" id="pin-icon"></ion-icon>
       <h2>Location</h2>
     </ion-item>
     <ion-card-content>
       <p>
-        Press the pin button to choose a location. A new window will appear with a search field
+        Tap the pin button to choose a location. A new window will appear with a search field
         to type in your location.
       </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-icon item-left name="search" id="search-icon"></ion-icon>
+      <h2>Search</h2>
+    </ion-item>
+    <ion-card-content>
+      <p>Tap the search button when you are done with all settings to make your lookup.</p>
     </ion-card-content>
   </ion-card>
 

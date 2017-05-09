@@ -54991,6 +54991,31 @@ page-help p {
   text-align: justify;
 }
 
+page-help ion-card {
+  box-shadow: none !important;
+  border-radius: 8px !important;
+}
+
+page-help #calendar-icon {
+  color: #00E676;
+}
+
+page-help #options-icon {
+  color: #00B0FF;
+}
+
+page-help #pin-icon {
+  color: #FF1744;
+}
+
+page-help #search-icon {
+  color: #00E5FF;
+}
+
+page-help #worth-noting {
+  margin-top: 12px;
+}
+
 page-result {
   position: relative;
 }
