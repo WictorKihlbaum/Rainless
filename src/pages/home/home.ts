@@ -26,10 +26,11 @@ export class HomePage {
 
 
   constructor(
-      private network: Network,
-      public toastCtrl: ToastController,
-      private statusBar: StatusBar,
-      private navCtrl: NavController) {
+    private network: Network,
+    public toastCtrl: ToastController,
+    private statusBar: StatusBar,
+    private navCtrl: NavController) {
+
     this.setupNetworkWatchers();
   }
 
@@ -55,8 +56,11 @@ export class HomePage {
     this.network.onDisconnect().subscribe(() => {
       if (this.successToast) this.successToast.dismiss();
       this.isDisconnected = true;
-      this.navCtrl.popToRoot();
       this.showErrorToast();
+
+      if (this.navCtrl.canGoBack()) {
+        this.navCtrl.popToRoot();
+      }
     });
   }
 

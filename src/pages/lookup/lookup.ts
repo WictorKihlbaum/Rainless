@@ -166,7 +166,7 @@ export class LookupPage implements OnInit {
     this.presentLoading('Loading...');
 
     for (let i = fromYear; i < toYear; i += 1) {
-      const data = await this.lookupService.load(i, this.chosenDate, latitude, longitude);
+      const data = await this.lookupService.load(i, this.chosenDate, this.mm, latitude, longitude);
       if (this.wasRain(data)) precipDays += 1;
     }
 
@@ -191,8 +191,8 @@ export class LookupPage implements OnInit {
   }
 
   presentResultPage(precipDays: number, yearsBack: number) {
-    const key = `${this.chosenDate}-${this.mm}-${this.location.lat}-${this.location.lng}`;
-    const parameters = {
+    const key: string = `${this.chosenDate}-${this.mm}-${this.location.lat}-${this.location.lng}`;
+    const parameters: any = {
       keyName: key,
       precipDays: precipDays,
       yearsBack: yearsBack,

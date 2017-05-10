@@ -26,15 +26,14 @@ export class LookupService {
     this.cacheStore = localforage.createInstance({ name: "rainless", storeName: "cache" });
   }
 
-  load(i, chosenDate, latitude, longitude) {
+  load(i, chosenDate, mm, latitude, longitude) {
     const year: string = i.toString();
     let month: string = (new Date(chosenDate).getMonth() + 1).toString();
     let day: string = new Date(chosenDate).getDate().toString();
     if (day.length == 1) day = '0' + day;
     if (month.length == 1) month = '0' + month;
     const date: string = `${year}-${month}-${day}T00:00:00`;
-    const key: string = `${date}-${latitude}-${longitude}`;
-
+    const key: string = `${chosenDate}-${mm}-${latitude}-${longitude}`;
     const url: string = `${this.cors}${this.apiURL}/${this.apiKey}/${latitude},${longitude},${date}?${this.excludes}&${this.units}`;
 
     return new Promise(resolve => {
@@ -48,7 +47,6 @@ export class LookupService {
             .map(res => res.json())
             .subscribe(data => {
               data = data.daily.data[0];
-              console.log(data);
               this.cacheStore.setItem(key, data).then(() => {
                 resolve(data);
               });

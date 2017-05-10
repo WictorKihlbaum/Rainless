@@ -32,6 +32,10 @@ export class SavedResultsPage {
 
   onSlideChange() {
     this.currentSlide = this.slides.getActiveIndex() + 1;
+    // Avoid bug (sometimes current slide gets bigger than total length)
+    if (this.currentSlide > this.slides.length()) {
+      this.currentSlide = this.slides.length();
+    }
   }
 
   listSavedResults() {
