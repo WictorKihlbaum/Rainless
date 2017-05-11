@@ -17,41 +17,45 @@
     </ion-title>
   </ion-navbar>
 
-  <!-- Current lookup settings -->
-  <h1>{{ niceLookingDate }}</h1>
-  <h2>{{ pastYears }} past years</h2>
+  <div class="gradient-background">
 
-  <!-- Settings buttons -->
-  <ion-grid padding class="gradient-background">
-    <ion-row justify-content-center>
-      <ion-col>
-        <!-- Calendar button -->
-        <button ion-fab mini (click)="picker.open()" color="calendarfab" [disabled]="!map">
-          <ion-icon name="md-calendar"></ion-icon>
-          <ion-datetime #picker
-            id="datetime-picker"
-            pickerFormat="D MMMM YYYY"
-            min="{{minYear}}"
-            max="{{maxYear}}"
-            (ionChange)="onDateChange()"
-            [(ngModel)]="chosenDate">
-          </ion-datetime>
-        </button>
-      </ion-col>
-      <ion-col>
-        <!-- Advanced options button -->
-        <button ion-fab mini (click)="onShowAdvancedOptions($event)" [disabled]="!optionsAvailable || !map" color="optionsfab">
-          <ion-icon name="md-rainy"></ion-icon>
-        </button>
-      </ion-col>
-      <ion-col>
-        <!-- Location button -->
-        <button ion-fab mini (click)="onShowPlacesModal()" color="pinfab" [disabled]="!map">
-          <ion-icon name="pin"></ion-icon>
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+    <!-- Current lookup settings -->
+    <h1>{{ niceLookingDate }}</h1>
+    <h2>{{ pastYears }} past years</h2>
+
+    <!-- Settings buttons -->
+    <ion-grid padding>
+      <ion-row justify-content-center>
+        <ion-col>
+          <!-- Calendar button -->
+          <button ion-fab mini (click)="picker.open()" color="calendarfab" [disabled]="!map">
+            <ion-icon name="md-calendar"></ion-icon>
+            <ion-datetime #picker
+              id="datetime-picker"
+              pickerFormat="D MMMM YYYY"
+              min="{{minYear}}"
+              max="{{maxYear}}"
+              (ionChange)="onDateChange()"
+              [(ngModel)]="chosenDate">
+            </ion-datetime>
+          </button>
+        </ion-col>
+        <ion-col>
+          <!-- Advanced options button -->
+          <button ion-fab mini (click)="onShowAdvancedOptions($event)" [disabled]="!optionsAvailable || !map" color="optionsfab">
+            <ion-icon name="md-rainy"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col>
+          <!-- Location button -->
+          <button ion-fab mini (click)="onShowPlacesModal()" color="pinfab" [disabled]="!map">
+            <ion-icon name="pin"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
 
 </ion-header>
 

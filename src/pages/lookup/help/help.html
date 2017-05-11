@@ -10,18 +10,6 @@
 </ion-header>
 <ion-content class="gradient-background">
 
-  <!-- General info card -->
-  <ion-card>
-    <ion-card-content>
-      <p>
-        Choose a location and a date. By default these are set for your current location
-        and today's date. Tap the search button when you are done with the settings.
-        The app will check the chosen date and location for each year as from the year you
-        choose up until {{ lastYear }}. The result will be shown on a new page.
-      </p>
-    </ion-card-content>
-  </ion-card>
-
   <!-- Date and years card -->
   <ion-card>
     <ion-item>
@@ -29,7 +17,10 @@
       <h2>Date and years</h2>
     </ion-item>
     <ion-card-content>
-      <p>Tap the calendar button to choose the date you want and the amount of past years to lookup.</p>
+      <p>
+        Tap the calendar button to choose the date you want and the amount of past years to lookup.
+        By default this is set for today's date and 10 past years.
+      </p>
     </ion-card-content>
   </ion-card>
 
@@ -67,7 +58,7 @@
     <ion-card-content>
       <p>
         Tap the pin button to choose a location. A new window will appear with a search field
-        to type in your location.
+        to type in your location. By default this is set for your current location.
       </p>
     </ion-card-content>
   </ion-card>
@@ -79,7 +70,11 @@
       <h2>Search</h2>
     </ion-item>
     <ion-card-content>
-      <p>Tap the search button when you are done with all settings to make your lookup.</p>
+      <p>
+        Tap the search button when you are done with all settings to make your lookup.
+        The app will check the chosen date and location for each year as from the year you
+        choose up until {{ lastYear }}. The result will be shown on a new page.
+      </p>
     </ion-card-content>
   </ion-card>
 

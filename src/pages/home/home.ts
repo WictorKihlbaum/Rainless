@@ -56,11 +56,8 @@ export class HomePage {
     this.network.onDisconnect().subscribe(() => {
       if (this.successToast) this.successToast.dismiss();
       this.isDisconnected = true;
+      this.navCtrl.popToRoot();
       this.showErrorToast();
-
-      if (this.navCtrl.canGoBack()) {
-        this.navCtrl.popToRoot();
-      }
     });
   }
 
