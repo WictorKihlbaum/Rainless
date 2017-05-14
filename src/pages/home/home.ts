@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ContactPage } from "../contact/contact";
 import { SavedResultsPage } from "../saved-results/saved-results";
 import { AboutPage } from "../about/about";
 import { LookupPage } from "../lookup/lookup";
 import { SettingsPage } from "../settings/settings";
 import { Network } from '@ionic-native/network';
-import { NavController, ToastController} from "ionic-angular";
+import { NavController, ToastController } from "ionic-angular";
 import { StatusBar } from "@ionic-native/status-bar";
 
 @Component({
@@ -27,11 +27,13 @@ export class HomePage {
 
   constructor(
     private network: Network,
-    public toastCtrl: ToastController,
+    private toastCtrl: ToastController,
     private statusBar: StatusBar,
     private navCtrl: NavController) {
+  }
 
-    this.setupNetworkWatchers();
+  ngOnInit() {
+    //this.setupNetworkWatchers();
   }
 
   ionViewDidEnter() {

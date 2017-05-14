@@ -19,15 +19,15 @@ export class ModalAutocompleteItems implements OnInit {
 
   constructor(public viewCtrl: ViewController) {}
 
-  ionViewDidEnter() {
-    this.content.scrollToTop();
-    this.searchbar.setFocus();
-  }
-
   ngOnInit() {
     this.acService = new google.maps.places.AutocompleteService();
     this.autocompleteItems = [];
     this.autocomplete = { query: '' };
+  }
+
+  ionViewDidEnter() {
+    this.content.scrollToTop();
+    this.searchbar.setFocus();
   }
 
   dismiss() {

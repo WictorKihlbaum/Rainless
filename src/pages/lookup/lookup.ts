@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ModalController, LoadingController, PopoverController } from 'ionic-angular';
+import { NavController, ModalController, LoadingController, PopoverController, ToastController } from 'ionic-angular';
 import { ResultPage } from './result/result';
 import { ModalAutocompleteItems } from './modal-autocomplete-items/modal-autocomplete-items';
 import { HelpPage } from './help/help';
 import { LookupService } from '../../providers/lookup-service';
 import { Geolocation } from '@ionic-native/geolocation';
-import { NativeGeocoder, NativeGeocoderReverseResult } from "@ionic-native/native-geocoder";
+import { NativeGeocoder } from "@ionic-native/native-geocoder";
 import { AdvancedOptionsPage } from "./advanced-options/advanced-options";
+import { StatusBar } from "@ionic-native/status-bar";
 
-declare let google: any;
+declare const google: any;
 
 @Component({
   selector: 'page-lookup',
@@ -27,6 +28,7 @@ export class LookupPage implements OnInit {
   private pastYears: number = 10;
   private niceLookingDate: string = 'No date';
   private loader: any;
+  private toast: any;
 
   /* Map variables */
   private location: any = { address: 'No address', lat: '', lng: '', set: false };
@@ -43,20 +45,26 @@ export class LookupPage implements OnInit {
     private modalCtrl: ModalController,
     private geolocation: Geolocation,
     private nativeGeocoder: NativeGeocoder,
-    private popoverCtrl: PopoverController) {
-
-    this.setupDatePicker();
+    private popoverCtrl: PopoverController,
+    private toastCtrl: ToastController,
+    private statusBar: StatusBar) {
   }
 
   async ngOnInit() {
-    this.presentLoading('Loading map...');
-    await this.setCurrentCoordinates();
-    this.initMap();
-    this.setMapPin();
-    this.createMapMarker({ lat: this.location.lat, lng: this.location.lng });
-    this.setCurrentAddress();
-    this.setNiceLookingDate();
-    //this.loader.dismiss();
+    try {
+      this.setupDatePicker();
+      this.presentLoading('Loading map...');
+      await this.setCurrentCoordinates();
+      this.initMap();
+      this.setMapPin();
+      this.createMapMarker({ lat: this.location.lat, lng: this.location.lng });
+      this.setCurrentAddress();
+      this.setNiceLookingDate();
+      this.loader.dismiss();
+    }
+    catch (message) {
+      this.showToast(message, 'error-toast');
+    }
   }
 
   onShowAdvancedOptions(myEvent) {
@@ -75,7 +83,8 @@ export class LookupPage implements OnInit {
       this.location.set = true;
     }
     catch (error) {
-      console.log('Error getting location', error);
+      console.log('Error getting coordinates', error);
+      throw 'There was an error getting your current coordinates';
     }
   }
 
@@ -85,8 +94,23 @@ export class LookupPage implements OnInit {
       this.location.address = `${address.street}, ${address.city}, ${address.countryName}`;
     }
     catch (error) {
-      console.log(error);
+      console.log('Error getting address', error);
+      throw 'There was an error getting your current address';
     }
+  }
+
+  showToast(message: string, css: string) {
+    this.statusBar.hide();
+    this.toast = this.toastCtrl.create({
+      message: message,
+      position: 'top',
+      cssClass: css,
+      duration: 5000
+    });
+    this.toast.onDidDismiss(() => {
+      this.statusBar.show();
+    });
+    this.toast.present();
   }
 
   onShowPlacesModal() {
@@ -101,8 +125,8 @@ export class LookupPage implements OnInit {
   }
 
   getPlaceDetail(placeID: string): void {
-    let self = this;
-    let request = { placeId: placeID };
+    const self = this;
+    const request = { placeId: placeID };
     this.placesService = new google.maps.places.PlacesService(this.map);
     this.placesService.getDetails(request, callback);
 

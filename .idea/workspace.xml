@@ -4,10 +4,9 @@
     <list default="true" id="a4121ebe-0881-4dd9-adf5-f5905aaea6d2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/Rainless.xcodeproj/project.xcworkspace/xcuserdata/wictor.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/platforms/ios/Rainless.xcodeproj/project.xcworkspace/xcuserdata/wictor.xcuserdatad/UserInterfaceState.xcuserstate" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/lookup/advanced-options/advanced-options.html" afterPath="$PROJECT_DIR$/src/pages/lookup/advanced-options/advanced-options.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/lookup/advanced-options/advanced-options.scss" afterPath="$PROJECT_DIR$/src/pages/lookup/advanced-options/advanced-options.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/home/home.ts" afterPath="$PROJECT_DIR$/src/pages/home/home.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/lookup/lookup.ts" afterPath="$PROJECT_DIR$/src/pages/lookup/lookup.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/main.css" afterPath="$PROJECT_DIR$/www/build/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/lookup/modal-autocomplete-items/modal-autocomplete-items.ts" afterPath="$PROJECT_DIR$/src/pages/lookup/modal-autocomplete-items/modal-autocomplete-items.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/main.js" afterPath="$PROJECT_DIR$/www/build/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/build/main.js.map" afterPath="$PROJECT_DIR$/www/build/main.js.map" />
     </list>
@@ -24,32 +23,26 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="home.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/home/home.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="31" column="37" lean-forward="true" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="lookup.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/lookup/lookup.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="193" column="115" lean-forward="false" selection-start-line="193" selection-start-column="115" selection-end-line="193" selection-end-column="115" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="result.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/lookup/result/result.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="31" column="55" lean-forward="false" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="result.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/lookup/result/result.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="22" column="34" lean-forward="false" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-              <folding />
+            <state relative-caret-position="57">
+              <caret line="64" column="21" lean-forward="true" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,8 +93,6 @@
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/src/pages/home/home.scss" />
         <option value="$PROJECT_DIR$/src/providers/lookup-service.ts" />
-        <option value="$PROJECT_DIR$/src/pages/lookup/modal-autocomplete-items/modal-autocomplete-items.ts" />
-        <option value="$PROJECT_DIR$/src/pages/home/home.ts" />
         <option value="$PROJECT_DIR$/src/pages/lookup/modal-autocomplete-items/modal-autocomplete-items.html" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/pages/lookup/lookup.html" />
@@ -116,6 +107,8 @@
         <option value="$PROJECT_DIR$/src/pages/lookup/advanced-options/advanced-options.html" />
         <option value="$PROJECT_DIR$/src/pages/lookup/advanced-options/advanced-options.scss" />
         <option value="$PROJECT_DIR$/src/pages/lookup/result/result.ts" />
+        <option value="$PROJECT_DIR$/src/pages/lookup/modal-autocomplete-items/modal-autocomplete-items.ts" />
+        <option value="$PROJECT_DIR$/src/pages/home/home.ts" />
         <option value="$PROJECT_DIR$/src/pages/lookup/lookup.ts" />
       </list>
     </option>
@@ -258,11 +251,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lookup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="result" />
+              <option name="myItemId" value="home" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -395,12 +384,12 @@
       <workItem from="1494684236445" duration="888000" />
       <workItem from="1494718547374" duration="937000" />
       <workItem from="1494721270423" duration="90000" />
-      <workItem from="1494758904006" duration="6366000" />
+      <workItem from="1494758904006" duration="9158000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84562000" />
+    <option name="totallyTimeSpent" value="87354000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="24" y="23" width="1393" height="797" extended-state="0" />
@@ -663,24 +652,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/home.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="58" column="31" lean-forward="false" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/lookup/modal-autocomplete-items/modal-autocomplete-items.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/lookup/modal-autocomplete-items/modal-autocomplete-items.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -743,26 +718,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/lookup/lookup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
           <caret line="50" column="25" lean-forward="false" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="101" column="1" lean-forward="false" selection-start-line="101" selection-start-column="1" selection-end-line="101" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -807,11 +766,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="101" column="1" lean-forward="false" selection-start-line="101" selection-start-column="1" selection-end-line="101" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/lookup/modal-autocomplete-items/modal-autocomplete-items.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#61#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/home.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="31" column="37" lean-forward="true" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/lookup/lookup.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="193" column="115" lean-forward="false" selection-start-line="193" selection-start-column="115" selection-end-line="193" selection-end-column="115" />
-          <folding />
+        <state relative-caret-position="57">
+          <caret line="64" column="21" lean-forward="true" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
