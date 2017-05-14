@@ -49,7 +49,8 @@ export class ResultPage {
     const toast = this.toastCtrl.create({
       message: 'Result was successfully saved',
       duration: 5000,
-      position: 'top'
+      position: 'top',
+      cssClass: 'success-toast'
     });
     toast.onDidDismiss(() => {
       this.statusBar.show();

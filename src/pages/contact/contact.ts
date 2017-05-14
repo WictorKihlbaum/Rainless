@@ -55,29 +55,31 @@ export class ContactPage {
         this.onFeedbackSuccess();
       }, error => {
         console.log("ERROR -> " + JSON.stringify(error));
-        this.presentToast('An error occurred while trying to send your message.');
+        this.presentToast('An error occurred while trying to send your message.', 'error-toast');
       });
   }
 
   presentLoading() {
     this.loader = this.loadingCtrl.create({
-      content: "Sending message..."
+      content: "Sending message...",
+      cssClass: 'loading-animation'
     });
     this.loader.present();
   }
 
   onFeedbackSuccess() {
     this.loader.dismiss();
-    this.presentToast('Thank you! Your message was successfully sent.');
+    this.presentToast('Thank you! Your message was successfully sent.', 'success-toast');
     this.feedback.reset();
   }
 
-  presentToast(message: string) {
+  presentToast(message: string, css: string) {
     this.statusBar.hide();
     const toast = this.toastCtrl.create({
       message: message,
       duration: 10000,
-      position: 'top'
+      position: 'top',
+      cssClass: css
     });
     toast.onDidDismiss(() => {
       this.statusBar.show();

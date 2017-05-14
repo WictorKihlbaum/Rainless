@@ -65,7 +65,8 @@ export class SettingsPage {
     const toast = this.toastCtrl.create({
       message: 'Cache was successfully cleared',
       duration: 5000,
-      position: 'top'
+      position: 'top',
+      cssClass: 'success-toast'
     });
     toast.onDidDismiss(() => {
       this.statusBar.show();

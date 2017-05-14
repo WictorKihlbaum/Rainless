@@ -56,7 +56,7 @@ export class LookupPage implements OnInit {
     this.createMapMarker({ lat: this.location.lat, lng: this.location.lng });
     this.setCurrentAddress();
     this.setNiceLookingDate();
-    this.loader.dismiss();
+    //this.loader.dismiss();
   }
 
   onShowAdvancedOptions(myEvent) {
@@ -206,7 +206,8 @@ export class LookupPage implements OnInit {
     this.loader = this.loadingCtrl.create({
       spinner: 'bubbles',
       content: text,
-      dismissOnPageChange: true
+      dismissOnPageChange: true,
+      cssClass: 'loading-animation'
     });
     this.loader.present();
   }

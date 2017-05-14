@@ -40,7 +40,7 @@
           </button>
         </ion-col>
         <ion-col>
-          <button ion-fab [navPush]="contactPage">
+          <button ion-fab [navPush]="contactPage" [disabled]="isDisconnected">
             <ion-icon name="mail"></ion-icon>
           </button>
         </ion-col>

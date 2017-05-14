@@ -56,6 +56,7 @@ ion-title {
   bottom: 3vw;
 }
 
+/* General page styles */
 .page-grid, .page-grid-row {
   height: 100%;
   padding: 0;
@@ -64,12 +65,10 @@ ion-title {
 .page-grid-row {
   text-align: center;
 }
-
 .page-topic {
   font-size: 8vw;
   font-family: Josefin-Regular, sans-serif;
 }
-
 .page-text {
   font-size: 4vw;
   line-height: 1.4;
@@ -78,6 +77,7 @@ ion-title {
   color: white;
 }
 
+/* Toasts */
 .error-toast .toast-wrapper {
   background-color: #FFEBEE;
   .toast-message, .toast-button {
@@ -88,5 +88,15 @@ ion-title {
   background-color: #E8F5E9;
   .toast-message, .toast-button {
     color: #4CAF50 !important;
+  }
+}
+
+/* Loading animation */
+.loading-animation .loading-wrapper {
+  .loading-content {
+    color: #1DE9B6;
+  }
+  ion-spinner * {
+    fill: #00E5FF;
   }
 }

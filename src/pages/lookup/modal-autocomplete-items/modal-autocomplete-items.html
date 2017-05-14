@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar color="mytoolbar">
-    <ion-title>Search address</ion-title>
+    <ion-title>Location</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content #content no-bounce>
@@ -11,7 +11,7 @@
     [showCancelButton]="true"
     (ionInput)="updateSearch()"
     (ionCancel)="dismiss()"
-    placeholder="Start typing and select...">
+    placeholder="Search address...">
   </ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let item of autocompleteItems" (click)="chooseItem(item)">
