@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Content, Searchbar, ViewController } from 'ionic-angular';
 
-declare let google: any;
+declare const google: any;
 
 @Component({
   selector: 'page-modal-autocomplete-items',

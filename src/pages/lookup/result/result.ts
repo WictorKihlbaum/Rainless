@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams, ToastController} from 'ionic-angular';
 import { StatusBar } from "@ionic-native/status-bar";
 import * as localforage from "localforage";
@@ -21,8 +21,10 @@ export class ResultPage {
     private toastCtrl: ToastController,
     private statusBar: StatusBar,
     private iab: InAppBrowser) {
+  }
 
-    this.parameters = navParams;
+  ngOnInit() {
+    this.parameters = this.navParams;
     this.setResultsStore();
     this.checkIfResultIsSaved();
   }

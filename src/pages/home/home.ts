@@ -33,7 +33,7 @@ export class HomePage {
   }
 
   ngOnInit() {
-    //this.setupNetworkWatchers();
+    this.setupNetworkWatchers();
   }
 
   ionViewDidEnter() {
@@ -66,7 +66,7 @@ export class HomePage {
   showErrorToast() {
     this.statusBar.hide();
     this.errorToast = this.toastCtrl.create({
-      message: 'Network error! You are offline',
+      message: 'Network connection lost. Please reestablish connection to continue using the app.',
       showCloseButton: true,
       closeButtonText: 'Ok',
       position: 'top',

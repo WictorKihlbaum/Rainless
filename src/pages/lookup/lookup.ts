@@ -179,15 +179,15 @@ export class LookupPage implements OnInit {
   }
 
   async onFetchWeatherData() {
+    // Show loading animation for user.
+    this.presentLoading('Loading...');
+
     const latitude: string = this.location.lat.toString();
     const longitude: string = this.location.lng.toString();
     const fromYear: number = new Date(this.chosenDate).getFullYear();
     const toYear: number = new Date().getFullYear();
     const yearsBack = toYear - fromYear;
     let precipDays: number = 0;
-
-    // Show loading animation for user.
-    this.presentLoading('Loading...');
 
     for (let i = fromYear; i < toYear; i += 1) {
       const data = await this.lookupService.load(i, this.chosenDate, this.mm, latitude, longitude);

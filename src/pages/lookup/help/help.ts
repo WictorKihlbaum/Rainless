@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'page-help',
@@ -8,7 +8,10 @@ export class HelpPage {
 
   private lastYear: number;
 
-  constructor() {
+
+  constructor() {}
+
+  ngOnInit() {
     this.lastYear = new Date().getFullYear() - 1;
   }
 
