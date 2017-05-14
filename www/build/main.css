@@ -55070,6 +55070,20 @@ page-lookup #search-fab-container button {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 
+page-advanced-options ion-list-header, page-advanced-options ion-icon {
+  color: #00B0FF !important;
+}
+
+page-advanced-options ion-badge {
+  color: white;
+  background-color: #1DE9B6 !important;
+}
+
+page-advanced-options button {
+  color: white;
+  background-color: #00E5FF !important;
+}
+
 page-help h2 {
   font-size: 5vw;
   color: #757575;
