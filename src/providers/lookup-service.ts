@@ -27,7 +27,7 @@ export class LookupService {
     this.cacheStore = localforage.createInstance({ name: "rainless", storeName: "cache" });
   }
 
-  load(i, chosenDate, mm, latitude, longitude) {
+  load(i, chosenDate, latitude, longitude) {
     return new Promise((resolve, reject) => {
 
       const year: string = i.toString();
@@ -36,7 +36,7 @@ export class LookupService {
       if (day.length == 1) day = '0' + day;
       if (month.length == 1) month = '0' + month;
       const date: string = `${year}-${month}-${day}T00:00:00`;
-      const key: string = `${year}-${month}-${day}-${mm}mm-${latitude}-${longitude}`;
+      const key: string = `${year}-${month}-${day}-${latitude}-${longitude}`;
       const url: string = `${this.cors}${this.apiURL}/${this.apiKey}/${latitude},${longitude},${date}?${this.excludes}&${this.units}`;
 
       // First check if weather data is cached.

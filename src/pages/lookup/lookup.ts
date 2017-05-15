@@ -193,7 +193,7 @@ export class LookupPage implements OnInit {
       let precipDays: number = 0;
 
       for (let i = fromYear; i < toYear; i += 1) {
-        const data = await this.lookupService.load(i, this.chosenDate, this.mm, latitude, longitude);
+        const data = await this.lookupService.load(i, this.chosenDate, latitude, longitude);
         if (this.wasRain(data)) precipDays += 1;
       }
 
