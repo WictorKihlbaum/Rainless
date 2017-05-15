@@ -12,7 +12,7 @@ import { StatusBar } from "@ionic-native/status-bar";
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
   private lookupPage = LookupPage;
   private aboutPage = AboutPage;

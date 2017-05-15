@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Content, Searchbar, ViewController } from 'ionic-angular';
 
 declare const google: any;
@@ -7,19 +7,17 @@ declare const google: any;
   selector: 'page-modal-autocomplete-items',
   templateUrl: 'modal-autocomplete-items.html'
 })
-export class ModalAutocompleteItems implements OnInit {
+export class ModalAutocompleteItems {
 
   @ViewChild('searchbar') searchbar: Searchbar;
   @ViewChild('content') content: Content;
 
+  acService: any;
   autocompleteItems: any;
   autocomplete: any;
-  acService: any;
 
 
-  constructor(public viewCtrl: ViewController) {}
-
-  ngOnInit() {
+  constructor(private viewCtrl: ViewController) {
     this.acService = new google.maps.places.AutocompleteService();
     this.autocompleteItems = [];
     this.autocomplete = { query: '' };
@@ -43,16 +41,18 @@ export class ModalAutocompleteItems implements OnInit {
       this.autocompleteItems = [];
       return;
     }
-    let self = this;
-    let config = {
+    const self = this;
+    const config = {
       types:  ['geocode'],
       input: this.autocomplete.query
     };
     this.acService.getPlacePredictions(config, (predictions, status) => {
       self.autocompleteItems = [];
-      predictions.forEach(prediction => {
-        self.autocompleteItems.push(prediction);
-      });
+      if (predictions) {
+        predictions.forEach(prediction => {
+          self.autocompleteItems.push(prediction);
+        });
+      }
     });
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController, NavParams, ToastController} from 'ionic-angular';
 import { StatusBar } from "@ionic-native/status-bar";
 import * as localforage from "localforage";
@@ -10,9 +10,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 })
 export class ResultPage {
 
-  private parameters: any;
-  private resultIsSaved: boolean = false;
   private resultsStore: any;
+  private resultIsSaved: boolean = false;
 
 
   constructor(
@@ -21,23 +20,20 @@ export class ResultPage {
     private toastCtrl: ToastController,
     private statusBar: StatusBar,
     private iab: InAppBrowser) {
-  }
 
-  ngOnInit() {
-    this.parameters = this.navParams;
     this.setResultsStore();
     this.checkIfResultIsSaved();
   }
 
   async checkIfResultIsSaved() {
-    const key = this.parameters.get('keyName');
+    const key = this.navParams.get('keyName');
     const value = await this.resultsStore.getItem(key);
     if (value != null) this.resultIsSaved = true;
   }
 
   async onSaveResult() {
-    const key = this.parameters.get('keyName');
-    await this.resultsStore.setItem(key, this.parameters);
+    const key = this.navParams.get('keyName');
+    await this.resultsStore.setItem(key, this.navParams);
     this.resultIsSaved = true;
     this.presentToast();
   }

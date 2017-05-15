@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ModalController, LoadingController, PopoverController, ToastController } from 'ionic-angular';
+import { NavController, ModalController, LoadingController, PopoverController, ToastController, Platform } from 'ionic-angular';
 import { ResultPage } from './result/result';
 import { ModalAutocompleteItems } from './modal-autocomplete-items/modal-autocomplete-items';
 import { HelpPage } from './help/help';
@@ -47,7 +47,8 @@ export class LookupPage implements OnInit {
     private nativeGeocoder: NativeGeocoder,
     private popoverCtrl: PopoverController,
     private toastCtrl: ToastController,
-    private statusBar: StatusBar) {
+    private statusBar: StatusBar,
+    private platform: Platform) {
   }
 
   async ngOnInit() {
@@ -84,7 +85,7 @@ export class LookupPage implements OnInit {
     }
     catch (error) {
       console.log('Error getting coordinates', error);
-      throw 'An error occurred while trying to get your current coordinates';
+      throw 'An error occurred while trying to get your current coordinates.';
     }
   }
 
@@ -94,8 +95,11 @@ export class LookupPage implements OnInit {
       this.location.address = `${address.street}, ${address.city}, ${address.countryName}`;
     }
     catch (error) {
-      console.log('Error getting address', error);
-      throw 'An error occurred while trying to get your current address';
+      // Desktop developing purpose since this only works for iOS and Android.
+      if (this.platform.is('ios') || this.platform.is('android')) {
+        console.log('Error getting address', error);
+        throw 'An error occurred while trying to get your current address.';
+      }
     }
   }
 

@@ -56,11 +56,11 @@ export class SettingsPage {
 
   async clearCache() {
     await this.cacheStore.clear();
-    this.presentToast();
+    this.showToast();
     this.checkCache();
   }
 
-  presentToast() {
+  showToast() {
     this.statusBar.hide();
     const toast = this.toastCtrl.create({
       message: 'Cache was successfully cleared',

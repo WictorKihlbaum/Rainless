@@ -16,6 +16,7 @@ export class LookupService {
 
 
   constructor(private http: Http, private platform: Platform) {
+    // Desktop developing purpose.
     if (platform.is('ios') || platform.is('android')) {
       this.cors = ''; // Cors is not needed on mobile devices.
     }

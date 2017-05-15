@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavParams, ViewController } from 'ionic-angular';
 
 @Component({
@@ -7,13 +7,11 @@ import { NavParams, ViewController } from 'ionic-angular';
 })
 export class AdvancedOptionsPage {
 
-  public mmPrecipitation: number;
+  private mmPrecipitation: number;
 
 
-  constructor(public viewCtrl: ViewController, public navParams: NavParams) {}
-
-  ngOnInit() {
-    this.mmPrecipitation = this.navParams.get('mm');
+  constructor(public viewCtrl: ViewController, public navParams: NavParams) {
+    this.mmPrecipitation = navParams.get('mm');
   }
 
   onClosePopover() {
