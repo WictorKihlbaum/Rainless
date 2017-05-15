@@ -13,23 +13,20 @@ export class ContactPage {
   private feedback : FormGroup;
   private subject: string = 'feedback';
   private recipient: string = 'wictor.kihlbaum@gmail.com';
-  private http: Http;
   private mailgunUrl: string = 'mg.rainless.com';
   private mailgunApiKey: string;
   private loader: any;
 
 
   constructor(
-    http: Http,
+    private http: Http,
     private formBuilder: FormBuilder,
     private toastCtrl: ToastController,
     private loadingCtrl: LoadingController,
     private platform: Platform,
     private statusBar: StatusBar) {
 
-    this.http = http;
     this.mailgunApiKey = window.btoa("api:key-ba6608ffb8bd55bcfeb1c5aded1dca87");
-
     this.feedback = this.formBuilder.group({
       subject: [this.subject, Validators.required],
       message: ['', Validators.required]
@@ -37,7 +34,7 @@ export class ContactPage {
   }
 
   sendFeedback() {
-    this.presentLoading();
+    this.showLoading();
     let requestHeaders = new Headers();
     requestHeaders.append("Authorization", `Basic ${this.mailgunApiKey}`);
     requestHeaders.append("Content-Type", "application/x-www-form-urlencoded");
@@ -58,7 +55,7 @@ export class ContactPage {
     });
   }
 
-  presentLoading() {
+  showLoading() {
     this.loader = this.loadingCtrl.create({
       spinner: 'bubbles',
       content: "Sending message...",
@@ -69,16 +66,16 @@ export class ContactPage {
 
   onFeedbackSuccess() {
     this.loader.dismiss();
-    this.presentToast('Thank you for taking the time to give some feedback! Your message was successfully sent.', 'success-toast');
+    this.showToast('Thank you for taking the time to give some feedback! Your message was successfully sent.', 'success-toast');
     this.feedback.reset();
   }
 
   onFeedbackError() {
     this.loader.dismiss();
-    this.presentToast('An error occurred while trying to send your message. Please make sure you have a network connection and try again.', 'error-toast');
+    this.showToast('An error occurred while trying to send your message. Please make sure you have a network connection and try again.', 'error-toast');
   }
 
-  presentToast(message: string, css: string) {
+  showToast(message: string, css: string) {
     this.statusBar.hide();
     const toast = this.toastCtrl.create({
       message: message,

@@ -7,12 +7,12 @@
         <h1 class="page-topic">Result</h1>
 
         <div padding id="result-text-container">
-          <h1 id="date">{{ parameters.get('niceLookingDate') }}</h1>
-          <h2 id="location">{{ parameters.get('location').address }}</h2>
+          <h1 id="date">{{ navParams.get('niceLookingDate') }}</h1>
+          <h2 id="location">{{ navParams.get('location').address }}</h2>
 
           <div id="result-text">
-            It has rained {{ parameters.get('precipDays') }} out of {{ parameters.get('yearsBack') }}
-            times this date during the past {{ parameters.get('yearsBack') }} years.
+            It has rained {{ navParams.get('precipDays') }} out of {{ navParams.get('yearsBack') }}
+            times this date during the past {{ navParams.get('yearsBack') }} years.
           </div>
 
 

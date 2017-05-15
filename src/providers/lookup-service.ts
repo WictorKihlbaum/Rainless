@@ -28,33 +28,34 @@ export class LookupService {
   }
 
   load(i, chosenDate, mm, latitude, longitude) {
-    const year: string = i.toString();
-    let month: string = (new Date(chosenDate).getMonth() + 1).toString();
-    let day: string = new Date(chosenDate).getDate().toString();
-    if (day.length == 1) day = '0' + day;
-    if (month.length == 1) month = '0' + month;
-    const date: string = `${year}-${month}-${day}T00:00:00`;
-    const key: string = `${chosenDate}-${mm}-${latitude}-${longitude}`;
-    const url: string = `${this.cors}${this.apiURL}/${this.apiKey}/${latitude},${longitude},${date}?${this.excludes}&${this.units}`;
-
     return new Promise((resolve, reject) => {
-      // First check if the data is already cached.
+
+      const year: string = i.toString();
+      let month: string = (new Date(chosenDate).getMonth() + 1).toString();
+      let day: string = new Date(chosenDate).getDate().toString();
+      if (day.length == 1) day = '0' + day;
+      if (month.length == 1) month = '0' + month;
+      const date: string = `${year}-${month}-${day}T00:00:00`;
+      const key: string = `${year}-${month}-${day}-${mm}mm-${latitude}-${longitude}`;
+      const url: string = `${this.cors}${this.apiURL}/${this.apiKey}/${latitude},${longitude},${date}?${this.excludes}&${this.units}`;
+
+      // First check if weather data is cached.
       this.cacheStore.getItem(key).then(cache => {
-        if (cache) {
+        if (cache != null) {
           resolve(cache);
-        } else {
-          // If no cache was found call the API.
+        }
+        else {
+          // If no cache was found call the weather API.
           this.http.get(url)
             .map(res => res.json())
-              .subscribe(data => {
-                data = data.daily.data[0];
-                // Cache data for future use.
-                this.cacheStore.setItem(key, data).then(() => {
-                  resolve(data);
-                });
-              }, error => {
-                reject();
+            .subscribe(data => {
+              data = data.daily.data[0];
+              this.cacheStore.setItem(key, data).then(() => {
+                resolve(data);
               });
+            }, error => {
+              reject();
+            });
         }
       });
     });

@@ -31,7 +31,7 @@ export class LookupPage implements OnInit {
   private toast: any;
 
   /* Map variables */
-  private location: any = { address: 'No address', lat: '', lng: '', set: false };
+  private location: any = { address: 'No address', lat: null, lng: null, set: false };
   private placesService: any;
   private map: any;
   private pin: any;
@@ -53,8 +53,8 @@ export class LookupPage implements OnInit {
 
   async ngOnInit() {
     try {
+      this.showLoading('Loading map...');
       this.setupDatePicker();
-      this.presentLoading('Loading map...');
       await this.setCurrentCoordinates();
       this.initMap();
       this.setMapPin();
@@ -84,7 +84,6 @@ export class LookupPage implements OnInit {
       this.location.set = true;
     }
     catch (error) {
-      console.log('Error getting coordinates', error);
       throw 'An error occurred while trying to get your current coordinates.';
     }
   }
@@ -97,7 +96,6 @@ export class LookupPage implements OnInit {
     catch (error) {
       // Desktop developing purpose since this only works for iOS and Android.
       if (this.platform.is('ios') || this.platform.is('android')) {
-        console.log('Error getting address', error);
         throw 'An error occurred while trying to get your current address.';
       }
     }
@@ -185,7 +183,7 @@ export class LookupPage implements OnInit {
   async onFetchWeatherData() {
     try {
       // Show loading animation for user.
-      this.presentLoading('Loading...');
+      this.showLoading('Loading...');
 
       const latitude: string = this.location.lat.toString();
       const longitude: string = this.location.lng.toString();
@@ -199,7 +197,7 @@ export class LookupPage implements OnInit {
         if (this.wasRain(data)) precipDays += 1;
       }
 
-      this.presentResultPage(precipDays, yearsBack);
+      this.showResultPage(precipDays, yearsBack);
     }
     catch (error) {
       this.loader.dismiss();
@@ -224,8 +222,8 @@ export class LookupPage implements OnInit {
     return rain;
   }
 
-  presentResultPage(precipDays: number, yearsBack: number) {
-    const key: string = `${this.chosenDate.substring(0, 10)}-${this.mm}-${this.location.lat}-${this.location.lng}`;
+  showResultPage(precipDays: number, yearsBack: number) {
+    const key: string = `${this.chosenDate.substring(0, 10)}-${this.mm}mm-${this.location.lat}-${this.location.lng}`;
     const parameters: any = {
       keyName: key,
       precipDays: precipDays,
@@ -236,7 +234,7 @@ export class LookupPage implements OnInit {
     this.navCtrl.push(ResultPage, parameters);
   }
 
-  presentLoading(text: string) {
+  showLoading(text: string) {
     this.loader = this.loadingCtrl.create({
       spinner: 'bubbles',
       content: text,
