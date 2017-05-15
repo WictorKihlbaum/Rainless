@@ -38,11 +38,6 @@ export class HomePage {
     this.network.onDisconnect().subscribe(() => {
       this.showToast();
     });
-
-    this.network.onConnect().subscribe(() => {
-      // Refresh page to load google API js file.
-      window.location.reload();
-    });
   }
 
   showToast() {

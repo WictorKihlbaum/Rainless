@@ -95,7 +95,7 @@ export class LookupPage implements OnInit {
     }
     catch (error) {
       console.log('Error getting address', error);
-      //throw 'An error occurred while trying to get your current address';
+      throw 'An error occurred while trying to get your current address';
     }
   }
 
