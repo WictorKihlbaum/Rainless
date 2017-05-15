@@ -60,6 +60,7 @@ export class ContactPage {
 
   presentLoading() {
     this.loader = this.loadingCtrl.create({
+      spinner: 'bubbles',
       content: "Sending message...",
       cssClass: 'loading-animation'
     });

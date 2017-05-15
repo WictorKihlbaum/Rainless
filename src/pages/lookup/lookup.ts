@@ -105,7 +105,7 @@ export class LookupPage implements OnInit {
       message: message,
       position: 'top',
       cssClass: css,
-      duration: 7000
+      duration: 10000
     });
     this.toast.onDidDismiss(() => {
       this.statusBar.show();
@@ -133,7 +133,7 @@ export class LookupPage implements OnInit {
     function callback(place, status) {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
         self.location.address = place.formatted_address;
-        let location = place.geometry.location;
+        const location = place.geometry.location;
         self.location.lat = location.lat();
         self.location.lng = location.lng();
         self.map.setCenter(location);
