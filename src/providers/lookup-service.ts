@@ -36,7 +36,7 @@ export class LookupService {
     const key: string = `${chosenDate}-${mm}-${latitude}-${longitude}`;
     const url: string = `${this.cors}${this.apiURL}/${this.apiKey}/${latitude},${longitude},${date}?${this.excludes}&${this.units}`;
 
-    return new Promise(resolve => {
+    return new Promise((resolve, reject) => {
       // First check if the data is already cached.
       this.cacheStore.getItem(key).then(cache => {
         if (cache) {
@@ -45,12 +45,14 @@ export class LookupService {
           // If no cache was found call the API.
           this.http.get(url)
             .map(res => res.json())
-            .subscribe(data => {
-              data = data.daily.data[0];
-              this.cacheStore.setItem(key, data).then(() => {
-                resolve(data);
+              .subscribe(data => {
+                data = data.daily.data[0];
+                this.cacheStore.setItem(key, data).then(() => {
+                  resolve(data);
+                });
+              }, error => {
+                reject();
               });
-            });
         }
       });
     });

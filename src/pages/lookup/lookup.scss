@@ -19,9 +19,14 @@ page-lookup {
       ion-row ion-col button {
         margin: 0 auto !important;
         border: 2px solid rgba(255, 255, 255, 0.5);
+        box-shadow: none !important;
       }
     }
+  }
 
+  /* Remove shadow for Android */
+  ion-header.header.header-md::after {
+    background-image: none !important;
   }
 
   #map {

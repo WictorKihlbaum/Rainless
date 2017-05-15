@@ -1,32 +1,32 @@
 page-result {
 
   #result-text-container {
+    width: 85vw;
+    margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 12px;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3) !important;;
 
     h1, h2 {
       color: white !important;
     }
-
     #date {
       font-size: 7vw;
     }
-
     #location {
       font-size: 5vw;
     }
-  }
-
-  #result-text {
-    font-family: OpenSans-Regular, sans-serif;
-    color: white;
-    font-size: 4.5vw;
-    text-align: left;
+    #result-text {
+      font-family: OpenSans-Regular, sans-serif;
+      color: white;
+      font-size: 4vw;
+      text-align: left;
+    }
   }
 
   #buttons-container {
     #save-result-button, #new-lookup-button {
-      box-shadow: 0 2px 2px 2px rgba(0, 229, 255, 0.3) !important;
+      box-shadow: 0 2px 5px rgba(0, 229, 255, 0.3) !important;
     }
     #new-lookup-button {
       margin-top: 12px;
@@ -39,7 +39,7 @@ page-result {
   }
 
   #darksky-logo-wide {
-    width: 60vw !important;
+    width: 50vw !important;
   }
 
   .page-grid2, .page-grid3 {
@@ -47,15 +47,23 @@ page-result {
     color: white;
   }
   .page-grid2 {
-    height: 65%;
+    height: 55%;
     background-image: url("../assets/img/result-header.png");
     background-position: center bottom;
     background-size: 100%;
     background-repeat: no-repeat;
   }
   .page-grid3 {
-    height: 35%;
+    height: 45%;
     background-color: white;
+  }
+
+  .diagonal-gradient-background {
+    background: #1de9b6; /* Old browsers */
+    background: -moz-linear-gradient(45deg, #1de9b6 0%, #00e5ff 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #1de9b6 0%,#00e5ff 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #1de9b6 0%,#00e5ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1de9b6', endColorstr='#00e5ff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
   }
 
 }

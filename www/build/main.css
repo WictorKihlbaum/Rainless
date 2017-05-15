@@ -55031,6 +55031,10 @@ page-home #fabs-grid ion-row ion-col button {
   border: 1px solid #00E5FF;
 }
 
+page-lookup {
+  /* Remove shadow for Android */
+}
+
 page-lookup ion-header {
   font-family: OpenSans-Regular, sans-serif;
   text-align: center;
@@ -55053,6 +55057,11 @@ page-lookup ion-header ion-grid {
 page-lookup ion-header ion-grid ion-row ion-col button {
   margin: 0 auto !important;
   border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: none !important;
+}
+
+page-lookup ion-header.header.header-md::after {
+  background-image: none !important;
 }
 
 page-lookup #map {
@@ -55125,8 +55134,11 @@ page-help #worth-noting {
 }
 
 page-result #result-text-container {
+  width: 85vw;
+  margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 12px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3) !important;
 }
 
 page-result #result-text-container h1, page-result #result-text-container h2 {
@@ -55141,15 +55153,15 @@ page-result #result-text-container #location {
   font-size: 5vw;
 }
 
-page-result #result-text {
+page-result #result-text-container #result-text {
   font-family: OpenSans-Regular, sans-serif;
   color: white;
-  font-size: 4.5vw;
+  font-size: 4vw;
   text-align: left;
 }
 
 page-result #buttons-container #save-result-button, page-result #buttons-container #new-lookup-button {
-  box-shadow: 0 2px 2px 2px rgba(0, 229, 255, 0.3) !important;
+  box-shadow: 0 2px 5px rgba(0, 229, 255, 0.3) !important;
 }
 
 page-result #buttons-container #new-lookup-button {
@@ -55163,7 +55175,7 @@ page-result #buttons-container #back-button {
 }
 
 page-result #darksky-logo-wide {
-  width: 60vw !important;
+  width: 50vw !important;
 }
 
 page-result .page-grid2, page-result .page-grid3 {
@@ -55172,7 +55184,7 @@ page-result .page-grid2, page-result .page-grid3 {
 }
 
 page-result .page-grid2 {
-  height: 65%;
+  height: 55%;
   background-image: url("../assets/img/result-header.png");
   background-position: center bottom;
   background-size: 100%;
@@ -55180,8 +55192,19 @@ page-result .page-grid2 {
 }
 
 page-result .page-grid3 {
-  height: 35%;
+  height: 45%;
   background-color: white;
+}
+
+page-result .diagonal-gradient-background {
+  background: #1de9b6;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #1de9b6 0%, #00e5ff 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1de9b6', endColorstr='#00e5ff',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
 }
 
 page-saved-results ion-slides {

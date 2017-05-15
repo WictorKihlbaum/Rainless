@@ -6,18 +6,18 @@
 
         <h1 class="page-topic">Result</h1>
 
-        <div padding>
-          <div padding id="result-text-container">
-            <h1 id="date">{{ parameters.get('niceLookingDate') }}</h1>
-            <h2 id="location">{{ parameters.get('location').address }}</h2>
+        <div padding id="result-text-container">
+          <h1 id="date">{{ parameters.get('niceLookingDate') }}</h1>
+          <h2 id="location">{{ parameters.get('location').address }}</h2>
 
-            <div id="result-text">
-              It has rained {{ parameters.get('precipDays') }} out of {{ parameters.get('yearsBack') }}
-              times this date during the past {{ parameters.get('yearsBack') }} years.
-            </div>
-            <!-- Powered by DarkSky -->
-            <img src="assets/img/darksky-white-wide.png" id="darksky-logo-wide" (click)="onVisitDarkSky()" />
+          <div id="result-text">
+            It has rained {{ parameters.get('precipDays') }} out of {{ parameters.get('yearsBack') }}
+            times this date during the past {{ parameters.get('yearsBack') }} years.
           </div>
+
+
+        <!-- Powered by DarkSky -->
+        <img src="assets/img/darksky-white-wide.png" id="darksky-logo-wide" (click)="onVisitDarkSky()" />
         </div>
 
       </ion-col>
@@ -30,12 +30,12 @@
 
         <div id="buttons-container" padding>
 
-          <button ion-button icon-left [disabled]="resultIsSaved" (click)="onSaveResult()" class="gradient-background" round block id="save-result-button">
+          <button ion-button icon-left [disabled]="resultIsSaved" (click)="onSaveResult()" class="diagonal-gradient-background" round block id="save-result-button">
             <ion-icon name="bookmark"></ion-icon>
             Save result
           </button>
 
-          <button ion-button icon-left navPop class="gradient-background" round block id="new-lookup-button">
+          <button ion-button icon-left navPop class="diagonal-gradient-background" round block id="new-lookup-button">
             <ion-icon name="search"></ion-icon>
             New lookup
           </button>

@@ -84,7 +84,7 @@ export class LookupPage implements OnInit {
     }
     catch (error) {
       console.log('Error getting coordinates', error);
-      throw 'There was an error getting your current coordinates';
+      throw 'An error occurred while trying to get your current coordinates';
     }
   }
 
@@ -95,7 +95,7 @@ export class LookupPage implements OnInit {
     }
     catch (error) {
       console.log('Error getting address', error);
-      throw 'There was an error getting your current address';
+      //throw 'An error occurred while trying to get your current address';
     }
   }
 
@@ -105,7 +105,7 @@ export class LookupPage implements OnInit {
       message: message,
       position: 'top',
       cssClass: css,
-      duration: 5000
+      duration: 7000
     });
     this.toast.onDidDismiss(() => {
       this.statusBar.show();
@@ -179,22 +179,28 @@ export class LookupPage implements OnInit {
   }
 
   async onFetchWeatherData() {
-    // Show loading animation for user.
-    this.presentLoading('Loading...');
+    try {
+      // Show loading animation for user.
+      this.presentLoading('Loading...');
 
-    const latitude: string = this.location.lat.toString();
-    const longitude: string = this.location.lng.toString();
-    const fromYear: number = new Date(this.chosenDate).getFullYear();
-    const toYear: number = new Date().getFullYear();
-    const yearsBack = toYear - fromYear;
-    let precipDays: number = 0;
+      const latitude: string = this.location.lat.toString();
+      const longitude: string = this.location.lng.toString();
+      const fromYear: number = new Date(this.chosenDate).getFullYear();
+      const toYear: number = new Date().getFullYear();
+      const yearsBack = toYear - fromYear;
+      let precipDays: number = 0;
 
-    for (let i = fromYear; i < toYear; i += 1) {
-      const data = await this.lookupService.load(i, this.chosenDate, this.mm, latitude, longitude);
-      if (this.wasRain(data)) precipDays += 1;
+      for (let i = fromYear; i < toYear; i += 1) {
+        const data = await this.lookupService.load(i, this.chosenDate, this.mm, latitude, longitude);
+        if (this.wasRain(data)) precipDays += 1;
+      }
+
+      this.presentResultPage(precipDays, yearsBack);
     }
-
-    this.presentResultPage(precipDays, yearsBack);
+    catch (error) {
+      this.loader.dismiss();
+      this.showToast('An error occurred while trying to fetch the weather data. Please make sure you have a network connection and try again.', 'error-toast');
+    }
   }
 
   wasRain(data) {

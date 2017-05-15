@@ -5,7 +5,7 @@ import { AboutPage } from "../about/about";
 import { LookupPage } from "../lookup/lookup";
 import { SettingsPage } from "../settings/settings";
 import { Network } from '@ionic-native/network';
-import { NavController, ToastController } from "ionic-angular";
+import { ToastController } from "ionic-angular";
 import { StatusBar } from "@ionic-native/status-bar";
 
 @Component({
@@ -20,76 +20,44 @@ export class HomePage {
   private contactPage = ContactPage;
   private settingsPage = SettingsPage;
 
-  private isDisconnected: boolean = false;
-  private errorToast: any;
-  private successToast: any;
+  private toast: any;
 
 
   constructor(
     private network: Network,
     private toastCtrl: ToastController,
-    private statusBar: StatusBar,
-    private navCtrl: NavController) {
+    private statusBar: StatusBar) {
   }
 
   ngOnInit() {
-    this.setupNetworkWatchers();
+    this.setupNetworkWatcher();
   }
 
-  ionViewDidEnter() {
-    this.checkCurrentNetworkConnection();
-  }
-
-  checkCurrentNetworkConnection() {
-    if (this.network.type == 'none' || this.network.type == 'unknown') {
-      this.isDisconnected = true;
-    }
-  }
-
-  setupNetworkWatchers() {
-    // Network connection is established.
-    this.network.onConnect().subscribe(() => {
-      if (this.errorToast) this.errorToast.dismiss();
-      this.isDisconnected = false;
-      this.showSuccessToast();
-    });
-
+  setupNetworkWatcher() {
     // Network connection is down.
     this.network.onDisconnect().subscribe(() => {
-      if (this.successToast) this.successToast.dismiss();
-      this.isDisconnected = true;
-      this.navCtrl.popToRoot();
-      this.showErrorToast();
+      this.showToast();
+    });
+
+    this.network.onConnect().subscribe(() => {
+      // Refresh page to load google API js file.
+      window.location.reload();
     });
   }
 
-  showErrorToast() {
+  showToast() {
     this.statusBar.hide();
-    this.errorToast = this.toastCtrl.create({
+    this.toast = this.toastCtrl.create({
       message: 'Network connection lost. Please reestablish connection to continue using the app.',
       showCloseButton: true,
       closeButtonText: 'Ok',
       position: 'top',
       cssClass: 'error-toast'
     });
-    this.errorToast.onDidDismiss(() => {
+    this.toast.onDidDismiss(() => {
       this.statusBar.show();
     });
-    this.errorToast.present();
-  }
-
-  showSuccessToast() {
-    this.statusBar.hide();
-    this.successToast = this.toastCtrl.create({
-      message: 'Network connection is established',
-      position: 'top',
-      cssClass: 'success-toast',
-      duration: 5000
-    });
-    this.successToast.onDidDismiss(() => {
-      this.statusBar.show();
-    });
-    this.successToast.present();
+    this.toast.present();
   }
 
 }

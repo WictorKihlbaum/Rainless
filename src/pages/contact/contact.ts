@@ -51,12 +51,11 @@ export class ContactPage {
       body: `from=test@example.com&to=${this.recipient}&subject=${subject}&text=${message}`,
       headers: requestHeaders
     }))
-      .subscribe(success => {
-        this.onFeedbackSuccess();
-      }, error => {
-        console.log("ERROR -> " + JSON.stringify(error));
-        this.presentToast('An error occurred while trying to send your message.', 'error-toast');
-      });
+    .subscribe(success => {
+      this.onFeedbackSuccess();
+    }, error => {
+      this.onFeedbackError();
+    });
   }
 
   presentLoading() {
@@ -69,8 +68,13 @@ export class ContactPage {
 
   onFeedbackSuccess() {
     this.loader.dismiss();
-    this.presentToast('Thank you! Your message was successfully sent.', 'success-toast');
+    this.presentToast('Thank you for taking the time to give some feedback! Your message was successfully sent.', 'success-toast');
     this.feedback.reset();
+  }
+
+  onFeedbackError() {
+    this.loader.dismiss();
+    this.presentToast('An error occurred while trying to send your message. Please make sure you have a network connection and try again.', 'error-toast');
   }
 
   presentToast(message: string, css: string) {
