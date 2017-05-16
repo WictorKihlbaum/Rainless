@@ -10,13 +10,14 @@
         <ion-card class="card-gradient">
           <ion-item>
             <ion-icon name="md-rainy" item-left></ion-icon>
-            <h2>{{ navParams.get('niceLookingDate') }}</h2>
-            <p>{{ navParams.get('location').address }}</p>
+            <h2>{{ niceLookingDate }}</h2>
+            <p>{{ address }}</p>
           </ion-item>
           <ion-card-content>
             <p>
-              It has rained {{ navParams.get('precipDays') }} out of {{ navParams.get('yearsBack') }}
-              times this date during the past {{ navParams.get('yearsBack') }} years.
+              It has rained <span *ngIf="mm > 0">at least {{ mm }}mm</span>
+              {{ precipDays }} out of {{ yearsBack }} times this date during
+              the past {{ yearsBack }} years.
             </p>
           </ion-card-content>
           <img src="assets/img/darksky-white-wide.png" id="darksky-logo-wide" (click)="onVisitDarkSky()" />

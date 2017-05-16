@@ -12,6 +12,11 @@ export class ResultPage {
 
   private resultsStore: any;
   private resultIsSaved: boolean = false;
+  private niceLookingDate: string;
+  private address: string;
+  private mm: number;
+  private precipDays: number;
+  private yearsBack: number;
 
 
   constructor(
@@ -23,6 +28,12 @@ export class ResultPage {
 
     this.setResultsStore();
     this.checkIfResultIsSaved();
+
+    this.niceLookingDate = navParams.get('niceLookingDate');
+    this.address = navParams.get('location').address;
+    this.mm = navParams.get('mm');
+    this.precipDays = navParams.get('precipDays');
+    this.yearsBack = navParams.get('yearsBack');
   }
 
   async checkIfResultIsSaved() {

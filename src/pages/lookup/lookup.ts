@@ -229,7 +229,8 @@ export class LookupPage implements OnInit {
       precipDays: precipDays,
       yearsBack: yearsBack,
       location: this.location,
-      niceLookingDate: this.niceLookingDate
+      niceLookingDate: this.niceLookingDate,
+      mm: this.mm
     };
     this.navCtrl.push(ResultPage, parameters);
   }
