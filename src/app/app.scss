@@ -40,20 +40,8 @@ ion-title {
   font-weight: bold;
 }
 
-/* Teal / Cyan */
 .gradient-background {
-  background: #00e5ff; /* Old browsers */
-  background: -moz-linear-gradient(top, #00e5ff 0%, #1de9b6 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #00e5ff 0%,#1de9b6 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #00e5ff 0%,#1de9b6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e5ff', endColorstr='#1de9b6',GradientType=0 );
-}
-
-.darksky-logo {
-  width: 34vw;
-  position: absolute;
-  right: 3vw;
-  bottom: 3vw;
+  background: linear-gradient(to bottom, #00E5FF 0%, #1DE9B6 100%);
 }
 
 /* General page styles */
@@ -66,6 +54,7 @@ ion-title {
   text-align: center;
 }
 .page-topic {
+  margin: 0 0 10px 0; // Remove default margin top (20px), keep margin bottom.
   font-size: 8vw;
   font-family: Josefin-Regular, sans-serif;
 }

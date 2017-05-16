@@ -19,7 +19,6 @@ export class HomePage implements OnInit {
   private savedResultsPage = SavedResultsPage;
   private contactPage = ContactPage;
   private settingsPage = SettingsPage;
-
   private toast: any;
 
 
@@ -30,13 +29,17 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-    this.setupNetworkWatcher();
+    this.setupNetworkWatchers();
   }
 
-  setupNetworkWatcher() {
+  setupNetworkWatchers() {
     // Network connection is down.
     this.network.onDisconnect().subscribe(() => {
       this.showToast();
+    });
+    // Network connection is up. Dismiss error toast.
+    this.network.onConnect().subscribe(() => {
+      this.toast.dismiss();
     });
   }
 

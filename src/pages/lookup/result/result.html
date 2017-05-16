@@ -1,30 +1,33 @@
 <ion-content class="gradient-background" no-bounce>
 
-  <ion-grid class="page-grid2">
+  <!-- Top grid -->
+  <ion-grid class="page-grid-top">
     <ion-row align-items-center class="page-grid-row">
       <ion-col>
 
         <h1 class="page-topic">Result</h1>
 
-        <div padding id="result-text-container">
-          <h1 id="date">{{ navParams.get('niceLookingDate') }}</h1>
-          <h2 id="location">{{ navParams.get('location').address }}</h2>
-
-          <div id="result-text">
-            It has rained {{ navParams.get('precipDays') }} out of {{ navParams.get('yearsBack') }}
-            times this date during the past {{ navParams.get('yearsBack') }} years.
-          </div>
-
-
-        <!-- Powered by DarkSky -->
-        <img src="assets/img/darksky-white-wide.png" id="darksky-logo-wide" (click)="onVisitDarkSky()" />
-        </div>
+        <ion-card class="card-gradient">
+          <ion-item>
+            <ion-icon name="md-rainy" item-left></ion-icon>
+            <h2>{{ navParams.get('niceLookingDate') }}</h2>
+            <p>{{ navParams.get('location').address }}</p>
+          </ion-item>
+          <ion-card-content>
+            <p>
+              It has rained {{ navParams.get('precipDays') }} out of {{ navParams.get('yearsBack') }}
+              times this date during the past {{ navParams.get('yearsBack') }} years.
+            </p>
+          </ion-card-content>
+          <img src="assets/img/darksky-white-wide.png" id="darksky-logo-wide" (click)="onVisitDarkSky()" />
+        </ion-card>
 
       </ion-col>
     </ion-row>
   </ion-grid>
 
-  <ion-grid class="page-grid3">
+  <!-- Bottom grid -->
+  <ion-grid class="page-grid-bottom">
     <ion-row align-items-center class="page-grid-row">
       <ion-col>
 
@@ -40,12 +43,11 @@
             New lookup
           </button>
 
-          <div padding>
-            <button ion-button icon-left outline (click)="onPopToRoot()" id="back-button">
-              <ion-icon name="arrow-back"></ion-icon>
-              Back to menu
-            </button>
-          </div>
+          <button ion-button icon-left outline (click)="onPopToRoot()" id="back-button">
+            <ion-icon name="arrow-back"></ion-icon>
+            Back to menu
+          </button>
+
         </div>
 
       </ion-col>

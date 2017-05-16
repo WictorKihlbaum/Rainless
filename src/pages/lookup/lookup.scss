@@ -7,14 +7,13 @@ page-lookup {
     h1, h2 {
       color: white !important;
       margin: 0;
-      font-weight: bold;
     }
     h2 {
       font-size: 4vw;
     }
 
     ion-grid {
-      box-shadow: 0 2px 2px 2px rgba(0, 229, 255, 0.3);
+      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
 
       ion-row ion-col button {
         margin: 0 auto !important;
@@ -41,7 +40,7 @@ page-lookup {
     margin-bottom: 24px;
 
     button {
-      box-shadow: 0 2px 2px 2px rgba(0, 229, 255, 0.3);
+      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
     }
   }
 

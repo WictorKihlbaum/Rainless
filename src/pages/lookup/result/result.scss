@@ -1,26 +1,26 @@
 page-result {
 
-  #result-text-container {
-    width: 85vw;
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3) !important;;
+  /* Result card */
+  ion-card {
+    border-radius: 12px !important;
+    box-shadow: 0 20px 10px -12px rgba(124, 77, 255, 0.3) !important;
 
-    h1, h2 {
-      color: white !important;
+    ion-item {
+      ion-icon {
+        color: white;
+      }
+      background-color: rgba(255, 255, 255, 0.08) !important;
+      box-shadow: 0 2px 2px rgba(255, 255, 255, 0.02) !important;
     }
-    #date {
-      font-size: 7vw;
-    }
-    #location {
-      font-size: 5vw;
-    }
-    #result-text {
-      font-family: OpenSans-Regular, sans-serif;
-      color: white;
-      font-size: 4vw;
+
+    ion-card-content p {
       text-align: left;
+      margin-top: 16px !important;
+    }
+    h2, p {
+      color: white !important;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3) !important;
+      font-family: OpenSans-Regular, sans-serif !important;
     }
   }
 
@@ -29,7 +29,7 @@ page-result {
       box-shadow: 0 2px 5px rgba(0, 229, 255, 0.3) !important;
     }
     #new-lookup-button {
-      margin-top: 12px;
+      margin: 12px 0 16px 0;
     }
     #back-button {
       background-color: white;
@@ -42,28 +42,28 @@ page-result {
     width: 50vw !important;
   }
 
-  .page-grid2, .page-grid3 {
+  .page-grid-top, .page-grid-bottom {
     padding: 0;
     color: white;
   }
-  .page-grid2 {
-    height: 55%;
+  .page-grid-top {
+    height: 60%;
     background-image: url("../assets/img/result-header.png");
     background-position: center bottom;
     background-size: 100%;
     background-repeat: no-repeat;
   }
-  .page-grid3 {
-    height: 45%;
+  .page-grid-bottom {
+    height: 40%;
     background-color: white;
   }
 
   .diagonal-gradient-background {
-    background: #1de9b6; /* Old browsers */
-    background: -moz-linear-gradient(45deg, #1de9b6 0%, #00e5ff 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg, #1de9b6 0%,#00e5ff 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg, #1de9b6 0%,#00e5ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1de9b6', endColorstr='#00e5ff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: linear-gradient(45deg, #1DE9B6 0%, #00E5FF 100%);
+  }
+
+  .card-gradient {
+    background: linear-gradient(45deg, #7C4DFF 0%, #B388FF 100%);
   }
 
 }

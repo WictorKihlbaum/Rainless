@@ -25,6 +25,7 @@ page-home {
 
   #lookup-button {
     font-family: OpenSans-Regular, sans-serif;
+    box-shadow: 0 20px 10px -12px rgba(0, 229, 255, 0.3) !important;
   }
 
   #fabs-container {
@@ -39,8 +40,8 @@ page-home {
   #fabs-grid ion-row ion-col button {
     margin: 0 auto !important;
     background-color: white;
-    color: #00E5FF;
-    border: 1px solid #00E5FF;
+    color: rgba(179, 136, 255, 1.0);
+    border: 1px solid rgba(179, 136, 255, 1.0);
   }
 
 }
