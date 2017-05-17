@@ -3,6 +3,7 @@ import { AlertController, ToastController } from 'ionic-angular';
 import { StatusBar } from "@ionic-native/status-bar";
 import * as localforage from "localforage";
 import { Slides } from 'ionic-angular';
+import { InAppBrowser } from "@ionic-native/in-app-browser";
 
 @Component({
   selector: 'page-saved-results',
@@ -20,7 +21,8 @@ export class SavedResultsPage {
   constructor(
     private alertCtrl: AlertController,
     private toastCtrl: ToastController,
-    private statusBar: StatusBar) {
+    private statusBar: StatusBar,
+    private iab: InAppBrowser) {
 
     this.setResultsStore();
     this.listSavedResults();
@@ -97,6 +99,10 @@ export class SavedResultsPage {
     this.savedResults = [];
     this.listSavedResults();
     this.onSlideChange();
+  }
+
+  onVisitDarkSky() {
+    this.iab.create('https://darksky.net/poweredby/', '_system');
   }
 
 }

@@ -89,3 +89,31 @@ ion-title {
     fill: #00E5FF;
   }
 }
+
+/* Result card */
+.result-card {
+  background: linear-gradient(45deg, #7C4DFF 0%, #B388FF 100%);
+  border-radius: 12px !important;
+  box-shadow: 0 15px 10px -12px rgba(124, 77, 255, 0.3) !important;
+
+  ion-item {
+    ion-icon {
+      color: white;
+    }
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 2px 2px rgba(255, 255, 255, 0.02) !important;
+  }
+
+  ion-card-content p {
+    text-align: left;
+    margin-top: 16px !important;
+  }
+  h2, p {
+    color: white !important;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3) !important;
+    font-family: OpenSans-Regular, sans-serif !important;
+  }
+}
+.darksky-logo-wide {
+  width: 50vw !important;
+}

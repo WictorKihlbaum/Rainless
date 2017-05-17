@@ -35,7 +35,7 @@ export class HomePage implements OnInit {
   setupNetworkWatchers() {
     // Network connection is down.
     this.network.onDisconnect().subscribe(() => {
-      this.showToast();
+      this.showToast('Network connection lost. Please reestablish connection to continue using the app.', 'error-toast');
     });
     // Network connection is up. Dismiss error toast.
     this.network.onConnect().subscribe(() => {
@@ -43,14 +43,14 @@ export class HomePage implements OnInit {
     });
   }
 
-  showToast() {
+  showToast(message: string, css: string) {
     this.statusBar.hide();
     this.toast = this.toastCtrl.create({
-      message: 'Network connection lost. Please reestablish connection to continue using the app.',
+      message: message,
       showCloseButton: true,
       closeButtonText: 'Ok',
       position: 'top',
-      cssClass: 'error-toast'
+      cssClass: css
     });
     this.toast.onDidDismiss(() => {
       this.statusBar.show();

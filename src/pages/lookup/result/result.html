@@ -7,7 +7,7 @@
 
         <h1 class="page-topic">Result</h1>
 
-        <ion-card class="card-gradient">
+        <ion-card class="result-card">
           <ion-item>
             <ion-icon name="md-rainy" item-left></ion-icon>
             <h2>{{ niceLookingDate }}</h2>
@@ -20,7 +20,7 @@
               the past {{ yearsBack }} years.
             </p>
           </ion-card-content>
-          <img src="assets/img/darksky-white-wide.png" id="darksky-logo-wide" (click)="onVisitDarkSky()" />
+          <img src="assets/img/darksky-white-wide.png" class="darksky-logo-wide" (click)="onVisitDarkSky()" />
         </ion-card>
 
       </ion-col>

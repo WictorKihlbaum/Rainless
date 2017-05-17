@@ -12,33 +12,6 @@ page-saved-results {
     padding-bottom: 10px;
   }
 
-  ion-card {
-    background-color: transparent !important;
-    border-radius: 8px !important;
-    border: 1px solid white;
-    box-shadow: none !important;
-
-    ion-card-content {
-      text-align: center;
-      padding: 12px 0;
-      background-color: rgba(255, 255, 255, 0.2);
-      color: white;
-
-      h1, h2 {
-        color: white !important;
-      }
-      h1 {
-        font-size: 6vw;
-      }
-      h2 {
-        font-size: 4vw;
-      }
-    }
-  }
-  #result-text {
-    text-align: left;
-  }
-
   #no-results-text {
     font-size: 4vw;
     font-family: OpenSans-Regular, sans-serif;

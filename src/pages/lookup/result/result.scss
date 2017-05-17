@@ -1,27 +1,19 @@
 page-result {
 
-  /* Result card */
-  ion-card {
-    border-radius: 12px !important;
-    box-shadow: 0 20px 10px -12px rgba(124, 77, 255, 0.3) !important;
-
-    ion-item {
-      ion-icon {
-        color: white;
-      }
-      background-color: rgba(255, 255, 255, 0.08) !important;
-      box-shadow: 0 2px 2px rgba(255, 255, 255, 0.02) !important;
-    }
-
-    ion-card-content p {
-      text-align: left;
-      margin-top: 16px !important;
-    }
-    h2, p {
-      color: white !important;
-      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3) !important;
-      font-family: OpenSans-Regular, sans-serif !important;
-    }
+  .page-grid-top, .page-grid-bottom {
+    padding: 0;
+    color: white;
+  }
+  .page-grid-top {
+    height: 60%;
+    background-image: url("../assets/img/result-clouds.png");
+    background-position: center bottom;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  .page-grid-bottom {
+    height: 40%;
+    background-color: white;
   }
 
   #buttons-container {
@@ -38,32 +30,8 @@ page-result {
     }
   }
 
-  #darksky-logo-wide {
-    width: 50vw !important;
-  }
-
-  .page-grid-top, .page-grid-bottom {
-    padding: 0;
-    color: white;
-  }
-  .page-grid-top {
-    height: 60%;
-    background-image: url("../assets/img/result-header.png");
-    background-position: center bottom;
-    background-size: 100%;
-    background-repeat: no-repeat;
-  }
-  .page-grid-bottom {
-    height: 40%;
-    background-color: white;
-  }
-
   .diagonal-gradient-background {
     background: linear-gradient(45deg, #1DE9B6 0%, #00E5FF 100%);
-  }
-
-  .card-gradient {
-    background: linear-gradient(45deg, #7C4DFF 0%, #B388FF 100%);
   }
 
 }

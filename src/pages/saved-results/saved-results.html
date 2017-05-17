@@ -17,20 +17,24 @@
             <ion-slide *ngFor="let result of savedResults">
 
               <ion-card class="result-card">
-                <ion-card-content padding>
-                  <h1>{{ result.niceLookingDate }}</h1>
-                  <h2>{{ result.location.address }}</h2>
-                  <!-- Delete button -->
-                  <ion-fab top right>
-                    <button ion-fab mini item-right color="deletebutton" (click)="showConfirm(result.keyName)">
-                      <ion-icon name="trash"></ion-icon>
-                    </button>
-                  </ion-fab>
+                <ion-item>
+                  <ion-icon name="md-rainy" item-left></ion-icon>
+                  <h2>{{ result.niceLookingDate }}</h2>
+                  <p>{{ result.location.address }}</p>
+                </ion-item>
+                <ion-card-content>
+                  <p>
+                    It has rained <span *ngIf="result.mm > 0">at least {{ result.mm }}mm</span>
+                    {{ result.precipDays }} out of {{ result.yearsBack }} times this date during
+                    the past {{ result.yearsBack }} years.
+                  </p>
                 </ion-card-content>
-                <div id="result-text" padding>
-                  It has rained {{ result.precipDays }} out of {{ result.yearsBack }}
-                  times this date during the past {{ result.yearsBack }} years.
-                </div>
+                <img src="assets/img/darksky-white-wide.png" class="darksky-logo-wide" (click)="onVisitDarkSky()" />
+                <ion-fab bottom right>
+                  <button ion-fab mini item-right color="deletebutton" (click)="showConfirm(result.keyName)">
+                    <ion-icon name="trash"></ion-icon>
+                  </button>
+                </ion-fab>
               </ion-card>
 
             </ion-slide>

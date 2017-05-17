@@ -54955,6 +54955,37 @@ ion-title {
   fill: #00E5FF;
 }
 
+/* Result card */
+.result-card {
+  background: linear-gradient(45deg, #7C4DFF 0%, #B388FF 100%);
+  border-radius: 12px !important;
+  box-shadow: 0 15px 10px -12px rgba(124, 77, 255, 0.3) !important;
+}
+
+.result-card ion-item {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 2px 2px rgba(255, 255, 255, 0.02) !important;
+}
+
+.result-card ion-item ion-icon {
+  color: white;
+}
+
+.result-card ion-card-content p {
+  text-align: left;
+  margin-top: 16px !important;
+}
+
+.result-card h2, .result-card p {
+  color: white !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3) !important;
+  font-family: OpenSans-Regular, sans-serif !important;
+}
+
+.darksky-logo-wide {
+  width: 50vw !important;
+}
+
 page-about {
   position: relative;
 }
@@ -55022,8 +55053,8 @@ page-home #fabs-grid ion-row ion-col {
 page-home #fabs-grid ion-row ion-col button {
   margin: 0 auto !important;
   background-color: white;
-  color: #b388ff;
-  border: 1px solid #b388ff;
+  color: #00E5FF;
+  border: 1px solid #00E5FF;
 }
 
 page-lookup {
@@ -55088,17 +55119,18 @@ page-advanced-options button {
   background-color: #00E5FF !important;
 }
 
-page-help h2 {
-  font-size: 5vw;
+page-help h2, page-help p {
   color: #757575;
   font-family: OpenSans-Regular, sans-serif;
+}
+
+page-help h2 {
+  font-size: 5vw;
 }
 
 page-help p {
   font-size: 4vw;
   line-height: 1.4;
-  font-family: OpenSans-Light, sans-serif;
-  color: #757575;
   text-align: justify;
 }
 
@@ -55127,33 +55159,22 @@ page-help #worth-noting {
   margin-top: 12px;
 }
 
-page-result {
-  /* Result card */
-}
-
-page-result ion-card {
-  border-radius: 12px !important;
-  box-shadow: 0 20px 10px -12px rgba(124, 77, 255, 0.3) !important;
-}
-
-page-result ion-card ion-item {
-  background-color: rgba(255, 255, 255, 0.08) !important;
-  box-shadow: 0 2px 2px rgba(255, 255, 255, 0.02) !important;
-}
-
-page-result ion-card ion-item ion-icon {
+page-result .page-grid-top, page-result .page-grid-bottom {
+  padding: 0;
   color: white;
 }
 
-page-result ion-card ion-card-content p {
-  text-align: left;
-  margin-top: 16px !important;
+page-result .page-grid-top {
+  height: 60%;
+  background-image: url("../assets/img/result-clouds.png");
+  background-position: center bottom;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
-page-result ion-card h2, page-result ion-card p {
-  color: white !important;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3) !important;
-  font-family: OpenSans-Regular, sans-serif !important;
+page-result .page-grid-bottom {
+  height: 40%;
+  background-color: white;
 }
 
 page-result #buttons-container #save-result-button, page-result #buttons-container #new-lookup-button {
@@ -55170,34 +55191,8 @@ page-result #buttons-container #back-button {
   border: 1px solid #00E5FF;
 }
 
-page-result #darksky-logo-wide {
-  width: 50vw !important;
-}
-
-page-result .page-grid-top, page-result .page-grid-bottom {
-  padding: 0;
-  color: white;
-}
-
-page-result .page-grid-top {
-  height: 60%;
-  background-image: url("../assets/img/result-header.png");
-  background-position: center bottom;
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
-
-page-result .page-grid-bottom {
-  height: 40%;
-  background-color: white;
-}
-
 page-result .diagonal-gradient-background {
   background: linear-gradient(45deg, #1DE9B6 0%, #00E5FF 100%);
-}
-
-page-result .card-gradient {
-  background: linear-gradient(45deg, #7C4DFF 0%, #B388FF 100%);
 }
 
 page-saved-results ion-slides {
@@ -55210,36 +55205,6 @@ page-saved-results #badge-container {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 0 0 8px 8px;
   padding-bottom: 10px;
-}
-
-page-saved-results ion-card {
-  background-color: transparent !important;
-  border-radius: 8px !important;
-  border: 1px solid white;
-  box-shadow: none !important;
-}
-
-page-saved-results ion-card ion-card-content {
-  text-align: center;
-  padding: 12px 0;
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
-}
-
-page-saved-results ion-card ion-card-content h1, page-saved-results ion-card ion-card-content h2 {
-  color: white !important;
-}
-
-page-saved-results ion-card ion-card-content h1 {
-  font-size: 6vw;
-}
-
-page-saved-results ion-card ion-card-content h2 {
-  font-size: 4vw;
-}
-
-page-saved-results #result-text {
-  text-align: left;
 }
 
 page-saved-results #no-results-text {

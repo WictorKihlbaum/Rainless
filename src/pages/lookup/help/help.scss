@@ -1,16 +1,15 @@
 page-help {
 
-  h2 {
-    font-size: 5vw;
+  h2, p {
     color: #757575;
     font-family: OpenSans-Regular, sans-serif;
   }
-
+  h2 {
+    font-size: 5vw;
+  }
   p {
     font-size: 4vw;
     line-height: 1.4;
-    font-family: OpenSans-Light, sans-serif;
-    color: #757575;
     text-align: justify;
   }
 
