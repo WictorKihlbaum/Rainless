@@ -43,23 +43,28 @@ export class ResultPage {
   }
 
   async onSaveResult() {
-    const key = this.navParams.get('keyName');
-    await this.resultsStore.setItem(key, this.navParams);
-    this.resultIsSaved = true;
-    this.presentToast();
+    try {
+      const key = this.navParams.get('keyName');
+      await this.resultsStore.setItem(key, this.navParams);
+      this.resultIsSaved = true;
+      this.showToast('Result was successfully saved', 'success-toast');
+    }
+    catch (error) {
+      this.showToast('An error occurred while trying to save result. Please try again.', 'error-toast');
+    }
   }
 
   setResultsStore() {
     this.resultsStore = localforage.createInstance({ name: "rainless", storeName: 'results' });
   }
 
-  presentToast() {
+  showToast(message: string, css: string) {
     this.statusBar.hide();
     const toast = this.toastCtrl.create({
-      message: 'Result was successfully saved',
+      message: message,
       duration: 5000,
       position: 'top',
-      cssClass: 'success-toast'
+      cssClass: css
     });
     toast.onDidDismiss(() => {
       this.statusBar.show();

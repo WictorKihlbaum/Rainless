@@ -42,6 +42,8 @@ export class SavedResultsPage {
     this.resultsStore.iterate(value => {
       this.savedResults.push(value.data);
     });
+    // Show latest result first.
+    this.savedResults.reverse();
   }
 
   showConfirm(id: string) {
@@ -67,18 +69,23 @@ export class SavedResultsPage {
   }
 
   async onDeleteResult(id: string) {
-    await this.resultsStore.removeItem(id);
-    this.showToast('Result was successfully deleted');
-    this.resetAndRefresh();
+    try {
+      await this.resultsStore.removeItem(id);
+      this.showToast('Result was successfully deleted', 'success-toast');
+      this.resetAndRefresh();
+    }
+    catch (error) {
+      this.showToast('An error occurred while trying to delete the saved result. Please try again.', 'error-toast');
+    }
   }
 
-  showToast(message: string) {
+  showToast(message: string, css: string) {
     this.statusBar.hide();
     const toast = this.toastCtrl.create({
       message: message,
       duration: 5000,
       position: 'top',
-      cssClass: 'success-toast'
+      cssClass: css
     });
     toast.onDidDismiss(() => {
       this.statusBar.show();

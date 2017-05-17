@@ -55,18 +55,23 @@ export class SettingsPage {
   }
 
   async clearCache() {
-    await this.cacheStore.clear();
-    this.showToast();
-    this.checkCache();
+    try {
+      await this.cacheStore.clear();
+      this.showToast('Cache was successfully cleared', 'success-toast');
+      this.checkCache();
+    }
+    catch (error) {
+      this.showToast('An error occurred while trying to clear the cache.', 'error-toast');
+    }
   }
 
-  showToast() {
+  showToast(message: string, css: string) {
     this.statusBar.hide();
     const toast = this.toastCtrl.create({
-      message: 'Cache was successfully cleared',
+      message: message,
       duration: 5000,
       position: 'top',
-      cssClass: 'success-toast'
+      cssClass: css
     });
     toast.onDidDismiss(() => {
       this.statusBar.show();

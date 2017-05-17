@@ -35,7 +35,7 @@ export class ContactPage {
 
   sendFeedback() {
     this.showLoading();
-    let requestHeaders = new Headers();
+    const requestHeaders = new Headers();
     requestHeaders.append("Authorization", `Basic ${this.mailgunApiKey}`);
     requestHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
