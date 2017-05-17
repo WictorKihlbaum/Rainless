@@ -10,7 +10,7 @@ import { StatusBar } from "@ionic-native/status-bar";
 })
 export class ContactPage {
 
-  private feedback : FormGroup;
+  private feedback: FormGroup;
   private subject: string = 'feedback';
   private recipient: string = 'wictor.kihlbaum@gmail.com';
   private mailgunUrl: string = 'mg.rainless.com';
