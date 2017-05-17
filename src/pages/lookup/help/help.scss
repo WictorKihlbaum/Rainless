@@ -1,38 +1,49 @@
 page-help {
 
-  h2, p {
-    color: #757575;
+  ion-card ion-card-content p {
+    color: white !important;
+    margin-top: 12px !important;
+    text-align: justify;
     font-family: OpenSans-Regular, sans-serif;
   }
-  h2 {
-    font-size: 5vw;
-  }
-  p {
-    font-size: 4vw;
-    line-height: 1.4;
-    text-align: justify;
+
+  #calendar-card {
+    background: linear-gradient(45deg, #00e676 0%,#69f0ae 100%);
+    box-shadow: 0 2px 5px rgba(0, 230, 118, 0.3) !important;
+
+    #calendar-icon, h2 {
+      color: #00E676;
+    }
   }
 
-  ion-card {
-    box-shadow: none !important;
-    border-radius: 8px !important;
+  #precipitation-card {
+    background: linear-gradient(45deg, #00b0ff 0%,#40c4ff 100%);
+    box-shadow: 0 2px 5px rgba(0, 176, 255, 0.3) !important;
+
+    #options-icon, h2 {
+      color: #00B0FF;
+    }
+    #worth-noting {
+      margin-top: 12px;
+    }
   }
 
-  #calendar-icon {
-    color: #00E676;
-  }
-  #options-icon {
-    color: #00B0FF;
-  }
-  #pin-icon {
-    color: #FF1744;
-  }
-  #search-icon {
-    color: #00E5FF;
+  #location-card {
+    background: linear-gradient(45deg, #ff1744 0%,#ff5252 100%);
+    box-shadow: 0 2px 5px rgba(255, 23, 68, 0.3) !important;
+
+    #pin-icon, h2 {
+      color: #FF1744;
+    }
   }
 
-  #worth-noting {
-    margin-top: 12px;
+  #search-card {
+    background: linear-gradient(45deg, #00e5ff 0%,#18ffff 100%);
+    box-shadow: 0 2px 5px rgba(0, 229, 255, 0.3) !important;
+
+    #search-icon, h2 {
+      color: #00E5FF;
+    }
   }
 
 }
