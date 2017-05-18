@@ -55036,7 +55036,6 @@ page-home #home-subtopic {
 
 page-home #lookup-button {
   font-family: OpenSans-Regular, sans-serif;
-  box-shadow: 0 20px 10px -12px rgba(0, 229, 255, 0.3) !important;
 }
 
 page-home #fabs-container {
@@ -55131,11 +55130,7 @@ page-help #calendar-card {
   box-shadow: 0 2px 5px rgba(0, 230, 118, 0.3) !important;
 }
 
-page-help #calendar-card #calendar-icon {
-  color: #00E676;
-}
-
-page-help #calendar-card h2 {
+page-help #calendar-card #calendar-icon, page-help #calendar-card h2 {
   color: #00E676;
 }
 
@@ -55144,11 +55139,7 @@ page-help #precipitation-card {
   box-shadow: 0 2px 5px rgba(0, 176, 255, 0.3) !important;
 }
 
-page-help #precipitation-card #options-icon {
-  color: #00B0FF;
-}
-
-page-help #precipitation-card h2 {
+page-help #precipitation-card #options-icon, page-help #precipitation-card h2 {
   color: #00B0FF;
 }
 
@@ -55161,11 +55152,7 @@ page-help #location-card {
   box-shadow: 0 2px 5px rgba(255, 23, 68, 0.3) !important;
 }
 
-page-help #location-card #pin-icon {
-  color: #FF1744;
-}
-
-page-help #location-card h2 {
+page-help #location-card #pin-icon, page-help #location-card h2 {
   color: #FF1744;
 }
 
@@ -55174,11 +55161,7 @@ page-help #search-card {
   box-shadow: 0 2px 5px rgba(0, 229, 255, 0.3) !important;
 }
 
-page-help #search-card #search-icon {
-  color: #00E5FF;
-}
-
-page-help #search-card h2 {
+page-help #search-card #search-icon, page-help #search-card h2 {
   color: #00E5FF;
 }
 

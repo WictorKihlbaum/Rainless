@@ -11,7 +11,7 @@
     [showCancelButton]="true"
     (ionInput)="updateSearch()"
     (ionCancel)="dismiss()"
-    placeholder="Search address...">
+    placeholder="Search location...">
   </ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let item of autocompleteItems" (click)="chooseItem(item)">
