@@ -1,19 +1,10 @@
 page-result {
 
-  .page-grid-top, .page-grid-bottom {
-    padding: 0;
-    color: white;
-  }
   .page-grid-top {
     height: 60%;
-    background-image: url("../assets/img/result-clouds.png");
-    background-position: center bottom;
-    background-size: 100%;
-    background-repeat: no-repeat;
   }
   .page-grid-bottom {
     height: 40%;
-    background-color: white;
   }
 
   #buttons-container {
@@ -21,9 +12,9 @@ page-result {
       box-shadow: 0 2px 5px rgba(0, 229, 255, 0.3) !important;
     }
     #new-lookup-button {
-      margin: 12px 0 16px 0;
+      margin-top: 12px;
     }
-    #back-button {
+    .my-back-button {
       background-color: white;
       color: #00E5FF;
       border: 1px solid #00E5FF;

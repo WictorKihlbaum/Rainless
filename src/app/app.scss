@@ -50,6 +50,18 @@ ion-title {
   padding: 0;
   color: white;
 }
+.page-grid-top, .page-grid-bottom {
+  color: white;
+}
+.page-grid-top {
+  background-image: url("../assets/img/result-clouds.png");
+  background-position: center bottom;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.page-grid-bottom {
+  background-color: white;
+}
 .page-grid-row {
   text-align: center;
 }
@@ -64,6 +76,10 @@ ion-title {
   font-family: OpenSans-Regular, sans-serif;
   text-align: left;
   color: white;
+}
+
+.my-back-button {
+  margin-top: 16px;
 }
 
 /* Toasts */

@@ -54911,6 +54911,21 @@ ion-title {
   color: white;
 }
 
+.page-grid-top, .page-grid-bottom {
+  color: white;
+}
+
+.page-grid-top {
+  background-image: url("../assets/img/result-clouds.png");
+  background-position: center bottom;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.page-grid-bottom {
+  background-color: white;
+}
+
 .page-grid-row {
   text-align: center;
 }
@@ -54927,6 +54942,10 @@ ion-title {
   font-family: OpenSans-Regular, sans-serif;
   text-align: left;
   color: white;
+}
+
+.my-back-button {
+  margin-top: 16px;
 }
 
 /* Toasts */
@@ -54986,7 +55005,7 @@ ion-title {
   width: 50vw !important;
 }
 
-page-about {
+page-about .page-grid {
   position: relative;
 }
 
@@ -55010,11 +55029,23 @@ page-home {
   /* Topic and subtopic */
 }
 
-page-home .page-grid-row {
-  background-image: url("../assets/img/home-bottom.png");
-  background-position: center bottom;
-  background-size: 100% 30vh;
-  background-repeat: no-repeat;
+page-home .page-grid-top {
+  height: 80%;
+}
+
+page-home .page-grid-bottom {
+  height: 20%;
+}
+
+page-home .page-grid-bottom ion-row ion-col {
+  text-align: center;
+}
+
+page-home .page-grid-bottom ion-row ion-col button {
+  margin: 0 auto !important;
+  background-color: white;
+  color: #00E5FF;
+  border: 1px solid #00E5FF;
 }
 
 page-home #inapp-logo {
@@ -55035,29 +55066,28 @@ page-home #home-subtopic {
 }
 
 page-home #lookup-button {
+  margin-top: 16px;
   font-family: OpenSans-Regular, sans-serif;
-}
-
-page-home #fabs-container {
-  width: 100%;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-}
-
-page-home #fabs-grid ion-row ion-col {
-  text-align: center;
-}
-
-page-home #fabs-grid ion-row ion-col button {
-  margin: 0 auto !important;
-  background-color: white;
-  color: #00E5FF;
-  border: 1px solid #00E5FF;
 }
 
 page-lookup {
   /* Remove shadow for Android */
+  /*
+  #calendar-button {
+    background: linear-gradient(45deg, #00e676 0%, #69f0ae 100%);
+    box-shadow: none !important;
+  }
+
+  #pin-button {
+    background: linear-gradient(45deg, #ff1744 0%, #ff5252 100%);
+    box-shadow: none !important;
+  }
+
+  #options-button {
+    background: linear-gradient(45deg, #00b0ff 0%, #40c4ff 100%);
+    box-shadow: none !important;
+  }
+  */
 }
 
 page-lookup ion-header {
@@ -55080,8 +55110,6 @@ page-lookup ion-header ion-grid {
 
 page-lookup ion-header ion-grid ion-row ion-col button {
   margin: 0 auto !important;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  box-shadow: none !important;
 }
 
 page-lookup ion-header.header.header-md::after {
@@ -55165,22 +55193,12 @@ page-help #search-card #search-icon, page-help #search-card h2 {
   color: #00E5FF;
 }
 
-page-result .page-grid-top, page-result .page-grid-bottom {
-  padding: 0;
-  color: white;
-}
-
 page-result .page-grid-top {
   height: 60%;
-  background-image: url("../assets/img/result-clouds.png");
-  background-position: center bottom;
-  background-size: 100%;
-  background-repeat: no-repeat;
 }
 
 page-result .page-grid-bottom {
   height: 40%;
-  background-color: white;
 }
 
 page-result #buttons-container #save-result-button, page-result #buttons-container #new-lookup-button {
@@ -55188,10 +55206,10 @@ page-result #buttons-container #save-result-button, page-result #buttons-contain
 }
 
 page-result #buttons-container #new-lookup-button {
-  margin: 12px 0 16px 0;
+  margin-top: 12px;
 }
 
-page-result #buttons-container #back-button {
+page-result #buttons-container .my-back-button {
   background-color: white;
   color: #00E5FF;
   border: 1px solid #00E5FF;
@@ -55226,8 +55244,4 @@ page-saved-results #no-results-text {
   font-family: OpenSans-Regular, sans-serif;
   text-align: center;
   color: white;
-}
-
-page-saved-results #back-button {
-  margin-top: 16px;
 }

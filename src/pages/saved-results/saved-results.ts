@@ -13,7 +13,7 @@ export class SavedResultsPage {
 
   @ViewChild(Slides) slides: Slides;
 
-  private savedResults: any = [];
+  private results: any = [];
   private resultsStore: any;
   private currentSlide: number = 1;
 
@@ -25,7 +25,7 @@ export class SavedResultsPage {
     private iab: InAppBrowser) {
 
     this.setResultsStore();
-    this.listSavedResults();
+    this.listResults();
   }
 
   setResultsStore() {
@@ -40,12 +40,12 @@ export class SavedResultsPage {
     }
   }
 
-  listSavedResults() {
+  listResults() {
     this.resultsStore.iterate(value => {
-      this.savedResults.push(value.data);
+      this.results.push(value.data);
     });
     // Show latest result first.
-    this.savedResults.reverse();
+    this.results.reverse();
   }
 
   showConfirm(id: string) {
@@ -96,8 +96,8 @@ export class SavedResultsPage {
   }
 
   resetAndRefresh() {
-    this.savedResults = [];
-    this.listSavedResults();
+    this.results = [];
+    this.listResults();
     this.onSlideChange();
   }
 

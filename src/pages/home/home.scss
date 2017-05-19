@@ -1,10 +1,20 @@
 page-home {
 
-  .page-grid-row {
-    background-image: url("../assets/img/home-bottom.png");
-    background-position: center bottom;
-    background-size: 100% 30vh;
-    background-repeat: no-repeat;
+  .page-grid-top {
+    height: 80%;
+  }
+  .page-grid-bottom {
+    height: 20%;
+
+    ion-row ion-col {
+      text-align: center;
+    }
+    ion-row ion-col button {
+      margin: 0 auto !important;
+      background-color: white;
+      color: #00E5FF;
+      border: 1px solid #00E5FF;
+    }
   }
 
   #inapp-logo {
@@ -24,23 +34,8 @@ page-home {
   }
 
   #lookup-button {
+    margin-top: 16px;
     font-family: OpenSans-Regular, sans-serif;
-  }
-
-  #fabs-container {
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-  }
-  #fabs-grid ion-row ion-col {
-    text-align: center;
-  }
-  #fabs-grid ion-row ion-col button {
-    margin: 0 auto !important;
-    background-color: white;
-    color: #00E5FF;
-    border: 1px solid #00E5FF;
   }
 
 }

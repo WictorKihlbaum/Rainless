@@ -7,14 +7,14 @@
         <h1 class="page-topic">Saved results</h1>
 
         <!-- Show if there are any saved results -->
-        <div *ngIf="savedResults.length > 0">
+        <div *ngIf="results.length > 0">
 
           <div class="page-text">
             Swipe left on the card to browse through your saved results.
           </div>
 
           <ion-slides (ionSlideDidChange)="onSlideChange()">
-            <ion-slide *ngFor="let result of savedResults">
+            <ion-slide *ngFor="let result of results">
 
               <ion-card class="result-card">
                 <ion-item>
@@ -44,19 +44,19 @@
           <!-- Number of slides badge -->
           <div id="badge-container">
             <ion-badge color="primarybutton">
-              {{ currentSlide }} of {{ savedResults.length }}
+              {{ currentSlide }} of {{ results.length }}
             </ion-badge>
           </div>
 
         </div>
 
         <!-- Show if no saved results -->
-        <div padding id="no-results-text" *ngIf="savedResults.length == 0">
-          You don't have any saved results
+        <div padding id="no-results-text" *ngIf="results.length == 0">
+          Your saved results will be placed here.
         </div>
 
         <!-- Back button -->
-        <button ion-button color="light" outline icon-left navPop id="back-button">
+        <button ion-button color="light" outline icon-left navPop class="my-back-button">
           <ion-icon name="arrow-back"></ion-icon>
           Back
         </button>

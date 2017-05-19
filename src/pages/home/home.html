@@ -1,6 +1,6 @@
 <ion-content class="gradient-background" no-bounce>
 
-  <ion-grid class="page-grid">
+  <ion-grid class="page-grid-top">
     <ion-row align-items-center class="page-grid-row">
       <ion-col>
 
@@ -14,43 +14,39 @@
         </h2>
 
         <!-- Lookup date button -->
-        <div padding>
-          <button [navPush]="lookupPage" ion-button icon-left round id="lookup-button" color="primarybutton">
-            <ion-icon name="search"></ion-icon>
-            Lookup date
-          </button>
-        </div>
+        <button [navPush]="lookupPage" ion-button icon-left round id="lookup-button" color="primarybutton">
+          <ion-icon name="search"></ion-icon>
+          Lookup date
+        </button>
 
       </ion-col>
     </ion-row>
   </ion-grid>
 
   <!-- FAB buttons -->
-  <div id="fabs-container" padding>
-    <ion-grid id="fabs-grid">
-      <ion-row>
-        <ion-col>
-          <button ion-fab [navPush]="aboutPage">
-            <ion-icon name="information-circle"></ion-icon>
-          </button>
-        </ion-col>
-        <ion-col>
-          <button ion-fab [navPush]="savedResultsPage">
-            <ion-icon name="bookmark"></ion-icon>
-          </button>
-        </ion-col>
-        <ion-col>
-          <button ion-fab [navPush]="contactPage">
-            <ion-icon name="mail"></ion-icon>
-          </button>
-        </ion-col>
-        <ion-col>
-          <button ion-fab [navPush]="settingsPage">
-            <ion-icon name="settings"></ion-icon>
-          </button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
+  <ion-grid class="page-grid-bottom">
+    <ion-row align-items-center class="page-grid-row">
+      <ion-col>
+        <button ion-fab [navPush]="aboutPage">
+          <ion-icon name="information-circle"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-fab [navPush]="savedResultsPage">
+          <ion-icon name="bookmark"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-fab [navPush]="contactPage">
+          <ion-icon name="mail"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-fab [navPush]="settingsPage">
+          <ion-icon name="settings"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
