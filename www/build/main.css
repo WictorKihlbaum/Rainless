@@ -55207,6 +55207,14 @@ page-saved-results ion-slides {
   border-radius: 8px 8px 0 0;
 }
 
+page-saved-results .delete-result-button {
+  background: linear-gradient(45deg, #ff1744 0%, #ff5252 100%);
+  box-shadow: 0 2px 5px rgba(255, 23, 68, 0.3) !important;
+  color: white;
+  width: 75%;
+  margin: 0 auto 10px auto;
+}
+
 page-saved-results #badge-container {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 0 0 8px 8px;
@@ -55218,4 +55226,8 @@ page-saved-results #no-results-text {
   font-family: OpenSans-Regular, sans-serif;
   text-align: center;
   color: white;
+}
+
+page-saved-results #back-button {
+  margin-top: 16px;
 }

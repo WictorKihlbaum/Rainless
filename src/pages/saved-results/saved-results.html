@@ -29,13 +29,14 @@
                     the past {{ result.yearsBack }} years.
                   </p>
                 </ion-card-content>
+                <!-- DarkSky logo -->
                 <img src="assets/img/darksky-white-wide.png" class="darksky-logo-wide" (click)="onVisitDarkSky()" />
-                <ion-fab bottom right>
-                  <button ion-fab mini item-right color="deletebutton" (click)="showConfirm(result.keyName)">
-                    <ion-icon name="trash"></ion-icon>
-                  </button>
-                </ion-fab>
               </ion-card>
+              <!-- Delete button -->
+              <button ion-button icon-left block round small class="delete-result-button" (click)="showConfirm(result.keyName)">
+                <ion-icon name="trash"></ion-icon>
+                Delete result
+              </button>
 
             </ion-slide>
           </ion-slides>
@@ -55,12 +56,10 @@
         </div>
 
         <!-- Back button -->
-        <div padding>
-          <button ion-button color="light" outline icon-left navPop>
-            <ion-icon name="arrow-back"></ion-icon>
-            Back
-          </button>
-        </div>
+        <button ion-button color="light" outline icon-left navPop id="back-button">
+          <ion-icon name="arrow-back"></ion-icon>
+          Back
+        </button>
 
       </ion-col>
     </ion-row>
