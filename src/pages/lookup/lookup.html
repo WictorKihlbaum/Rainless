@@ -7,19 +7,19 @@
         <ion-icon name="arrow-back"></ion-icon>
       </button>
     </ion-buttons>
+    <ion-title>
+      Date
+    </ion-title>
     <ion-buttons end>
       <button ion-button icon-only [navPush]="helpPage">
         <ion-icon name="help-circle"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>
-      Lookup date
-    </ion-title>
   </ion-navbar>
 
   <div class="gradient-background">
 
-    <!-- Current lookup settings -->
+    <!-- Current settings -->
     <h1>{{ niceLookingDate }}</h1>
     <h2>{{ pastYears }} past years</h2>
 
@@ -61,7 +61,7 @@
 
 <ion-content no-bounce>
 
-  <!-- Map -->
+  <!-- Google map -->
   <div id="map"></div>
 
   <!-- Lookup button -->

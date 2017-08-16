@@ -55055,33 +55055,19 @@ page-home #rate-button {
   background-color: white;
 }
 
-page-lookup {
-  /*
-  #calendar-button {
-    background: linear-gradient(45deg, #00e676 0%, #69f0ae 100%);
-    box-shadow: none !important;
-  }
-
-  #pin-button {
-    background: linear-gradient(45deg, #ff1744 0%, #ff5252 100%);
-    box-shadow: none !important;
-  }
-
-  #options-button {
-    background: linear-gradient(45deg, #00b0ff 0%, #40c4ff 100%);
-    box-shadow: none !important;
-  }
-  */
+page-lookup ion-header {
+  font-family: OpenSans-Regular;
 }
 
-page-lookup ion-header {
-  font-family: OpenSans-Regular, sans-serif;
-  text-align: center;
+page-lookup ion-header h1 {
+  margin: 0;
+  padding: 0 0 10px 0;
 }
 
 page-lookup ion-header h1, page-lookup ion-header h2 {
   color: white !important;
-  margin: 0;
+  text-align: center;
+  font-family: Ubuntu-Medium;
 }
 
 page-lookup ion-header h2 {
@@ -55126,8 +55112,11 @@ page-advanced-options button {
   background-color: #00E5FF !important;
 }
 
+page-help .help-card {
+  box-shadow: none;
+}
+
 page-help .help-card ion-card-content p {
-  color: white;
   margin-top: 12px;
   text-align: justify;
   font-family: OpenSans-Regular;

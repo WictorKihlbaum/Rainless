@@ -1,10 +1,12 @@
 page-help {
 
-  .help-card ion-card-content p {
-    color: white;
-    margin-top: 12px;
-    text-align: justify;
-    font-family: OpenSans-Regular;
+  .help-card {
+    box-shadow: none;
+    ion-card-content p {
+      margin-top: 12px;
+      text-align: justify;
+      font-family: OpenSans-Regular;
+    }
   }
 
   #worth-noting {
