@@ -1,19 +1,22 @@
-<ion-header>
-  <ion-navbar color="mytoolbar" [hideBackButton]="true">
+<ion-header no-border>
+  <ion-navbar color="header" [hideBackButton]="true">
     <ion-buttons start>
-      <button ion-fab mini color="primarybutton" navPop>
+      <button ion-button icon-only navPop>
         <ion-icon name="arrow-back"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>Help</ion-title>
+    <ion-title>
+      Help
+    </ion-title>
   </ion-navbar>
 </ion-header>
+
 <ion-content>
 
   <!-- Date and years card -->
-  <ion-card id="calendar-card">
+  <ion-card class="help-card">
     <ion-item>
-      <ion-icon item-left name="md-calendar" id="calendar-icon"></ion-icon>
+      <ion-icon item-left name="md-calendar"></ion-icon>
       <h2>Date and years</h2>
     </ion-item>
     <ion-card-content>
@@ -25,9 +28,9 @@
   </ion-card>
 
   <!-- Daily precipitation card -->
-  <ion-card id="precipitation-card">
+  <ion-card class="help-card">
     <ion-item>
-      <ion-icon item-left name="md-rainy" id="options-icon"></ion-icon>
+      <ion-icon item-left name="md-rainy"></ion-icon>
       <h2>Daily precipitation</h2>
     </ion-item>
     <ion-card-content>
@@ -50,9 +53,9 @@
   </ion-card>
 
   <!-- Location card -->
-  <ion-card id="location-card">
+  <ion-card class="help-card">
     <ion-item>
-      <ion-icon item-left name="pin" id="pin-icon"></ion-icon>
+      <ion-icon item-left name="pin"></ion-icon>
       <h2>Location</h2>
     </ion-item>
     <ion-card-content>
@@ -64,9 +67,9 @@
   </ion-card>
 
   <!-- Search card -->
-  <ion-card id="search-card">
+  <ion-card class="help-card">
     <ion-item>
-      <ion-icon item-left name="search" id="search-icon"></ion-icon>
+      <ion-icon item-left name="search"></ion-icon>
       <h2>Search</h2>
     </ion-item>
     <ion-card-content>

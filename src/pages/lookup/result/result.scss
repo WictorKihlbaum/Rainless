@@ -6,23 +6,10 @@ page-result {
   .page-grid-bottom {
     height: 40%;
   }
-
-  #buttons-container {
-    #save-result-button, #new-lookup-button {
-      box-shadow: 0 2px 5px rgba(0, 229, 255, 0.3) !important;
-    }
-    #new-lookup-button {
-      margin-top: 12px;
-    }
-    .my-back-button {
-      background-color: white;
-      color: #00E5FF;
-      border: 1px solid #00E5FF;
-    }
-  }
-
-  .diagonal-gradient-background {
-    background: linear-gradient(45deg, #1DE9B6 0%, #00E5FF 100%);
+  .result-button {
+    box-shadow: 0 2px 5px rgba(124, 77, 255, 0.3);
+    background: linear-gradient(45deg, #2979FF 0%, #448AFF 100%);
+    margin: 12px 0;
   }
 
 }

@@ -26,6 +26,8 @@
 		CD98BD465D70420DB73187C4 /* CDVReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C24DB844586E4979B4454E5B /* CDVReachability.m */; };
 		6CB137A567FA41B9B7CBBBE1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E02272AE50D46089AE332E1 /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7FFAC1BE834240D7B0E17A36 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21A35E43AB741CBB3C00935 /* CoreTelephony.framework */; };
+		F58D5E8F967E47AB87E7497E /* LaunchReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4B16FB1B9644D5A7F88B60 /* LaunchReview.m */; };
+		1E9BA471D223486E94797768 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF68DFA333C4063AFB8E1D5 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,9 @@
 		8E89DA9888294B43A28508FE /* CDVReachability.h */ = {isa = PBXFileReference; name = "CDVReachability.h"; path = "cordova-plugin-network-information/CDVReachability.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		8E02272AE50D46089AE332E1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		A21A35E43AB741CBB3C00935 /* CoreTelephony.framework */ = {isa = PBXFileReference; name = "CoreTelephony.framework"; path = "System/Library/Frameworks/CoreTelephony.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		4E4B16FB1B9644D5A7F88B60 /* LaunchReview.m */ = {isa = PBXFileReference; name = "LaunchReview.m"; path = "cordova-launch-review/LaunchReview.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		76B19ED338AC4F3D9C376874 /* LaunchReview.h */ = {isa = PBXFileReference; name = "LaunchReview.h"; path = "cordova-launch-review/LaunchReview.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		3CF68DFA333C4063AFB8E1D5 /* StoreKit.framework */ = {isa = PBXFileReference; name = "StoreKit.framework"; path = "System/Library/Frameworks/StoreKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +106,7 @@
 				F34DB915A3EC420EAC184663 /* CoreLocation.framework in Frameworks */,
 				6CB137A567FA41B9B7CBBBE1 /* SystemConfiguration.framework in Frameworks */,
 				7FFAC1BE834240D7B0E17A36 /* CoreTelephony.framework in Frameworks */,
+				1E9BA471D223486E94797768 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +179,7 @@
 				5F27E6F8B3904274A8E2AFB4 /* CoreLocation.framework */,
 				8E02272AE50D46089AE332E1 /* SystemConfiguration.framework */,
 				A21A35E43AB741CBB3C00935 /* CoreTelephony.framework */,
+				3CF68DFA333C4063AFB8E1D5 /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -220,6 +227,8 @@
 				C24DB844586E4979B4454E5B /* CDVReachability.m */,
 				8761B9DD8CD54736B49916AB /* CDVConnection.h */,
 				8E89DA9888294B43A28508FE /* CDVReachability.h */,
+				4E4B16FB1B9644D5A7F88B60 /* LaunchReview.m */,
+				76B19ED338AC4F3D9C376874 /* LaunchReview.h */,
 			);
 			name = Plugins;
 			path = Rainless/Plugins;
@@ -351,6 +360,7 @@
 				205A818272FB44BE8F624511 /* NativeGeocoder.swift in Sources */,
 				B2426B6BD45A429BAA517A88 /* CDVConnection.m in Sources */,
 				CD98BD465D70420DB73187C4 /* CDVReachability.m in Sources */,
+				F58D5E8F967E47AB87E7497E /* LaunchReview.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

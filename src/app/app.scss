@@ -15,16 +15,6 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-/* Josefin */
-@font-face {
-  font-family: Josefin-Light;
-  src: url("../assets/fonts/JosefinSans-Light.ttf");
-}
-@font-face {
-  font-family: Josefin-Regular;
-  src: url("../assets/fonts/JosefinSans-Regular.ttf");
-}
-
 /* OpenSans */
 @font-face {
   font-family: OpenSans-Light;
@@ -35,13 +25,27 @@
   src: url("../assets/fonts/OpenSans-Regular.ttf");
 }
 
+/* Ubuntu */
+@font-face {
+  font-family: Ubuntu-Bold;
+  src: url("../assets/fonts/Ubuntu-Bold.ttf");
+}
+@font-face {
+  font-family: Ubuntu-Medium;
+  src: url("../assets/fonts/Ubuntu-Medium.ttf");
+}
+@font-face {
+  font-family: Ubuntu-Regular;
+  src: url("../assets/fonts/Ubuntu-Regular.ttf");
+}
+
 ion-title {
-  font-family: OpenSans-Light, sans-serif;
-  font-weight: bold;
+  font-family: Ubuntu-Medium;
 }
 
 .gradient-background {
-  background: linear-gradient(to bottom, #00E5FF 0%, #1DE9B6 100%);
+  //background: linear-gradient(to bottom, #00E5FF 0%, #1DE9B6 100%);
+  background: linear-gradient(to top, #2979FF 0%, #448AFF 100%);
 }
 
 /* General page styles */
@@ -68,7 +72,7 @@ ion-title {
 .page-topic {
   margin: 0 0 10px 0; // Remove default margin top (20px), keep margin bottom.
   font-size: 8vw;
-  font-family: Josefin-Regular, sans-serif;
+  font-family: Ubuntu-Medium;;
 }
 .page-text {
   font-size: 4vw;
@@ -78,21 +82,17 @@ ion-title {
   color: white;
 }
 
-.my-back-button {
-  margin-top: 16px;
-}
-
 /* Toasts */
 .error-toast .toast-wrapper {
   background-color: #FFEBEE;
   .toast-message, .toast-button {
-    color: #F44336 !important;
+    color: #F44336;
   }
 }
 .success-toast .toast-wrapper {
   background-color: #E8F5E9;
   .toast-message, .toast-button {
-    color: #4CAF50 !important;
+    color: #4CAF50;
   }
 }
 
@@ -109,27 +109,27 @@ ion-title {
 /* Result card */
 .result-card {
   background: linear-gradient(45deg, #7C4DFF 0%, #B388FF 100%);
-  border-radius: 12px !important;
-  box-shadow: 0 15px 10px -12px rgba(124, 77, 255, 0.3) !important;
+  border-radius: 12px;
+  box-shadow: 0 15px 10px -12px rgba(124, 77, 255, 0.3);
 
   ion-item {
     ion-icon {
       color: white;
     }
-    background-color: rgba(255, 255, 255, 0.08) !important;
-    box-shadow: 0 2px 2px rgba(255, 255, 255, 0.02) !important;
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 2px 2px rgba(255, 255, 255, 0.02);
   }
 
   ion-card-content p {
     text-align: left;
-    margin-top: 16px !important;
+    margin-top: 16px;
   }
   h2, p {
     color: white !important;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3) !important;
-    font-family: OpenSans-Regular, sans-serif !important;
+    font-family: Ubuntu-Medium;
   }
 }
 .darksky-logo-wide {
-  width: 50vw !important;
+  width: 50vw;
+  height: auto;
 }

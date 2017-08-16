@@ -32,19 +32,14 @@
     <ion-row align-items-center class="page-grid-row">
       <ion-col>
 
-        <div id="buttons-container" padding>
+        <div padding>
 
-          <button ion-button icon-left [disabled]="resultIsSaved" (click)="onSaveResult()" class="diagonal-gradient-background" round block id="save-result-button">
-            <ion-icon name="bookmark"></ion-icon>
-            Save result
-          </button>
-
-          <button ion-button icon-left navPop class="diagonal-gradient-background" round block id="new-lookup-button">
+          <button ion-button icon-left navPop round block class="result-button">
             <ion-icon name="search"></ion-icon>
             New lookup
           </button>
 
-          <button ion-button icon-left outline (click)="onPopToRoot()" class="my-back-button">
+          <button ion-button icon-left round block (click)="onPopToRoot()" class="result-button">
             <ion-icon name="arrow-back"></ion-icon>
             Back to menu
           </button>

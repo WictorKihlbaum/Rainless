@@ -37,6 +37,9 @@
         },
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.wictorkihlbaum.rainless2"
+        },
+        "cordova-launch-review": {
+            "PACKAGE_NAME": "com.wictorkihlbaum.rainless2"
         }
     },
     "dependent_plugins": {

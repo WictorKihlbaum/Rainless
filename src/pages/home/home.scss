@@ -5,16 +5,6 @@ page-home {
   }
   .page-grid-bottom {
     height: 20%;
-
-    ion-row ion-col {
-      text-align: center;
-    }
-    ion-row ion-col button {
-      margin: 0 auto !important;
-      background-color: white;
-      color: #00E5FF;
-      border: 1px solid #00E5FF;
-    }
   }
 
   #inapp-logo {
@@ -23,19 +13,33 @@ page-home {
 
   /* Topic and subtopic */
   #home-topic, #home-subtopic {
-    font-family: Josefin-Regular, sans-serif;
     color: white;
   }
   #home-topic {
-    font-size: 13vw;
+    font-family: Ubuntu-Bold;
+    font-size: 10vw;
   }
   #home-subtopic {
-    font-size: 6vw;
+    font-family: Ubuntu-Regular;
+    font-size: 4vw;
   }
 
+  #lookup-button-col {
+    padding: 0 24px;
+  }
   #lookup-button {
-    margin-top: 16px;
-    font-family: OpenSans-Regular, sans-serif;
+    font-family: Ubuntu-Medium;
+    color: white;
+    background-image: linear-gradient(19deg, #2979FF 0%, #448AFF 100%);
+  }
+
+  .mini-fab {
+    color: #448AFF;
+    background-color: white;
+  }
+  #rate-button {
+    color: orange;
+    background-color: white;
   }
 
 }

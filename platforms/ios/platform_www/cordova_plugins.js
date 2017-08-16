@@ -114,6 +114,14 @@ module.exports = [
         "clobbers": [
             "Connection"
         ]
+    },
+    {
+        "file": "plugins/cordova-launch-review/www/launchreview.js",
+        "id": "cordova-launch-review.LaunchReview",
+        "pluginId": "cordova-launch-review",
+        "clobbers": [
+            "LaunchReview"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -130,7 +138,8 @@ module.exports.metadata =
     "cordova-plugin-inappbrowser": "1.7.0",
     "cordova-plugin-add-swift-support": "1.6.2",
     "cordova-plugin-nativegeocoder": "1.0.2",
-    "cordova-plugin-network-information": "1.3.3"
+    "cordova-plugin-network-information": "1.3.3",
+    "cordova-launch-review": "2.0.0"
 }
 // BOTTOM OF METADATA
 });

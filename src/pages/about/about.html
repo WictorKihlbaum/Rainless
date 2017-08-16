@@ -1,24 +1,26 @@
+<ion-header no-border>
+  <ion-navbar color="header" [hideBackButton]="true">
+    <ion-buttons start>
+      <button ion-button icon-only navPop>
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      About
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
 <ion-content padding class="gradient-background" no-bounce>
 
-  <ion-grid class="page-grid">
-    <ion-row align-items-center class="page-grid-row">
-      <ion-col>
-        <h1 class="page-topic">About</h1>
-        <div class="page-text">
-          This app will tell you how many times it has rained
-          on a particular date and location during the past years.
-          All necessarry weather data is retreived from Dark Sky.
-        </div>
-        <!-- Back button -->
-        <button ion-button color="light" outline icon-left navPop class="my-back-button">
-          <ion-icon name="arrow-back"></ion-icon>
-          Back
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-  <!-- Powered by DarkSky -->
-  <img src="assets/img/darksky-white.png" class="darksky-logo" (click)="onVisitDarkSky()" />
+  <div class="page-text">
+    This app will tell you how many times it has rained
+    on a particular date and location during the past years.
+    All necessarry weather data is retreived from Dark Sky.
+    <p>
+      All images and icons have been created by Freepik and downloaded from
+      Freepik.com and Flaticon.com
+    </p>
+  </div>
 
 </ion-content>

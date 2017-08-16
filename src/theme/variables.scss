@@ -30,6 +30,11 @@ $colors: (
   light:      white,
   dark:       #222,
 
+  header:(
+    base: #448AFF,
+    contrast: white
+  ),
+
   primarybutton:(
     base: white,
     contrast: #00E5FF
@@ -63,11 +68,6 @@ $colors: (
   calendarfab:(
     base: white,
     contrast: #00E676
-  ),
-
-  lookupbutton:(
-    base: white,
-    contrast: #00E5FF
   ),
 
   advanced-color:(

@@ -21,11 +21,6 @@ page-lookup {
     }
   }
 
-  /* Remove shadow for Android */
-  ion-header.header.header-md::after {
-    background-image: none !important;
-  }
-
   #map {
     height: 100%;
   }

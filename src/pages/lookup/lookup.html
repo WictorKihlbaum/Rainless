@@ -1,14 +1,14 @@
-<ion-header>
+<ion-header no-border>
 
   <!-- Navbar -->
-  <ion-navbar [hideBackButton]="true" color="mytoolbar">
+  <ion-navbar [hideBackButton]="true" color="header">
     <ion-buttons start>
-      <button ion-fab mini color="primarybutton" navPop>
+      <button ion-button icon-only navPop>
         <ion-icon name="arrow-back"></ion-icon>
       </button>
     </ion-buttons>
     <ion-buttons end>
-      <button ion-fab mini color="primarybutton" [navPush]="helpPage">
+      <button ion-button icon-only [navPush]="helpPage">
         <ion-icon name="help-circle"></ion-icon>
       </button>
     </ion-buttons>
