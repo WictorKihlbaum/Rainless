@@ -1,21 +1,5 @@
 <ion-content class="gradient-background" no-bounce>
 
-  <ion-fab top left>
-    <button ion-fab mini id="rate-button" (click)="onRateApp()">
-      <ion-icon name="md-star"></ion-icon>
-    </button>
-  </ion-fab>
-
-  <!-- Mini fab buttons -->
-  <ion-fab top right>
-    <button ion-fab mini [navPush]="aboutPage" class="mini-fab">
-      <ion-icon name="information-circle"></ion-icon>
-    </button>
-    <button ion-fab mini [navPush]="settingsPage" class="mini-fab">
-      <ion-icon name="settings"></ion-icon>
-    </button>
-  </ion-fab>
-
   <ion-grid class="page-grid-top">
     <ion-row align-items-center class="page-grid-row">
       <ion-col>
@@ -28,6 +12,21 @@
         <h2 id="home-subtopic">
           Plan the future with the past
         </h2>
+
+        <ion-row>
+          <ion-col col-6 id="rate-button-col">
+            <!-- Rate button -->
+            <button ion-fab mini id="rate-button" (click)="onRateApp()">
+              <ion-icon name="md-star"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col col-6>
+            <!-- Info button -->
+            <button ion-fab mini id="info-button" [navPush]="aboutPage">
+              <ion-icon name="md-information-circle"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
 
       </ion-col>
     </ion-row>

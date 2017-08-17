@@ -33,11 +33,16 @@ page-home {
     background-image: linear-gradient(19deg, #2979FF 0%, #448AFF 100%);
   }
 
-  .mini-fab {
+  #rate-button-col {
+    position: relative;
+  }
+  #info-button {
     color: #448AFF;
     background-color: white;
   }
   #rate-button {
+    position: absolute;
+    right: 0;
     color: orange;
     background-color: white;
   }

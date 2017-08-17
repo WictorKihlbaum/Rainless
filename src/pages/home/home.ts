@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { AboutPage } from "../about/about";
 import { LookupPage } from "../lookup/lookup";
-import { SettingsPage } from "../settings/settings";
 import { LaunchReview } from "@ionic-native/launch-review";
 
 @Component({
@@ -13,7 +12,6 @@ export class HomePage {
 
   private lookupPage = LookupPage;
   private aboutPage = AboutPage;
-  private settingsPage = SettingsPage;
 
 
   constructor(private launchReview: LaunchReview) {}

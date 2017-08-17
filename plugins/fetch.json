@@ -50,12 +50,10 @@
     "cordova-plugin-geolocation": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-geolocation"
+            "id": "cordova-plugin-geolocation@~2.4.2"
         },
         "is_top_level": true,
-        "variables": {
-            "GEOLOCATION_USAGE_DESCRIPTION": " "
-        }
+        "variables": {}
     },
     "cordova-plugin-compat": {
         "source": {
@@ -68,7 +66,7 @@
     "cordova-plugin-inappbrowser": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-inappbrowser@1.7.0"
+            "id": "cordova-plugin-inappbrowser@~1.7.0"
         },
         "is_top_level": true,
         "variables": {}
@@ -76,7 +74,7 @@
     "cordova-plugin-nativegeocoder": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-nativegeocoder"
+            "id": "cordova-plugin-nativegeocoder@~1.0.2"
         },
         "is_top_level": true,
         "variables": {}
@@ -100,7 +98,7 @@
     "cordova-launch-review": {
         "source": {
             "type": "registry",
-            "id": "cordova-launch-review"
+            "id": "cordova-launch-review@^2.0.0"
         },
         "is_top_level": true,
         "variables": {}

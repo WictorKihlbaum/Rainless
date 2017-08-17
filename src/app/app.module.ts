@@ -5,12 +5,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { InAppBrowser } from "@ionic-native/in-app-browser";
 import { HttpModule } from "@angular/http";
-import { Network } from "@ionic-native/network";
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AboutPage } from "../pages/about/about";
-import { SettingsPage } from "../pages/settings/settings";
 
 import { LookupPage } from "../pages/lookup/lookup";
 import { AdvancedOptionsPage } from "../pages/lookup/advanced-options/advanced-options";
@@ -27,8 +25,7 @@ import { ResultPage } from "../pages/lookup/result/result";
     AdvancedOptionsPage,
     HelpPage,
     ModalAutocompleteItems,
-    ResultPage,
-    SettingsPage
+    ResultPage
   ],
   imports: [
     BrowserModule,
@@ -44,14 +41,12 @@ import { ResultPage } from "../pages/lookup/result/result";
     AdvancedOptionsPage,
     HelpPage,
     ModalAutocompleteItems,
-    ResultPage,
-    SettingsPage
+    ResultPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     InAppBrowser,
-    Network,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
