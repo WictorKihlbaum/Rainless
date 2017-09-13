@@ -1,18 +1,27 @@
-<ion-header>
-  <ion-navbar color="mytoolbar">
-    <ion-title>Location</ion-title>
+<ion-header no-border>
+  <ion-navbar color="header" [hideBackButton]="true">
+    <ion-buttons start>
+      <button ion-button icon-only navPop>
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Location
+    </ion-title>
   </ion-navbar>
+  <ion-toolbar color="header">
+    <ion-searchbar
+      #searchbar
+      [(ngModel)]="autocomplete.query"
+      [showCancelButton]="true"
+      (ionInput)="updateSearch()"
+      (ionCancel)="dismiss()"
+      placeholder="Search location">
+    </ion-searchbar>
+  </ion-toolbar>
 </ion-header>
+
 <ion-content #content no-bounce>
-  <ion-searchbar
-    color="light"
-    #searchbar
-    [(ngModel)]="autocomplete.query"
-    [showCancelButton]="true"
-    (ionInput)="updateSearch()"
-    (ionCancel)="dismiss()"
-    placeholder="Search location...">
-  </ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let item of autocompleteItems" (click)="chooseItem(item)">
       {{ item.description }}

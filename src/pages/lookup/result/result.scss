@@ -7,8 +7,9 @@ page-result {
     height: 40%;
   }
   .result-button {
+    font-family: Ubuntu-Medium;
+    background-image: linear-gradient(45deg, #2979FF 0%, #7C4DFF 100%);
     box-shadow: 0 2px 5px rgba(124, 77, 255, 0.3);
-    background: linear-gradient(45deg, #2979FF 0%, #448AFF 100%);
     margin: 12px 0;
   }
 

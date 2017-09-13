@@ -30,7 +30,8 @@ page-home {
   #lookup-button {
     font-family: Ubuntu-Medium;
     color: white;
-    background-image: linear-gradient(19deg, #2979FF 0%, #448AFF 100%);
+    background-image: linear-gradient(45deg, #2979FF 0%, #7C4DFF 100%);
+    box-shadow: 0 2px 5px rgba(124, 77, 255, 0.3);
   }
 
   #rate-button-col {
@@ -43,7 +44,7 @@ page-home {
   #rate-button {
     position: absolute;
     right: 0;
-    color: orange;
+    color: #FFD740;
     background-color: white;
   }
 

@@ -19,6 +19,19 @@ page-lookup {
     ion-grid {
       box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
 
+      #calendar-button {
+        background-color: white;
+        color: #00E676;
+      }
+      #options-button {
+        background-color: white;
+        color: #00B0FF;
+      }
+      #pin-button {
+        background-color: white;
+        color: #FF1744;
+      }
+
       ion-row ion-col button {
         margin: 0 auto !important;
       }

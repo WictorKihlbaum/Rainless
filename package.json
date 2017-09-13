@@ -1,6 +1,6 @@
 {
   "name": "Rainless",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "Wictor Kihlbaum",
   "homepage": "http://ionicframework.com/",
   "private": true,
@@ -28,14 +28,27 @@
     "@ionic-native/splash-screen": "3.12.1",
     "@ionic-native/status-bar": "3.12.1",
     "@ionic/storage": "2.0.1",
-    "ionic-angular": "3.6.0",
+    "cordova-ios": "^4.4.0",
+    "cordova-launch-review": "^2.0.0",
+    "cordova-plugin-add-swift-support": "^1.7.0",
+    "cordova-plugin-compat": "^1.1.0",
+    "cordova-plugin-console": "^1.0.5",
+    "cordova-plugin-device": "1.1.4",
+    "cordova-plugin-geolocation": "^2.4.3",
+    "cordova-plugin-inappbrowser": "^1.7.1",
+    "cordova-plugin-nativegeocoder": "^2.0.2",
+    "cordova-plugin-splashscreen": "^4.0.3",
+    "cordova-plugin-statusbar": "^2.2.2",
+    "cordova-plugin-whitelist": "^1.3.1",
+    "ionic-angular": "^3.6.1",
+    "ionic-plugin-keyboard": "^2.2.1",
     "ionicons": "3.0.0",
     "rxjs": "5.4.0",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.12"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "2.1.3",
+    "@ionic/app-scripts": "^2.1.4",
     "typescript": "2.3.4"
   },
   "description": "Rainless: Plan the future with the past",
@@ -43,10 +56,17 @@
     "plugins": {
       "cordova-plugin-inappbrowser": {},
       "cordova-launch-review": {},
+      "cordova-plugin-geolocation": {},
       "cordova-plugin-nativegeocoder": {},
-      "cordova-plugin-geolocation": {
-        "GEOLOCATION_USAGE_DESCRIPTION": " "
-      }
-    }
+      "cordova-plugin-console": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-whitelist": {},
+      "ionic-plugin-keyboard": {}
+    },
+    "platforms": [
+      "ios"
+    ]
   }
 }

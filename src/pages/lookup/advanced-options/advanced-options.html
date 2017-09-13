@@ -4,7 +4,7 @@
   </ion-list-header>
   <ion-item>
     <ion-label>
-      <ion-badge>{{ mmPrecipitation }} mm</ion-badge>
+      <ion-badge id="mm-badge">{{ mmPrecipitation }} mm</ion-badge>
     </ion-label>
     <ion-range min="0" max="10" [(ngModel)]="mmPrecipitation">
       <ion-icon small range-left name="md-rainy"></ion-icon>
@@ -14,7 +14,7 @@
 </ion-list>
 
 <ion-item no-lines>
-  <button ion-button round block (click)="onClosePopover()">
+  <button ion-button round block (click)="onClosePopover()" id="done-button">
     Done
   </button>
 </ion-item>

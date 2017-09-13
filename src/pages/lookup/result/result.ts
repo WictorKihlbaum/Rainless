@@ -5,6 +5,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 @Component({
   selector: 'page-result',
   templateUrl: 'result.html',
+  providers: [InAppBrowser]
 })
 export class ResultPage {
 

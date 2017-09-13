@@ -7,10 +7,20 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-console": {
+        "cordova-launch-review": {
             "PACKAGE_NAME": "io.ionic.starter"
         },
-        "cordova-plugin-device": {
+        "cordova-plugin-geolocation": {
+            "GEOLOCATION_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "io.ionic.starter"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "io.ionic.starter"
+        },
+        "cordova-plugin-nativegeocoder": {
+            "PACKAGE_NAME": "io.ionic.starter"
+        },
+        "cordova-plugin-console": {
             "PACKAGE_NAME": "io.ionic.starter"
         },
         "cordova-plugin-splashscreen": {
@@ -24,30 +34,17 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-geolocation": {
-            "GEOLOCATION_USAGE_DESCRIPTION": " ",
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.wictorkihlbaum.rainless2"
-        },
-        "cordova-plugin-nativegeocoder": {
-            "PACKAGE_NAME": "com.wictorkihlbaum.rainless2"
-        },
-        "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "com.wictorkihlbaum.rainless2"
-        },
-        "cordova-launch-review": {
-            "PACKAGE_NAME": "com.wictorkihlbaum.rainless2"
         }
     },
     "dependent_plugins": {
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "io.ionic.starter"
+        },
         "cordova-plugin-compat": {
             "PACKAGE_NAME": "io.ionic.starter"
         },
         "cordova-plugin-add-swift-support": {
-            "PACKAGE_NAME": "com.wictorkihlbaum.rainless2"
+            "PACKAGE_NAME": "io.ionic.starter"
         }
     }
 }

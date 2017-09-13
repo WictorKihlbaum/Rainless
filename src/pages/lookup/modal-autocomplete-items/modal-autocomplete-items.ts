@@ -25,7 +25,7 @@ export class ModalAutocompleteItems {
 
   ionViewDidEnter() {
     this.content.scrollToTop();
-    this.searchbar.setFocus();
+    setTimeout(() => this.searchbar.setFocus(), 100);
   }
 
   dismiss() {

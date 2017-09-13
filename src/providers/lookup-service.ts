@@ -9,7 +9,7 @@ export class LookupService {
 
   private cors: string = 'https://cors-anywhere.herokuapp.com/';
   private apiURL: string = 'https://api.darksky.net/forecast';
-  private apiKey: string = '2735c64ddcc4acfb0c869faf3adfad18';
+  private apiKey: string = '';
   private excludes: string = 'exclude=flags,currently,hourly';
   private units: string = 'units=si';
   private cacheStore: any;

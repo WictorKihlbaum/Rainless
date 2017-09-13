@@ -8,34 +8,33 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { NativeGeocoder } from "@ionic-native/native-geocoder";
 import { AdvancedOptionsPage } from "./advanced-options/advanced-options";
 import { StatusBar } from "@ionic-native/status-bar";
+import { MapHandler } from "./map-handler";
 
 declare const google: any;
 
 @Component({
   selector: 'page-lookup',
   templateUrl: 'lookup.html',
-  providers: [LookupService, Geolocation, NativeGeocoder]
+  providers: [LookupService, Geolocation, NativeGeocoder, MapHandler]
 })
 export class LookupPage implements OnInit {
 
   private helpPage = HelpPage;
+
   private chosenDate: any;
   private minYear: number;
   private maxYear: number;
-  private yearLimit: number = 20;
-  private mm: number = 0;
+  private yearLimit: number = 20; // Max amount of past years
+  private mm: number = 0; // Precipitation option
   private optionsAvailable: boolean = true;
-  private pastYears: number = 10;
-  private niceLookingDate: string = 'No date';
+  private pastYears: number = 10; // Default amount of past years
+  private niceLookingDate: string = 'No date'; // Will be shown in view for user
   private loader: any;
   private toast: any;
 
-  /* Map variables */
+  private mapIsSet: boolean = false;
   private location: any = { address: 'No address', lat: null, lng: null, set: false };
   private placesService: any;
-  private map: any;
-  private pin: any;
-  private marker: any;
 
 
   constructor(
@@ -48,7 +47,8 @@ export class LookupPage implements OnInit {
     private popoverCtrl: PopoverController,
     private toastCtrl: ToastController,
     private statusBar: StatusBar,
-    private platform: Platform) {
+    private platform: Platform,
+    private mapHandler: MapHandler) {
   }
 
   async ngOnInit() {
@@ -56,12 +56,10 @@ export class LookupPage implements OnInit {
       this.showLoading('Loading');
       this.setupDatePicker();
       await this.setCurrentCoordinates();
-      this.initMap();
-      this.setMapPin();
-      this.createMapMarker({ lat: this.location.lat, lng: this.location.lng });
-      this.setCurrentAddress();
+      this.setMap();
+      this.mapHandler.createMapMarker({ lat: this.location.lat, lng: this.location.lng });
+      //this.setCurrentAddress();
       this.setNiceLookingDate();
-      this.loader.dismiss();
     }
     catch (message) {
       this.showToast(message, 'error-toast');
@@ -69,7 +67,7 @@ export class LookupPage implements OnInit {
   }
 
   onShowAdvancedOptions(myEvent) {
-    const popover = this.popoverCtrl.create(AdvancedOptionsPage, { mm: this.mm });
+    const popover = this.popoverCtrl.create(AdvancedOptionsPage, {mm: this.mm});
     popover.onDidDismiss(mm => {
       if (mm != null) this.mm = mm;
     });
@@ -90,8 +88,13 @@ export class LookupPage implements OnInit {
 
   async setCurrentAddress() {
     try {
-      const address = await this.nativeGeocoder.reverseGeocode(this.location.lat, this.location.lng);
-      this.location.address = `${address.street}, ${address.city}, ${address.countryName}`;
+      const locationData = await this.nativeGeocoder.reverseGeocode(this.location.lat, this.location.lng);
+
+      this.location.address = `
+        ${locationData['thoroughfare']}, 
+        ${locationData['locality']}, 
+        ${locationData['countryName']}
+      `;
     }
     catch (error) {
       // Desktop developing purpose since this only works for iOS and Android.
@@ -115,8 +118,11 @@ export class LookupPage implements OnInit {
     this.toast.present();
   }
 
+  /*
+   * Present Google places view.
+   */
   onShowPlacesModal() {
-    let modal = this.modalCtrl.create(ModalAutocompleteItems);
+    const modal = this.modalCtrl.create(ModalAutocompleteItems);
     modal.onDidDismiss(data => {
       if (data) {
         this.location.address = data.description;
@@ -129,47 +135,49 @@ export class LookupPage implements OnInit {
   getPlaceDetail(placeID: string): void {
     const self = this;
     const request = { placeId: placeID };
-    this.placesService = new google.maps.places.PlacesService(this.map);
+    const map = this.mapHandler.getMap();
+    this.placesService = new google.maps.places.PlacesService(map);
     this.placesService.getDetails(request, callback);
 
     function callback(place, status) {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
+        // Update map marker and location data on location changes
         self.location.address = place.formatted_address;
         const location = place.geometry.location;
         self.location.lat = location.lat();
         self.location.lng = location.lng();
-        self.map.setCenter(location);
-        self.createMapMarker(location);
+        self.mapHandler.setMapCenter(location);
+        self.mapHandler.createMapMarker(location);
       }
     }
   }
 
-  initMap() {
-    const point = { lat: this.location.lat, lng: this.location.lng };
+  setMap() {
+    const coordinates = { lat: this.location.lat, lng: this.location.lng };
     const divMap = (<HTMLInputElement>document.getElementById('map'));
-    this.map = new google.maps.Map(divMap, {
-      center: point,
-      zoom: 12,
-      styles: this.getMapStyle(),
-      disableDefaultUI: true,
-      draggable: true,
-      zoomControl: false
-    });
+    this.mapHandler.initMap(divMap, coordinates);
+    this.mapHandler.setLoaderDismiss(this.loader);
+    this.mapIsSet = true;
   }
 
-  getMapStyle() {
-    return [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#6195a0"}]},{"featureType":"administrative.province","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"lightness":"0"},{"saturation":"0"},{"color":"#f5f5f2"},{"gamma":"1"}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"lightness":"-3"},{"gamma":"1.00"}]},{"featureType":"landscape.natural.terrain","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#bae5ce"},{"visibility":"on"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45},{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#fac9a9"},{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"labels.text","stylers":[{"color":"#4e4e4e"}]},{"featureType":"road.arterial","elementType":"labels.text.fill","stylers":[{"color":"#787878"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"transit.station.airport","elementType":"labels.icon","stylers":[{"hue":"#0a00ff"},{"saturation":"-77"},{"gamma":"0.57"},{"lightness":"0"}]},{"featureType":"transit.station.rail","elementType":"labels.text.fill","stylers":[{"color":"#43321e"}]},{"featureType":"transit.station.rail","elementType":"labels.icon","stylers":[{"hue":"#ff6c00"},{"lightness":"4"},{"gamma":"0.75"},{"saturation":"-68"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#eaf6f8"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#c7eced"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"lightness":"-49"},{"saturation":"-53"},{"gamma":"0.79"}]}];
-  }
-
+  /*
+   * Update view depending on chosen date and amount of past years.
+   */
   onDateChange() {
     this.setNiceLookingDate();
     this.setOptionsAvailable();
   }
 
+  /*
+   * Set the date which will be shown for the user in the view.
+   */
   setNiceLookingDate() {
-    const day: number = this.chosenDate.substring(8, 10);
+    let day: string = this.chosenDate.substring(8, 10);
+    if (day.charAt(0) == '0') day = day.charAt(1); // Remove 0 if any
+
     const months: any = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    const month: string = months[parseInt(this.chosenDate.substring(5, 7)) - 1];
+    const month: string = months[this.chosenDate.substring(5, 7) - 1];
+
     this.niceLookingDate = `${day} ${month}`;
   }
 
@@ -178,36 +186,41 @@ export class LookupPage implements OnInit {
     const toYear: number = new Date().getFullYear();
     this.pastYears = toYear - fromYear;
 
-    // Disable advanced options. Weather data will be to insufficient for calculations.
+    // Disable advanced options. Weather data is to insufficient.
     if (toYear - fromYear >= 11) this.optionsAvailable = false;
     else this.optionsAvailable = true;
   }
 
   async onFetchWeatherData() {
     try {
-      // Show loading animation for user.
+      // Show loading animation
       this.showLoading('Loading');
 
-      const latitude: string = this.location.lat.toString();
-      const longitude: string = this.location.lng.toString();
+      // Assemble all necessary parameters for the weather data fetch
+      const latitude: string = this.location.lat;
+      const longitude: string = this.location.lng;
       const fromYear: number = new Date(this.chosenDate).getFullYear();
       const toYear: number = new Date().getFullYear();
-      const yearsBack = toYear - fromYear;
+      const years = toYear - fromYear;
       let precipDays: number = 0;
 
+      // Fetch data and look for rain
       for (let i = fromYear; i < toYear; i += 1) {
         const data = await this.lookupService.load(i, this.chosenDate, latitude, longitude);
         if (this.wasRain(data)) precipDays += 1;
       }
 
-      this.showResultPage(precipDays, yearsBack);
+      this.showResultPage(precipDays, years);
     }
     catch (error) {
       this.loader.dismiss();
-      this.showToast('An error occurred while trying to fetch the weather data.', 'error-toast');
+      this.showToast('Weather data could not be fetched', 'error-toast');
     }
   }
 
+  /*
+   * Calculate if the day was rainy.
+   */
   wasRain(data) {
     let rain: boolean = false;
 
@@ -226,7 +239,10 @@ export class LookupPage implements OnInit {
   }
 
   showResultPage(precipDays: number, yearsBack: number) {
+    // Set database key
     const key: string = `${this.chosenDate.substring(0, 10)}-${this.mm}mm-${this.location.lat}-${this.location.lng}`;
+
+    // Assemble all necessary data for result page
     const parameters: any = {
       keyName: key,
       precipDays: precipDays,
@@ -235,6 +251,8 @@ export class LookupPage implements OnInit {
       niceLookingDate: this.niceLookingDate,
       mm: this.mm
     };
+
+    // Present result page
     this.navCtrl.push(ResultPage, parameters);
   }
 
@@ -248,6 +266,9 @@ export class LookupPage implements OnInit {
     this.loader.present();
   }
 
+  /*
+   * Setup date picker and the range of years to choose.
+   */
   setupDatePicker() {
     const date = new Date();
     const year = date.getFullYear();
@@ -257,26 +278,6 @@ export class LookupPage implements OnInit {
     this.chosenDate = localISOTime.replace(/^\d{4}/, defaultYear);
     this.minYear = year - this.yearLimit;
     this.maxYear = year - 1;
-  }
-
-  setMapPin() {
-    this.pin = {
-      url: 'assets/img/pin.png',
-      scaledSize : new google.maps.Size(32, 32)
-    };
-  }
-
-  createMapMarker(place: any) {
-    // Remove current marker from map.
-    if (this.marker) this.marker.setMap(null);
-
-    // Set new marker on map.
-    this.marker = new google.maps.Marker({
-      map: this.map,
-      animation: google.maps.Animation.DROP,
-      icon: this.pin,
-      position: place
-    });
   }
 
 }

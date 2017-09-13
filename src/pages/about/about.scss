@@ -1,1 +1,17 @@
-page-about {}
+page-about {
+
+  #attribution-topic, #attribution-list, .page-text {
+    font-family: Ubuntu-Medium;
+  }
+
+  #attribution-topic {
+    margin-top: 24px;
+  }
+  #attribution-list {
+    padding-left: 20px;
+    li {
+      margin-bottom: 6px;
+    }
+  }
+
+}

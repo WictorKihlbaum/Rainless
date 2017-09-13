@@ -2,10 +2,16 @@ page-help {
 
   .help-card {
     box-shadow: none;
+
+    h2 {
+      font-family: Ubuntu-Medium;
+    }
+
     ion-card-content p {
       margin-top: 12px;
       text-align: justify;
       font-family: OpenSans-Regular;
+      font-size: 4vw;
     }
   }
 

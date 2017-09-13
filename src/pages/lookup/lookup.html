@@ -28,7 +28,7 @@
       <ion-row justify-content-center>
         <ion-col>
           <!-- Calendar button -->
-          <button ion-fab (click)="picker.open()" color="calendarfab" [disabled]="!map">
+          <button ion-fab (click)="picker.open()" [disabled]="!mapIsSet" id="calendar-button">
             <ion-icon name="md-calendar"></ion-icon>
             <ion-datetime #picker
               id="datetime-picker"
@@ -42,13 +42,13 @@
         </ion-col>
         <ion-col>
           <!-- Advanced options button -->
-          <button ion-fab (click)="onShowAdvancedOptions($event)" [disabled]="!optionsAvailable || !map" color="optionsfab">
+          <button ion-fab (click)="onShowAdvancedOptions($event)" [disabled]="!optionsAvailable || !mapIsSet" id="options-button">
             <ion-icon name="md-rainy"></ion-icon>
           </button>
         </ion-col>
         <ion-col>
           <!-- Location button -->
-          <button ion-fab (click)="onShowPlacesModal()" color="pinfab" [disabled]="!map">
+          <button ion-fab (click)="onShowPlacesModal()" [disabled]="!mapIsSet" id="pin-button">
             <ion-icon name="pin"></ion-icon>
           </button>
         </ion-col>
